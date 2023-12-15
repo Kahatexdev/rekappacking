@@ -45,7 +45,7 @@
               <img src="assets/images/kahatex.png" alt="">
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2 text-center">Rekap Packing</h4>
+              <h4 class="mb-2 text-center">Rekap Packing System</h4>
 
               <form id="Auth" class="mb-3" action="<?= base_url('authverify') ?>" method="POST">
                 <div class="mb-3">

@@ -5,8 +5,13 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function mesin_index(): string
     {
-        return view('welcome_message');
+        return view('Mesin/Dashboard/index');
+    }
+    public function dataproduksi(): string
+    {
+
+        return view('Mesin/Dataproduksi/dataproduksi');
     }
 }

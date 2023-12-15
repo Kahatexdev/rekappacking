@@ -11,4 +11,5 @@ $routes->post('authverify', 'AuthController::auth');
 
 // 
 
-$routes->get('/index', 'Home::index');
+$routes->get('/mesin', 'Home::mesin_index');
+$routes->get('/mesin/dataproduksi', 'Home::dataproduksi');
