@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Judul</title>
+    <title><?= $Judul ?></title>
     <!-- Favicon icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/images/apple-touch-icon.png') ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/images/favicon-32x32.png') ?>">
@@ -21,6 +21,13 @@
     <link href="<?= base_url('assets/plugins/tables/css/datatable/select.dataTables.min.css') ?>" rel="stylesheet">
 
     <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+
+    <link href="<?= base_url('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') ?>" rel="stylesheet">
+
+    <link href="<?= base_url('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/plugins/timepicker/bootstrap-timepicker.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/plugins/bootstrap-daterangepicker/daterangepicker.css') ?>" rel="stylesheet">
+
 
 
 </head>
@@ -57,7 +64,7 @@
                     <ul class="clearfix">
                         <li>
 
-                            <h3 class="mt-4 mx-5 text-info"> Rekap Packing System - $session_usermesin</h3>
+                            <h3 class="mt-4 mx-5 text-info"> Rekap Packing System - <?= $User ?></h3>
                         </li>
                     </ul>
                 </div>
@@ -106,47 +113,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="nk-sidebar">
-            <div class="nk-nav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
-                    <li>
-                        <a href="<?= base_url('mesin/index') ?>" aria-expanded="false">
-                            <i class="icon-home menu-icon"></i><span class="nav-text">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('mesin/dataproduksi') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi</span>
-                        </a>
-                    </li>
-                    <!-- <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-doc menu-icon"></i><span class="nav-text">Report</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Report Pesanan</a></li>
 
-
-                        </ul>
-                    </li> -->
-
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-refresh menu-icon"></i><span class="nav-text">Retur</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Input Retur</a></li>
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>List Pengajuan Retur</a></li>
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Report Retur</a></li>
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Retur yang Ditolak</a></li>
-
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -154,9 +121,9 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
+        <div class="content mt-3">
 
-            <div class="container-fluid mt-1">
+            <div class="container-fluid">
                 <?= $this->renderSection('content'); ?>
             </div>
             <!-- #/ container -->
@@ -171,7 +138,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; 2023 @BP System</p>
+                <p>Copyright &copy; 2023 @BP-System</p>
             </div>
         </div>
         <!--**********************************
@@ -213,8 +180,6 @@
     <!-- ChartistJS -->
     <script src="<?= base_url('assets/plugins/chartist/js/chartist.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js') ?>"></script>
-
-
 
     <script src="<?= base_url('assets/js/dashboard/dashboard-1.js') ?>"></script>
 
