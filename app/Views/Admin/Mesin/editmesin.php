@@ -22,7 +22,7 @@
                     <?= $Header ?>
                 </h4>
                 <div class="text-bold">
-                    <a href="<?= base_url('admin/mesin') ?>" aria-expanded="false" class="btn btn-primary">
+                    <a href="<?= base_url('admin/mesin') ?>" aria-expanded="false" class="btn btn-info">
                         <i class="icon-back menu-icon"></i><span class="nav-text"> Kembali</span>
                     </a>
                 </div>
