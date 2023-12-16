@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Judul</title>
+    <title><?= $Judul ?></title>
     <!-- Favicon icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/images/apple-touch-icon.png') ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/images/favicon-32x32.png') ?>">
@@ -57,7 +57,7 @@
                     <ul class="clearfix">
                         <li>
 
-                            <h3 class="mt-4 mx-5 text-info"> Rekap Packing System - $session_usermesin</h3>
+                            <h3 class="mt-4 mx-5 text-info"> Rekap Packing System - <?= $User ?></h3>
                         </li>
                     </ul>
                 </div>
@@ -111,38 +111,37 @@
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Dashboard</li>
                     <li>
-                        <a href="<?= base_url('mesin/index') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin') ?>" aria-expanded="false">
                             <i class="icon-home menu-icon"></i><span class="nav-text">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('mesin/dataproduksi') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi</span>
+                        <a href="<?= base_url('admin/mesin') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Mesin</span>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-doc menu-icon"></i><span class="nav-text">Report</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Report Pesanan</a></li>
-
-
-                        </ul>
-                    </li> -->
-
                     <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-refresh menu-icon"></i><span class="nav-text">Retur</span>
+                        <a href="<?= base_url('admin/rosso') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Rosso</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Input Retur</a></li>
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>List Pengajuan Retur</a></li>
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Report Retur</a></li>
-                            <li><a href="#"> <i class="icon-doc menu-icon"></i>Retur yang Ditolak</a></li>
-
-                        </ul>
                     </li>
+                    <li>
+                        <a href="<?= base_url('admin/setting') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Setting</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/packing') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Packing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/stoklot') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Stoklot</span>
+                        </a>
+                    </li>
+
+
 
                 </ul>
             </div>

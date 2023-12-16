@@ -1,0 +1,13 @@
+CRITICAL - 2023-12-16 01:02:38 --> Undefined variable $Judul
+in APPPATH\Views\User\layout.php on line 8.
+ 1 APPPATH\Views\User\layout.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Judul', 'C:\\xampp\\htdocs\\rekappacking\\rekappacking\\app\\Views\\User\\layout.php', 8)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\rekappacking\\app\\Views\\User\\layout.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('User/layout', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Admin/index', [], true)
+ 6 APPPATH\Controllers\AdminController.php(10): view('Admin/index')
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AdminController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\rekappacking\\public\\index.php')
