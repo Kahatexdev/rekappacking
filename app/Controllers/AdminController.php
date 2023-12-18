@@ -5,14 +5,29 @@ namespace App\Controllers;
 
 class AdminController extends BaseController
 {
-    public function index()
+    protected $filters;
+
+    public function __construct()
+    {
+        if ($this->filters = ['role' => ['admin']] != session()->get('role')) {
+            return redirect()->to(base_url('/login'));
+        }
+        $this->isLogedin();
+    }
+    protected function isLogedin()
     {
         if (!session()->get('user_id')) {
             return redirect()->to(base_url('/login'));
         }
+    }
+
+
+    public function index()
+    {
+
         $data = [
             'Judul' => 'Dashboard Admin',
-            'User' => session()->get('role'),
+            'User' => session()->get('username'),
             'Tabel' => 'Data Produksi'
 
         ];

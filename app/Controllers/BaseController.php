@@ -21,27 +21,7 @@ use Psr\Log\LoggerInterface;
  */
 abstract class BaseController extends Controller
 {
-    protected $userData;
 
-    public function __construct()
-    {
-
-        $this->checkSession();
-    }
-    protected function checkSession()
-    {
-        // Lakukan pengecekan sesi di sini
-        $this->userData = [
-            'user_id' => session()->get('user_id'),
-            'role' => session()->get('role')
-            // Tambahkan data lainnya yang diperlukan
-        ];
-
-        // Jika user belum login, arahkan ke halaman login
-        if (!session()->get('user_id')) {
-            return redirect()->to(base_url('/login'));
-        }
-    }
     /**
      * Instance of the main Request object.
      *

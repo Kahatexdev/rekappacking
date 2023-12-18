@@ -13,8 +13,15 @@ $routes->post('authverify', 'AuthController::auth');
 
 // 
 // user routes
-$routes->get('/user/mesin', 'Home::mesin_index');
-$routes->get('/user/mesin/data', 'Home::mesindata');
+//mesin
+$routes->group('mesin', ['filter' => 'roles:mesin'], function ($routes) {
+
+    $routes->get('/', 'MesinController::mesin_index');
+    $routes->get('Mesin/data', 'MesinController::mesindata');
+});
+
+
+
 $routes->get('/user/rosso', 'Home::rosso_index');
 $routes->get('/user/rosso/data', 'Home::rossodata');
 $routes->get('/user/setting', 'Home::setting_index');
@@ -25,10 +32,13 @@ $routes->get('/user/stoklot', 'Home::stoklot_index');
 $routes->get('/user/stoklot/data', 'Home::stoklotdata');
 
 //admin routes
-$routes->get('/admin', 'AdminController::index');
-$routes->get('/admin/mesin', 'AdminController::mesin');
-$routes->get('/admin/mesin/update', 'AdminController::mesin_update');
-$routes->get('/admin/rosso', 'AdminController::rosso');
-$routes->get('/admin/setting', 'AdminController::setting');
-$routes->get('/admin/packing', 'AdminController::packing');
-$routes->get('/admin/stoklot', 'AdminController::stoklot');
+$routes->group('admin', ['filter' => 'roles:admin'], function ($routes) {
+
+    $routes->get('/', 'AdminController::index');
+    $routes->get('/mesin', 'AdminController::mesin');
+    $routes->get('/mesin/update', 'AdminController::mesin_update');
+    $routes->get('/rosso', 'AdminController::rosso');
+    $routes->get('/setting', 'AdminController::setting');
+    $routes->get('/packing', 'AdminController::packing');
+    $routes->get('/stoklot', 'AdminController::stoklot');
+});
