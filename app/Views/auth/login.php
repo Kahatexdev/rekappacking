@@ -46,6 +46,15 @@
               </div>
               <!-- /Logo -->
               <h4 class="mb-2 text-center">Rekap Packing System</h4>
+              <?php if (session()->getFlashdata('error')) : ?>
+               <p class="text-danger"><?= session()->getFlashdata('error') ?></p>
+               <?php endif; ?>
+
+               <?php if (session()->getFlashdata('errors')) : ?>
+               <?php foreach (session()->getFlashdata('errors') as $error) : ?>
+                <p class="text-danger"><?= esc($error) ?></p>
+                <?php endforeach; ?>
+                <?php endif; ?>
 
               <form id="Auth" class="mb-3" action="<?= base_url('authverify') ?>" method="POST">
                 <div class="mb-3">

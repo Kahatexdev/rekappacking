@@ -100,7 +100,8 @@
                             </div>
                         </li>
                         <li class="icons dropdown">
-                            <a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                            <a href="<?= base_url('logout') ?>"><i class="icon-key"></i> <span>Logout</span></a>
+
                         </li>
                     </ul>
                 </div>

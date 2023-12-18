@@ -7,7 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 // login
 $routes->get('/login', 'AuthController::index');
+$routes->get('/logout', 'AuthController::logout');
 $routes->post('authverify', 'AuthController::auth');
+
 
 // 
 // user routes

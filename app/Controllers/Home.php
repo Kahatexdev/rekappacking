@@ -11,7 +11,7 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data Mesin',
-            'User' => 'User Mesin'
+            'User' => session()->get('role')
         ];
         return view('User/Mesin/index', $data);
     }
@@ -19,7 +19,7 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data Mesin',
-            'User' => 'User Mesin'
+            'User' => session()->get('role')
         ];
 
         return view('User/Mesin/dataproduksi', $data);
@@ -29,7 +29,8 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data Rosso',
-            'User' => 'User Rosso'
+            'User' => session()->get('role')
+
         ];
         return view('User/Rosso/index', $data);
     }
@@ -37,7 +38,8 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data Rosso',
-            'User' => 'User Rosso'
+            'User' => session()->get('role')
+
         ];
 
         return view('User/Rosso/dataproduksi', $data);
@@ -47,7 +49,8 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data setting',
-            'User' => 'User setting'
+            'User' => session()->get('role')
+
         ];
         return view('User/Setting/index', $data);
     }
@@ -55,7 +58,8 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data setting',
-            'User' => 'User setting'
+            'User' => session()->get('role')
+
         ];
 
         return view('User/Setting/dataproduksi', $data);
@@ -66,7 +70,8 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data packing',
-            'User' => 'User packing'
+            'User' => session()->get('role')
+
         ];
         return view('User/Packing/index', $data);
     }
@@ -74,7 +79,8 @@ class Home extends BaseController
     {
         $data = [
             'Judul' => 'Data packing',
-            'User' => 'User packing'
+            'User' => session()->get('role')
+
         ];
 
         return view('User/Packing/dataproduksi', $data);

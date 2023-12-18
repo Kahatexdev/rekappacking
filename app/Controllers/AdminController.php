@@ -5,17 +5,22 @@ namespace App\Controllers;
 
 class AdminController extends BaseController
 {
-    public function index(): string
+    public function index()
     {
+        if (!session()->get('user_id')) {
+            return redirect()->to(base_url('/login'));
+        }
         $data = [
             'Judul' => 'Dashboard Admin',
-            'User' => 'Admin'
+            'User' => session()->get('role'),
+            'Tabel' => 'Data Produksi'
+
         ];
         return view('Admin/index', $data);
     }
 
     //mesin
-    public function mesin(): string
+    public function mesin()
     {
         $data = [
             'Judul' => 'Data Produksi Mesin',
@@ -24,7 +29,7 @@ class AdminController extends BaseController
         ];
         return view('Admin/Mesin/mesin', $data);
     }
-    public function mesin_update(): string
+    public function mesin_update()
     {
         $data = [
             'Judul' => 'Edit Data Mesin',
@@ -35,7 +40,7 @@ class AdminController extends BaseController
     }
 
     //rosso
-    public function rosso(): string
+    public function rosso()
     {
         $data = [
             'Judul' => 'Data Produksi rosso',
@@ -46,7 +51,7 @@ class AdminController extends BaseController
     }
 
     //setting
-    public function setting(): string
+    public function setting()
     {
         $data = [
             'Judul' => 'Data Produksi setting',
@@ -58,7 +63,7 @@ class AdminController extends BaseController
 
 
     // packing
-    public function packing(): string
+    public function packing()
     {
         $data = [
             'Judul' => 'Data Produksi packing',
@@ -69,7 +74,7 @@ class AdminController extends BaseController
     }
 
     //stoklot
-    public function stoklot(): string
+    public function stoklot()
     {
         $data = [
             'Judul' => 'Data stoklot',
