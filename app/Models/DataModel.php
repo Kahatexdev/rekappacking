@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class MesinModel extends Model
+class DataModel extends Model
 {
     protected $table = 'data';
     protected $primaryKey = 'id';

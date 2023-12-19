@@ -29,7 +29,9 @@
     <link href="<?= base_url('assets/plugins/bootstrap-daterangepicker/daterangepicker.css') ?>" rel="stylesheet">
 
 
-
+    <link rel="stylesheet" href="authpage/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="authpage/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="authpage/css/demo.css" />
 </head>
 
 <body>

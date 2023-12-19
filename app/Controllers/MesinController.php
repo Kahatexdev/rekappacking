@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
-use App\Models\MesinModel;
+use App\Models\DataModel;
 
 class MesinController extends BaseController
 {
@@ -12,7 +12,7 @@ class MesinController extends BaseController
 
     public function __construct()
     {
-        $this->dataModel = new MesinModel();;
+        $this->dataModel = new DataModel();;
         $this->filters = ['role' => ['mesin']];
         $this->isLogedin();
     }
@@ -74,9 +74,9 @@ class MesinController extends BaseController
                 }
                 // var_dump($data);
 
-                return redirect()->to('mesin')->with('success', 'Data imported and saved to database successfully');
+                return redirect()->to('data')->with('success', 'Data imported and saved to database successfully');
             } else {
-                return redirect()->to('mesin')->with('error', 'No data found in the Excel file');
+                return redirect()->to('data')->with('error', 'No data found in the Excel file');
             }
         }
         //var_dump($data);

@@ -21,6 +21,10 @@ $routes->group('/mesin', ['filter' => 'roles:mesin'], function ($routes) {
     $routes->post('import', 'MesinController::import');
 });
 
+//exportcontroller
+$routes->post('export', 'ExportController::export');
+
+
 
 
 $routes->get('/user/rosso', 'Home::rosso_index');

@@ -71,16 +71,18 @@
                     <div class="col-lg-4">
                         <div class="d-flex justify-content-end ">
 
-                            <button type="#" class="btn btn-success text-white"><i class="icon-note menu-icon"></i> Export Spreadsheet</button>
+                            <form action="<?= base_url('export') ?>" method="post">
+                                <button type="submit" class="btn btn-success text-white"><i class="icon-note menu-icon"></i> Export Spreadsheet</button>
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="table-responsive">
+
                     <table class="table table-striped table-bordered vertical-middle">
                         <thead>
                             <tr>
-
+                                <th>.</th>
                                 <th>No</th>
                                 <th>JC</th>
                                 <th>Inisial</th>
@@ -96,6 +98,7 @@
                                 foreach ($Produk as $dt) {
                             ?>
                                     <tr>
+                                        <td><input type="checkbox" name="selected[]" id="" value="<?= $dt['id']; ?>" class="form"></td>
                                         <td><?= $dt['id'] ?></td>
                                         <td><?= $dt['jc'] ?></td>
                                         <td><?= $dt['inisial'] ?></td>
@@ -117,6 +120,8 @@
 
                         </tbody>
                     </table>
+                    </form>
+
                 </div>
             </div>
 
