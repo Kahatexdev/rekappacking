@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><?= $Judul ?></title>
+
+
     <!-- Favicon icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/images/apple-touch-icon.png') ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/images/favicon-32x32.png') ?>">
@@ -20,6 +22,8 @@
     <link href="<?= base_url('assets/plugins/tables/css/datatable/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/plugins/tables/css/datatable/select.dataTables.min.css') ?>" rel="stylesheet">
 
+
+
     <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
 
     <link href="<?= base_url('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') ?>" rel="stylesheet">
@@ -28,10 +32,6 @@
     <link href="<?= base_url('assets/plugins/timepicker/bootstrap-timepicker.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/plugins/bootstrap-daterangepicker/daterangepicker.css') ?>" rel="stylesheet">
 
-
-    <link rel="stylesheet" href="authpage/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="authpage/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="authpage/css/demo.css" />
 </head>
 
 <body>
@@ -155,6 +155,7 @@
     <!--**********************************
         Scripts
     ***********************************-->
+
     <script src="<?= base_url('assets/plugins/common/common.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/custom.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/settings.js') ?>"></script>
@@ -165,6 +166,7 @@
     <script src="<?= base_url('assets/plugins/tables/js/jquery.dataTables.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/tables/js/datatable/dataTables.bootstrap4.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/tables/js/datatable-init/datatable-basic.min.js') ?>"></script>
+
 
     <!-- Chartjs -->
     <script src="<?= base_url('assets/plugins/chart.js/Chart.bundle.min.js') ?>"></script>

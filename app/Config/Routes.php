@@ -19,6 +19,7 @@ $routes->group('/mesin', ['filter' => 'roles:mesin'], function ($routes) {
     $routes->get('', 'MesinController::mesin_index');
     $routes->get('data', 'MesinController::mesindata');
     $routes->post('import', 'MesinController::import');
+    $routes->post('getData', 'MesinController::getData');
 });
 
 //exportcontroller

@@ -13,7 +13,7 @@ class ExportController extends BaseController
         $selectedIds = $this->request->getPost('selected');
 
         if (!$selectedIds) {
-            return redirect()->to('data');
+            return redirect()->to('mesin/data');
         }
 
         $model = new DataModel();
@@ -57,7 +57,7 @@ class ExportController extends BaseController
         readfile($filename);
 
         // Hapus file setelah di-download
-        // unlink($filename);
-        // exit();
+        unlink($filename);
+        exit();
     }
 }

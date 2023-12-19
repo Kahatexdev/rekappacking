@@ -12,17 +12,23 @@
 
 
                         Pesan atau notif disini
+                        <?php if (session()->getFlashdata('success')) : ?>
+                            <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                        <?php endif; ?>
 
+                        <?php if (session()->getFlashdata('error')) : ?>
+                            <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="col-lg-8">
                         <div class="d-flex justify-content-end">
                             <li class="icons dropdown">
-                                <a href="<?= base_url('user/mesin') ?>" class="btn btn-info text-white mx-2">
+                                <a href="<?= base_url('mesin') ?>" class="btn btn-info text-white mx-2">
                                     <i class="icon-arrow-up-circle menu-icon text-white"></i><span class="nav-text"> Import Produksi</span>
                                 </a>
                             </li>
                             <li class="icons dropdown">
-                                <a href="<?= base_url('user/mesin/data') ?>" class="btn btn-info text-white mx-2">
+                                <a href="<?= base_url('mesin/data') ?>" class="btn btn-info text-white mx-2">
                                     <i class="icon-chart menu-icon text-white"></i><span class="nav-text my-2"> Data Produksi</span>
                                 </a>
                             </li>
@@ -44,6 +50,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Tabel Data Produksi</h4>
+
                 <div class="d-flex justify-content-between">
                     <div class="col-lg-8">
                         <div class="row">
@@ -79,7 +86,7 @@
                 <hr>
                 <div class="table-responsive">
 
-                    <table class="table table-striped table-bordered vertical-middle">
+                    <table class="table  table-striped table-bordered vertical-middle " id="tabel">
                         <thead>
                             <tr>
                                 <th>.</th>
@@ -137,6 +144,26 @@
 </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $('#tabel').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?php echo base_url('mesin/getData'); ?>",
+                "type": "POST"
+            },
+            "columns": [{
+                    "data": "id"
+                },
+                {
+                    "data": "jc"
+                },
+                // Tambahkan kolom lainnya sesuai kebutuhan
+            ]
+        });
+    });
+</script>
 
 
 <?php $this->endSection(); ?>

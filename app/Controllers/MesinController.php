@@ -74,13 +74,30 @@ class MesinController extends BaseController
                 }
                 // var_dump($data);
 
-                return redirect()->to('data')->with('success', 'Data imported and saved to database successfully');
+                return redirect()->to('mesin/data')->with('success', 'Data imported and saved to database successfully');
             } else {
-                return redirect()->to('data')->with('error', 'No data found in the Excel file');
+                return redirect()->to('nesin/data')->with('error', 'No data found in the Excel file');
             }
         }
         //var_dump($data);
 
         return redirect()->to('mesin')->with('error', 'Invalid file or file not uploaded');
+    }
+    public function getData()
+    {
+        $model = new DataModel();
+        $draw = $this->request->getPost('draw');
+        $start = $this->request->getPost('start');
+        $length = $this->request->getPost('length');
+        $search = $this->request->getPost('search')['value'];
+
+        $data = [
+            'draw' => $draw,
+            'recordsTotal' => $model->countAll(),
+            'recordsFiltered' => $model->searchCount($search),
+            'data' => $model->search($search, $start, $length),
+        ];
+
+        return $this->response->setJSON($data);
     }
 }
