@@ -91,16 +91,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>TS0101</td>
+                            <?php
+                            if (!empty($Produk)) {
+                                foreach ($Produk as $dt) {
+                            ?>
+                                    <tr>
+                                        <td><?= $dt['id'] ?></td>
+                                        <td><?= $dt['jc'] ?></td>
+                                        <td><?= $dt['inisial'] ?></td>
+                                        <td><?= $dt['colour'] ?></td>
+                                        <td><?= $dt['deskripsi'] ?></td>
+                                        <td><?= $dt['admin'] ?></td>
 
-                                <td>T2</td>
-                                <td>J434184-1 24X18</td>
-                                <td>Deskripsi</td>
-                                <td>Teh teh</i></a></td>
-                            </tr>
-
+                                    </tr>
+                                <?php
+                                }
+                            } else {
+                                ?>
+                                <tr>
+                                    <td colspan="6" class="text-center">Tidak ada data</td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
 
                         </tbody>
                     </table>

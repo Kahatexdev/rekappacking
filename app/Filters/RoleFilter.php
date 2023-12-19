@@ -26,7 +26,10 @@ class RoleFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         $userRole = session()->get('role');
-        $allowedRoles = $arguments['roles'] ?? [];
+        $allowedRoles = $arguments['roles'] ?? ['admin', 'mesin', 'setting', 'rosso', 'packing', 'perbaikan', 'stocklot
+        
+        
+        '];
         if (!in_array($userRole, $allowedRoles)) {
             session()->destroy();
             return redirect()->to(base_url('/login'))->withInput()->with('error', 'Gabole gitu'); // Redirect jika peran tidak sesuai

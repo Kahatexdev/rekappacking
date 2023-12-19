@@ -14,10 +14,11 @@ $routes->post('authverify', 'AuthController::auth');
 // 
 // user routes
 //mesin
-$routes->group('mesin', ['filter' => 'roles:mesin'], function ($routes) {
+$routes->group('/mesin', ['filter' => 'roles:mesin'], function ($routes) {
 
-    $routes->get('/', 'MesinController::mesin_index');
-    $routes->get('Mesin/data', 'MesinController::mesindata');
+    $routes->get('', 'MesinController::mesin_index');
+    $routes->get('data', 'MesinController::mesindata');
+    $routes->post('import', 'MesinController::import');
 });
 
 
@@ -32,13 +33,13 @@ $routes->get('/user/stoklot', 'Home::stoklot_index');
 $routes->get('/user/stoklot/data', 'Home::stoklotdata');
 
 //admin routes
-$routes->group('admin', ['filter' => 'roles:admin'], function ($routes) {
+$routes->group('/admin', ['filter' => 'roles:admin'], function ($routes) {
 
-    $routes->get('/', 'AdminController::index');
-    $routes->get('/mesin', 'AdminController::mesin');
-    $routes->get('/mesin/update', 'AdminController::mesin_update');
-    $routes->get('/rosso', 'AdminController::rosso');
-    $routes->get('/setting', 'AdminController::setting');
-    $routes->get('/packing', 'AdminController::packing');
-    $routes->get('/stoklot', 'AdminController::stoklot');
+    $routes->get('', 'AdminController::index');
+    $routes->get('datamesin', 'AdminController::mesin');
+    $routes->get('mesin/update', 'AdminController::mesin_update');
+    $routes->get('rosso', 'AdminController::rosso');
+    $routes->get('setting', 'AdminController::setting');
+    $routes->get('packing', 'AdminController::packing');
+    $routes->get('stoklot', 'AdminController::stoklot');
 });
