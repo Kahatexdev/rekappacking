@@ -116,7 +116,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('admin/mesin') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin/datamesin') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Mesin</span>
                         </a>
                     </li>
@@ -126,7 +126,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('admin/setting') ?>" aria-expanded="false">
+                        <a href="<?= base_url('admin /setting') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Setting</span>
                         </a>
                     </li>
@@ -156,6 +156,7 @@
         <div class="content-body">
 
             <div class="container-fluid mt-1">
+
                 <?= $this->renderSection('content'); ?>
             </div>
             <!-- #/ container -->
@@ -184,6 +185,7 @@
     <!--**********************************
         Scripts
     ***********************************-->
+
     <script src="<?= base_url('assets/plugins/common/common.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/custom.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/settings.js') ?>"></script>
@@ -196,6 +198,7 @@
     <script src="<?= base_url('assets/plugins/tables/js/datatable-init/datatable-basic.min.js') ?>"></script>
 
     <!-- Chartjs -->
+
     <script src="<?= base_url('assets/plugins/chart.js/Chart.bundle.min.js') ?>"></script>
     <!-- Circle progress -->
     <script src="<?= base_url('assets/plugins/circle-progress/circle-progress.min.js') ?>"></script>
@@ -203,6 +206,8 @@
     <script src="<?= base_url('assets/plugins/d3v3/index.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/topojson/topojson.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/datamaps/datamaps.world.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/dashboard/dashboard-1.js') ?>"></script>
+
     <!-- Morrisjs -->
     <script src="<?= base_url('assets/plugins/raphael/raphael.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/morris/morris.min.js') ?>"></script>
@@ -215,7 +220,6 @@
 
 
 
-    <script src="<?= base_url('assets/js/dashboard/dashboard-1.js') ?>"></script>
 
 
 

@@ -87,7 +87,7 @@
                                 <td>J434184-1 24X18</td>
                                 <td>Deskripsi</td>
                                 <td>Teh teh</td>
-                                <td><a href="<?= base_url('admin/mesin/update') ?>" class="btn btn-primary"><i class="icon-pencil menu-icon"></i></a></td>
+                                <td><a href="<?= base_url('admin/editmesin') ?>" class="btn btn-info"><i class="icon-pencil menu-icon"></i></a></td>
                             </tr>
 
 

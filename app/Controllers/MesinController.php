@@ -76,7 +76,7 @@ class MesinController extends BaseController
 
                 return redirect()->to('mesin/data')->with('success', 'Data imported and saved to database successfully');
             } else {
-                return redirect()->to('nesin/data')->with('error', 'No data found in the Excel file');
+                return redirect()->to('mesin/data')->with('error', 'No data found in the Excel file');
             }
         }
         //var_dump($data);

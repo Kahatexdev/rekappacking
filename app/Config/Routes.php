@@ -42,7 +42,7 @@ $routes->group('/admin', ['filter' => 'roles:admin'], function ($routes) {
 
     $routes->get('', 'AdminController::index');
     $routes->get('datamesin', 'AdminController::mesin');
-    $routes->get('mesin/update', 'AdminController::mesin_update');
+    $routes->get('editmesin', 'AdminController::mesin_update');
     $routes->get('rosso', 'AdminController::rosso');
     $routes->get('setting', 'AdminController::setting');
     $routes->get('packing', 'AdminController::packing');
