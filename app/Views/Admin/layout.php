@@ -93,7 +93,7 @@
                             </div>
                         </li>
                         <li class="icons dropdown">
-                            <a href="<?= base_url('logout') ?>"><i class="icon-key"></i> <span>Logout</span></a>
+                            <button type="button" class="btn btn-white" data-toggle="modal" data-target="#basicModal"> <i class="icon-key"></i> <span>Logout</span></button>
                         </li>
                     </ul>
                 </div>
@@ -156,7 +156,22 @@
         <div class="content-body">
 
             <div class="container-fluid mt-1">
-
+                <div class="modal fade" id="basicModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Logout</h5>
+                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Apakah yakin ingin keluar</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+                                <a href="<?= base_url('logout') ?>" class="btn btn-primary">Ya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <?= $this->renderSection('content'); ?>
             </div>
             <!-- #/ container -->
@@ -196,7 +211,26 @@
     <script src="<?= base_url('assets/plugins/tables/js/jquery.dataTables.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/tables/js/datatable/dataTables.bootstrap4.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/tables/js/datatable-init/datatable-basic.min.js') ?>"></script>
-
+    <script>
+        $(document).ready(function() {
+            $('#tabel').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "<?php echo base_url('mesin/getData'); ?>",
+                    "type": "POST"
+                },
+                "columns": [{
+                        "data": "id"
+                    },
+                    {
+                        "data": "jc"
+                    },
+                    // Tambahkan kolom lainnya sesuai kebutuhan
+                ]
+            });
+        });
+    </script>
     <!-- Chartjs -->
 
     <script src="<?= base_url('assets/plugins/chart.js/Chart.bundle.min.js') ?>"></script>

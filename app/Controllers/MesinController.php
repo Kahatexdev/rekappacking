@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use App\Models\DataModel;
+use Config\Pager;
 
 class MesinController extends BaseController
 {
@@ -35,10 +36,12 @@ class MesinController extends BaseController
     }
     public function mesindata(): string
     {
+
         $data = [
             'Judul' => 'Data Mesin',
             'User' => session()->get('role'),
-            'Produk' => $this->dataModel->findAll()
+            'Produk' => $this->dataModel->paginate(15),
+            'pager' => $this->dataModel->pager,
         ];
 
 
@@ -68,8 +71,8 @@ class MesinController extends BaseController
                     if (!empty($row)) {
                         // Simpan ke database
                         //var_dump($data);
-                        $bismillah = ['jc' => $jc, 'inisial' => $inisial, 'colour' => $colour, 'deskripsi' => $deskripsi, 'admin' => $admin];
-                        $this->dataModel->insert($bismillah);
+                        $data = ['jc' => $jc, 'inisial' => $inisial, 'colour' => $colour, 'deskripsi' => $deskripsi, 'admin' => $admin];
+                        $this->dataModel->insert($data);
                     }
                 }
                 // var_dump($data);

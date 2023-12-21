@@ -95,6 +95,7 @@
                                 <th>Inisial</th>
                                 <th>Colour </th>
                                 <th>Desc</th>
+                                <th>Tanggal Import</th>
                                 <th>Admin</th>
 
                             </tr>
@@ -111,6 +112,7 @@
                                         <td><?= $dt['inisial'] ?></td>
                                         <td><?= $dt['colour'] ?></td>
                                         <td><?= $dt['deskripsi'] ?></td>
+                                        <td><?= $dt['created_at'] ?></td>
                                         <td><?= $dt['admin'] ?></td>
 
                                     </tr>
@@ -129,7 +131,10 @@
                     </table>
                     </form>
 
+
                 </div>
+
+
             </div>
 
         </div>
@@ -144,26 +149,7 @@
 </div>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $('#tabel').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "ajax": {
-                "url": "<?php echo base_url('mesin/getData'); ?>",
-                "type": "POST"
-            },
-            "columns": [{
-                    "data": "id"
-                },
-                {
-                    "data": "jc"
-                },
-                // Tambahkan kolom lainnya sesuai kebutuhan
-            ]
-        });
-    });
-</script>
+
 
 
 <?php $this->endSection(); ?>

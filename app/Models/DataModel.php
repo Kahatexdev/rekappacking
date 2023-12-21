@@ -6,10 +6,13 @@ use CodeIgniter\Model;
 
 class DataModel extends Model
 {
-    protected $table = 'data';
+    protected $table = 'dataproduk';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['jc', 'inisial', 'colour', 'deskripsi', 'admin']; // Sesuaikan dengan struktur tabel database 
+    protected $allowedFields = ['jc', 'inisial', 'colour', 'deskripsi', 'admin', 'creaeted_at', 'updated_at']; // Sesuaikan dengan struktur tabel database 
 
+    protected $useTimestamps = true;
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
 
     public function search($search, $start, $length)
     {
@@ -28,5 +31,13 @@ class DataModel extends Model
             ->orLike('jc', $search)
             // Tambahkan kondisi pencarian untuk kolom lainnya sesuai kebutuhan
             ->countAllResults();
+    }
+
+    protected function beforeInsert(array $data)
+    {
+        // Set created_at to the current date and time
+        $data['created_at'] = date('Y-m-d');
+
+        return $data;
     }
 }

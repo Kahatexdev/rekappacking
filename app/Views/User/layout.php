@@ -103,9 +103,10 @@
                             </div>
                         </li>
                         <li class="icons dropdown">
-                            <a href="<?= base_url('logout') ?>"><i class="icon-key"></i> <span>Logout</span></a>
+                            <button type="button" class="btn btn-white" data-toggle="modal" data-target="#basicModal"> <i class="icon-key"></i> <span>Logout</span></button>
 
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -126,7 +127,22 @@
             Content body start
         ***********************************-->
         <div class="content mt-3">
-
+            <div class="modal fade" id="basicModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Logout</h5>
+                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Apakah yakin ingin keluar?</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger text-white" data-dismiss="modal">Tidak</button>
+                            <a href="<?= base_url('logout') ?>" class="btn btn-primary">Ya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container-fluid">
                 <?= $this->renderSection('content'); ?>
             </div>
