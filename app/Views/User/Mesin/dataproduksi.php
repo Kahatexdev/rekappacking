@@ -94,8 +94,11 @@
                                 <th>JC</th>
                                 <th>Inisial</th>
                                 <th>Colour </th>
+                                <th>Qty Prod </th>
+                                <th>Qty BS </th>
+                                <th>Qty Total </th>
                                 <th>Desc</th>
-                                <th>Tanggal Import</th>
+                                <th>Tanggal</th>
                                 <th>Admin</th>
 
                             </tr>
@@ -111,6 +114,9 @@
                                         <td><?= $dt['jc'] ?></td>
                                         <td><?= $dt['inisial'] ?></td>
                                         <td><?= $dt['colour'] ?></td>
+                                        <td><?= $dt['qtyprod'] ?></td>
+                                        <td><?= $dt['qtybs'] ?></td>
+                                        <td><?= $dt['qtytotal'] ?></td>
                                         <td><?= $dt['deskripsi'] ?></td>
                                         <td><?= $dt['created_at'] ?></td>
                                         <td><?= $dt['admin'] ?></td>
@@ -121,7 +127,7 @@
                             } else {
                                 ?>
                                 <tr>
-                                    <td colspan="6" class="text-center">Tidak ada data</td>
+                                    <td colspan="10" class="text-center">Tidak ada data</td>
                                 </tr>
                             <?php
                             }

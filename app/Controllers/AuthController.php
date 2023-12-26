@@ -21,28 +21,16 @@ class AuthController extends BaseController
         if (!$userData) {
             return redirect()->to(base_url('/login'))->withInput()->with('error', 'Invalid username or password');
         }
-        session()->set('user_id', $userData['id']);
         session()->set('username', $userData['username']);
         session()->set('role', $userData['role']);
         switch ($userData['role']) {
-            case 'admin':
-                return redirect()->to(base_url('/admin'));
-                break;
-            case 'mesin':
-                return redirect()->to(base_url('/mesin'));
-                break;
-            case 'setting':
-                return redirect()->to(base_url('/setting'));
-                break;
-            case 'roso':
-                return redirect()->to(base_url('/rosso'));
-                break;
             case 'packing':
                 return redirect()->to(base_url('/packing'));
                 break;
-            case 'stoklot':
-                return redirect()->to(base_url('/stoklot'));
+            case 'monitoring':
+                return redirect()->to(base_url('/monitoring'));
                 break;
+
             default:
                 return redirect()->to(base_url('/login'));
                 break;

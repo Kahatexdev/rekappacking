@@ -2,13 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\DataModel;
+
 
 class AdminController extends BaseController
 {
     protected $filters;
-
+    protected $dataModel;
     public function __construct()
     {
+        $this->dataModel = new DataModel();
+
         if ($this->filters = ['role' => ['admin']] != session()->get('role')) {
             return redirect()->to(base_url('/login'));
         }
@@ -40,7 +44,9 @@ class AdminController extends BaseController
         $data = [
             'Judul' => 'Data Produksi Mesin',
             'User' => 'Admin',
-            'Tabel' => 'Data Produksi Mesin'
+            'Tabel' => 'Data Produksi Mesin',
+            'Produk' => $this->dataModel->paginate(15),
+            'pager' => $this->dataModel->pager,
         ];
         return view('Admin/Mesin/mesin', $data);
     }

@@ -41,4 +41,10 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+    public $default = [
+        'password' => 'callback[Usermodels::validatePassword]',
+    ];
+    public $login = [
+        'password' => 'validatePassword[username]',
+    ];
 }

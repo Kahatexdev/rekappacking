@@ -46,18 +46,20 @@
               </div>
               <!-- /Logo -->
               <h4 class="mb-2 text-center">Rekap Packing System</h4>
-              <?php if (session()->getFlashdata('error')) : ?>
-               <p class="text-danger"><?= session()->getFlashdata('error') ?></p>
-               <?php endif; ?>
-
-               <?php if (session()->getFlashdata('errors')) : ?>
-               <?php foreach (session()->getFlashdata('errors') as $error) : ?>
-                <p class="text-danger"><?= esc($error) ?></p>
-                <?php endforeach; ?>
-                <?php endif; ?>
+            <!-- Tampilkan pesan error jika ada -->
+            <?php if (session()->has('error')) : ?>
+        <p style="color: red;"><?= session('error') ?></p>
+    <?php endif; ?>
 
               <form id="Auth" class="mb-3" action="<?= base_url('authverify') ?>" method="POST">
                 <div class="mb-3">
+                <?php if (isset($validation)) : ?>
+            <ul style="color: red;">
+                <?php foreach ($validation->getErrors() as $error) : ?>
+                    <li><?= esc($error) ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
                   <label for="email" class="form-label">Email or Username</label>
                   <input
                     type="text"

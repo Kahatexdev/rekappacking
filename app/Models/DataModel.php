@@ -8,7 +8,7 @@ class DataModel extends Model
 {
     protected $table = 'dataproduk';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['jc', 'inisial', 'colour', 'deskripsi', 'admin', 'creaeted_at', 'updated_at']; // Sesuaikan dengan struktur tabel database 
+    protected $allowedFields = ['jc', 'inisial', 'colour', 'qtyprod', 'qtybs', 'qtytotal', 'deskripsi', 'admin', 'creaeted_at', 'updated_at']; // Sesuaikan dengan struktur tabel database 
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

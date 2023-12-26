@@ -13,6 +13,7 @@ class MesinController extends BaseController
 
     public function __construct()
     {
+
         $this->dataModel = new DataModel();;
         $this->filters = ['role' => ['mesin']];
         $this->isLogedin();
@@ -66,12 +67,15 @@ class MesinController extends BaseController
                     $jc = $row[0];
                     $inisial = $row[1];
                     $colour = $row[2];
-                    $deskripsi = $row[3];
-                    $admin = $row[4];
+                    $qtyprod = $row[3];
+                    $qtybs = $row[4];
+                    $qtytotal = $row[5];
+                    $deskripsi = $row[6];
+                    $admin = $row[7];
                     if (!empty($row)) {
                         // Simpan ke database
                         //var_dump($data);
-                        $data = ['jc' => $jc, 'inisial' => $inisial, 'colour' => $colour, 'deskripsi' => $deskripsi, 'admin' => $admin];
+                        $data = ['jc' => $jc, 'inisial' => $inisial, 'colour' => $colour, 'qtyprod' => $qtyprod, 'qtybs' => $qtybs, 'qtytotal' => $qtytotal, 'deskripsi' => $deskripsi, 'admin' => $admin];
                         $this->dataModel->insert($data);
                     }
                 }

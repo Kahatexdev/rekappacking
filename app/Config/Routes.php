@@ -28,23 +28,19 @@ $routes->post('export', 'ExportController::export');
 
 
 
-$routes->get('/user/rosso', 'Home::rosso_index');
-$routes->get('/user/rosso/data', 'Home::rossodata');
-$routes->get('/user/setting', 'Home::setting_index');
-$routes->get('/user/setting/data', 'Home::settingdata');
-$routes->get('/user/packing', 'Home::packing_index');
-$routes->get('/user/packing/data', 'Home::packingdata');
-$routes->get('/user/stoklot', 'Home::stoklot_index');
-$routes->get('/user/stoklot/data', 'Home::stoklotdata');
 
-//admin routes
-$routes->group('/admin', ['filter' => 'roles:admin'], function ($routes) {
+//packing routes
+$routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
-    $routes->get('', 'AdminController::index');
-    $routes->get('datamesin', 'AdminController::mesin');
-    $routes->get('editmesin', 'AdminController::mesin_update');
-    $routes->get('rosso', 'AdminController::rosso');
-    $routes->get('setting', 'AdminController::setting');
-    $routes->get('packing', 'AdminController::packing');
-    $routes->get('stoklot', 'AdminController::stoklot');
+    $routes->get('', 'PackingController::index');
+    $routes->post('import', 'PackingController::importPDK');
+    $routes->post('importinisial', 'PackingController::importInisial');
+    $routes->get('inputmasterflow', 'PackingController::flow');
+    $routes->get('flowproses', 'PackingController::inputproses');
+    $routes->get('datamesin', 'PackingController::mesin');
+    $routes->get('editmesin', 'PackingController::mesin_update');
+    $routes->get('rosso', 'PackingController::rosso');
+    $routes->get('setting', 'PackingController::setting');
+    $routes->get('packing', 'PackingController::packing');
+    $routes->get('stoklot', 'PackingController::stoklot');
 });
