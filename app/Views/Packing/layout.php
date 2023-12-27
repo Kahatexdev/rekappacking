@@ -119,11 +119,7 @@
                             <i class="icon-home menu-icon"></i><span class="nav-text">Master Data</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="<?= base_url('packing/inputmasterflow') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Flowproses</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="<?= base_url('packing/datamesin') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Mesin</span>

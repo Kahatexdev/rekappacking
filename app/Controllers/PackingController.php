@@ -53,45 +53,58 @@ class PackingController extends BaseController
         if ($file->isValid() && !$file->hasMoved()) {
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
-
+            $highestRow = $data->getHighestRow();
             if (!empty($data)) {
-                $no_model = str_replace([':', ' '], '', $data->getCell('B' . '9')->getValue());
-                $no_order =  str_replace([':', ' '], '', $data->getCell('B' . '5')->getValue());
-                $buyer = str_replace([':', ' '], '', $data->getCell('B' . '6')->getValue());
-                $po_globalString = str_replace([':', ' ', ','], '', $data->getCell('D' . '6')->getValue());
+                $no_model =  $data->getCell('B' . '4')->getValue();
+                $no_order =   $data->getCell('B' . '5')->getValue();
+                $buyer =  $data->getCell('B' . '6')->getValue();
+                $po_globalString = str_replace([':', ' ', ','], '', $data->getCell('B' . '7')->getValue());
                 $trim = 'Set';
-                $po_global = (int)str_replace($trim, '', $po_globalString) * 2;
+                $po_global = (int)str_replace($trim, '', $po_globalString);
                 $admin = session()->get('username');
+                $data1 = [
+                    'no_model' => $no_model,
+                    'no_order' => $no_order,
+                    'buyer' => $buyer,
+                    'po_global' => $po_global,
+                    'admin' => $admin,
+                ];
 
-                // Simpan ke database
-                //   var_dump($data);
-                $data = ['no_model' => $no_model, 'no_order' => $no_order, 'buyer' => $buyer, 'po_global' => $po_global, 'admin' => $admin];
-                $this->dataPDK->insert($data);
+                $existingData = $this->dataPDK->getWhere(['no_model' => $no_model])->getRow();
+
+                if (!$existingData) {
+                    $this->dataPDK->insert($data1);
+                }
+
+                for ($row = 11; $row <= $highestRow; ++$row) {
+                    $style = $data->getCell('A' . $row)->getValue();
+                    $inisial = $data->getCell('B' . $row)->getValue();
+                    $po_inisial = $data->getCell('C' . $row)->getValue();
+                    $colour = $data->getCell('D' . $row)->getValue();
+                    $delivery = $data->getCell('H' . $row)->getValue();
+                    $area = $data->getCell('F' . $row)->getValue();
+
+                    $data2 = [
+                        'no_model' => $no_model,
+                        'style' => $style,
+                        'inisial' => $inisial,
+                        'po_inisial' => $po_inisial,
+                        'colour' => $colour,
+                        'delivery' => $delivery,
+                        'area' => $area
+                    ];
+                    $this->masterInisial->insert($data2);
+                }
+                return redirect()->to(base_url('/flowproses'))->with('success', 'Data imported and saved to database successfully');
+            } else {
+                return redirect()->to(base_url('/packing'))->with('error', 'No data found in the Excel file');
             }
-            //var_dump($data);
-
-            return redirect()->to(base_url('/packing'))->with('success', 'Data imported and saved to database successfully');
-        } else {
-            // return redirect()->to('mesin/data')->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/packing'))->with('error', 'No data found in the Excel file');
         }
     }
 
-    // return redirect()->to('/packing')->with('error', 'Invalid file or file not uploaded');
-
     //flowproses
-    public function flow()
-    {
 
-        $data = [
-            'Judul' => 'Input Data Master',
-            'User' => session()->get('username'),
-            'Header' => 'Input Flow Proses',
-            'Proses' => $this->dataProses->findAll(),
-            'NoModel' => $this->dataPDK->findAll(),
-
-        ];
-        return view('Packing/Flow/inputmaster', $data);
-    }
     public function inputproses()
     {
 
@@ -99,55 +112,15 @@ class PackingController extends BaseController
             'Judul' => 'Input flowproses',
             'User' => session()->get('username'),
             'Header' => 'Input Flow Proses',
-            'Proses' => $this->dataProses->findAll()
+            'Proses' => $this->dataProses->findAll(),
+            'DB' => $this->masterInisial->findAll(),
 
         ];
-        return view('Packing/Flow/flowproses', $data);
+        return view('Packing/flowproses', $data);
     }
 
-    public function importinisial()
-    {
-        $file = $this->request->getFile('excel_file');
-        $area = $this->request->getVar('area');
-        $no_model = $this->request->getPost('no_model');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $spreadsheet = IOFactory::load($file);
-            $data = $spreadsheet->getActiveSheet()->toArray();
-
-            // Ensure there is data to insert
-            if (!empty($data)) {
-
-                foreach ($data as $x => $row) {
-                    if ($x == 0) {
-                        continue;
-                    }
-                    // $no_model = $row[0];
-                    $style = $row[1];
-                    $inisial = $row[2];
-                    $po_inisial = $row[3];
-                    $colour = $row[4];
-                    $delivery = $row[5];
-
-                    if (!empty($row)) {
-                        // Simpan ke database
-                        //var_dump($data);
-                        $data = ['no_model' => $no_model, 'style' => $style, 'colour' => $colour, 'inisial' => $inisial, 'po_inisial' => $po_inisial, 'delivery' => $delivery, 'area' => $area, 'admin' => session()->get('username')];
 
 
-                        $this->masterInisial->insert($data);
-                    }
-                }
-                // var_dump($data);
-
-                return redirect()->to('packing/flowproses')->with('success', 'Data imported and saved to database successfully');
-            } else {
-                return redirect()->to('packing/inputmasterflow')->with('error', 'No data found in the Excel file');
-            }
-        }
-        //var_dump($data);
-
-        return redirect()->to('packing/inputmasterflow')->with('error', 'Invalid file or file not uploaded');
-    }
     //mesin
     public function mesin()
     {

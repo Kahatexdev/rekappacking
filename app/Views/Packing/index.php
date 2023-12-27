@@ -8,10 +8,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-4">
-                        <i class="icon-info menu-icon"></i> <strong>INGAT!</strong>
+                        <i class="icon-info menu-icon"></i> <strong>Silahkan Import Data Master Order.</strong>
 
 
-                        <br> Silahkan Import Data Master Order.
+                        <br>
                         <?php if (session()->getFlashdata('success')) : ?>
                             <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
                         <?php endif; ?>
@@ -20,7 +20,20 @@
                             <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
                         <?php endif; ?>
                     </div>
-
+                    <div class="col-lg-8">
+                        <div class="d-flex justify-content-end">
+                            <li class="icons dropdown">
+                                <a href="<?= base_url('packing') ?>" class="btn btn-info text-white mx-2">
+                                    <i class="icon-arrow-up-circle menu-icon text-white"></i><span class="nav-text"> Import Data Master</span>
+                                </a>
+                            </li>
+                            <li class="icons dropdown">
+                                <a href="<?= base_url('packing/flowproses') ?>" class="btn btn-info text-white mx-2">
+                                    <i class="icon-chart menu-icon text-white"></i><span class="nav-text my-2"> Input Flow Prosses</span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
                 </div>
 
             </div>

@@ -37,18 +37,4 @@ class MasterInisial extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-
-    public function getMasterPDK()
-    {
-        $builder = $this->db->table('master_inisial');
-        $builder->select('master_inisial.*, master_pdk.*');
-        $builder->join('master_pdk', 'master_pdk.no_model = master_inisial.no_model', 'left');
-
-        $query = $builder->get();
-        return $query->getResult();
-    }
-    public function inputInisial()
-    {
-    }
 }
