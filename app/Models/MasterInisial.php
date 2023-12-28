@@ -24,7 +24,7 @@ class MasterInisial extends Model
     // Validation
     protected $validationRules      = [];
     protected $validationMessages   = [];
-    protected $skipValidation       = false;
+    protected $skipValidation       = ['style'];
     protected $cleanValidationRules = true;
 
     // Callbacks
@@ -37,4 +37,28 @@ class MasterInisial extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getInisialsByNoModel($noModel)
+    {
+        return $this->where('no_model', $noModel)->findAll();
+    }
+    public function getDataByIdInisial($idInisial)
+    {
+        // Sesuaikan dengan struktur tabel dan kolom yang sesuai di database
+        return $this->find($idInisial);
+    }
+    public function getAllData()
+    {
+        return $this->db->table('master_inisial')
+            ->join('master_pdk', 'master_pdk.no_model = master_inisial.no_model')
+            ->get()
+            ->getResultArray();
+    }
+    public function getAllDataWithFlowProses()
+    {
+        return $this->db->table('master_inisial')
+            ->join('flow_proses', 'flow_proses.id_inisial = master_inisial.id_inisial')
+            ->get()
+            ->getResultArray();
+    }
 }

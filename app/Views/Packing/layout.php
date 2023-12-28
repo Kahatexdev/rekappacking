@@ -214,28 +214,9 @@
 
 
     <script src="<?= base_url('assets/plugins/tables/js/jquery.dataTables.min.js') ?>"></script>
-    <script src="<?= base_url('assets/plugins/tables/js/datatable/dataTables.bootstrap4.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/tables/js/datatable-init/datatable-basic.min.js') ?>"></script>
-    <script>
-        $(document).ready(function() {
-            $('#tabel').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "ajax": {
-                    "url": "<?php echo base_url('mesin/getData'); ?>",
-                    "type": "POST"
-                },
-                "columns": [{
-                        "data": "id"
-                    },
-                    {
-                        "data": "jc"
-                    },
-                    // Tambahkan kolom lainnya sesuai kebutuhan
-                ]
-            });
-        });
-    </script>
+    <script src="<?= base_url('assets/plugins/tables/js/datatable/dataTables.bootstrap4.min.js') ?>"></script>
+
     <!-- Chartjs -->
 
     <script src="<?= base_url('assets/plugins/chart.js/Chart.bundle.min.js') ?>"></script>

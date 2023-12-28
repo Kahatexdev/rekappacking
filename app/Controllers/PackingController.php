@@ -6,6 +6,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 
 use App\Models\DataModel;
 use App\Models\PDKModels;
+use App\Models\FlowModels;
 use App\Models\MasterProses;
 use App\Models\MasterInisial;
 
@@ -16,13 +17,14 @@ class PackingController extends BaseController
     protected $dataModel;
     protected $dataProses;
     protected $masterInisial;
+    protected $flowModel;
     public function __construct()
     {
         $this->dataModel = new DataModel();
         $this->dataPDK = new PDKModels();
         $this->dataProses = new MasterProses();
         $this->masterInisial = new MasterInisial();
-
+        $this->flowModel = new FlowModels();
         if ($this->filters = ['role' => ['packing']] != session()->get('role')) {
             return redirect()->to(base_url('/login'));
         }
@@ -42,7 +44,7 @@ class PackingController extends BaseController
         $data = [
             'Judul' => 'Dashboard Packing',
             'User' => session()->get('username'),
-
+            'Data' =>  $this->masterInisial->getAllData()
         ];
         return view('Packing/index', $data);
     }
@@ -53,7 +55,6 @@ class PackingController extends BaseController
         if ($file->isValid() && !$file->hasMoved()) {
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
-            $highestRow = $data->getHighestRow();
             if (!empty($data)) {
                 $no_model =  $data->getCell('B' . '4')->getValue();
                 $no_order =   $data->getCell('B' . '5')->getValue();
@@ -75,27 +76,36 @@ class PackingController extends BaseController
                 if (!$existingData) {
                     $this->dataPDK->insert($data1);
                 }
+                $startRow = 11; // Ganti dengan nomor baris mulai
 
-                for ($row = 11; $row <= $highestRow; ++$row) {
-                    $style = $data->getCell('A' . $row)->getValue();
-                    $inisial = $data->getCell('B' . $row)->getValue();
-                    $po_inisial = $data->getCell('C' . $row)->getValue();
-                    $colour = $data->getCell('D' . $row)->getValue();
-                    $delivery = $data->getCell('H' . $row)->getValue();
-                    $area = $data->getCell('F' . $row)->getValue();
+                // Loop untuk membaca setiap baris di Excel, dimulai dari baris ke-$startRow
+                foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
+                    $cellIterator = $row->getCellIterator();
+                    $cellIterator->setIterateOnlyExistingCells(false);
+
+                    $data = [];
+                    foreach ($cellIterator as $cell) {
+                        $data[] = $cell->getValue();
+                    }
+                    $delivery = date_create_from_format('Y-m-d', $data[4]);
 
                     $data2 = [
                         'no_model' => $no_model,
-                        'style' => $style,
-                        'inisial' => $inisial,
-                        'po_inisial' => $po_inisial,
-                        'colour' => $colour,
-                        'delivery' => $delivery,
-                        'area' => $area
+                        'style' =>  $data[0],
+                        'inisial' =>  $data[1],
+                        'po_inisial' =>  $data[2],
+                        'colour' =>  $data[3],
+                        'delivery' => $delivery ? $delivery->format('Y-m-d') : null,
+                        'area' =>  $data[5],
+                        'admin' => $admin
                     ];
-                    $this->masterInisial->insert($data2);
+                    //exit();
+                    $result = $this->masterInisial->insert($data2);
+                    if (!$result) {
+                        var_dump($this->masterInisial->errors());
+                    }
                 }
-                return redirect()->to(base_url('/flowproses'))->with('success', 'Data imported and saved to database successfully');
+                return redirect()->to(base_url('/packing'))->with('success', 'Data imported and saved to database successfully');
             } else {
                 return redirect()->to(base_url('/packing'))->with('error', 'No data found in the Excel file');
             }
@@ -105,7 +115,7 @@ class PackingController extends BaseController
 
     //flowproses
 
-    public function inputproses()
+    public function flowproses()
     {
 
         $data = [
@@ -114,13 +124,67 @@ class PackingController extends BaseController
             'Header' => 'Input Flow Proses',
             'Proses' => $this->dataProses->findAll(),
             'DB' => $this->masterInisial->findAll(),
+            'Data' => $this->masterInisial->getAllDataWithFlowProses(),
 
         ];
         return view('Packing/flowproses', $data);
     }
+    public function getInisialByNoModel()
+    {
+        $noModel = $this->request->getPost('no_model');
+        $inisials = $this->masterInisial->getInisialsByNoModel($noModel);
+        return $this->response->setJSON(['inisials' => $inisials]);
+    }
+    public function getDataByIdInisial()
+    {
+        $idInisial = $this->request->getPost('id_inisial');
+        $data = $this->masterInisial->getDataByIdInisial($idInisial);
+        return $this->response->setJSON($data);
+    }
 
+    public function inputproses()
+    {
+        $idInisial = $this->request->getPost('inisial');
+        $proses1 = $this->request->getPost('proses1');
+        $proses2 = $this->request->getPost('proses2');
+        $proses3 = $this->request->getPost('proses3');
+        $proses4 = $this->request->getPost('proses4');
+        $proses5 = $this->request->getPost('proses5');
+        $proses6 = $this->request->getPost('proses6');
+        $proses7 = $this->request->getPost('proses7');
+        $proses8 = $this->request->getPost('proses8');
+        $proses9 = $this->request->getPost('proses9');
+        $proses10 = $this->request->getPost('proses10');
+        $proses11 = $this->request->getPost('proses11');
+        $proses12 = $this->request->getPost('proses12');
+        $proses13 = $this->request->getPost('proses13');
+        $proses14 = $this->request->getPost('proses14');
+        $proses15 = $this->request->getPost('proses15');
+        $keterangan = $this->request->getPost('keterangan');
 
+        $data = [
+            'id_inisial' => $idInisial,
+            'keterangan' => $keterangan,
+            'proses_1' => $proses1,
+            'proses_2' => $proses2,
+            'proses_3' => $proses3,
+            'proses_4' => $proses4,
+            'proses_5' => $proses5,
+            'proses_6' => $proses6,
+            'proses_7' => $proses7,
+            'proses_8' => $proses8,
+            'proses_9' => $proses9,
+            'proses_10' => $proses10,
+            'proses_11' => $proses11,
+            'proses_12' => $proses12,
+            'proses_13' => $proses13,
+            'proses_14' => $proses14,
+            'proses_15' => $proses15,
 
+        ];
+        $this->flowModel->insert($data);
+        return redirect()->to(base_url('packing/flowproses'))->with('success', 'Data Berhasil Di Input');
+    }
     //mesin
     public function mesin()
     {

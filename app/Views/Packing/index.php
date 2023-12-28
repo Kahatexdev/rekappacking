@@ -83,8 +83,70 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row mx-2">
+    <div class="col-lg-12">
+        <div class="card pb-0">
+            <div class="card-header d-flex justify-content-between">
+                <h4>
+                    Data Master
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
 
+                    <table class="table  table-striped table-bordered vertical-middle zero-configuration" id="tabel">
+                        <thead>
+                            <tr>
+                                <th>No Model</th>
+                                <th>No Order</th>
+                                <th>Buyer</th>
+                                <th>PO </th>
+                                <th>Style </th>
+                                <th>Area </th>
+                                <th>Inisial </th>
+                                <th>Colour</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            if (!empty($Data)) {
+                                foreach ($Data as $dt) {
+                            ?>
+                                    <tr>
+                                        <td><?= $dt['no_model'] ?></td>
+                                        <td><?= $dt['no_order'] ?></td>
+                                        <td><?= $dt['buyer'] ?></td>
+                                        <td><?= $dt['po_global'] ?></td>
+                                        <td><?= $dt['style'] ?></td>
+                                        <td><?= $dt['area'] ?></td>
+                                        <td><?= $dt['inisial'] ?></td>
+                                        <td><?= $dt['colour'] ?></td>
+
+
+                                    </tr>
+                                <?php
+                                }
+                            } else {
+                                ?>
+                                <tr>
+                                    <td colspan="8" class="text-center">Tidak ada data</td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+
+                        </tbody>
+                    </table>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 </div>
 

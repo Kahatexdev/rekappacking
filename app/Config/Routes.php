@@ -34,7 +34,10 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('', 'PackingController::index');
     $routes->post('import', 'PackingController::importPDK');
-    $routes->get('flowproses', 'PackingController::inputproses');
+    $routes->get('flowproses', 'PackingController::flowproses');
+    $routes->post('getInisialByNoModel', 'PackingController::getInisialByNoModel');
+    $routes->post('getDataByIdInisial', 'PackingController::getDataByIdInisial');
+    $routes->post('inputproses', 'PackingController::inputproses');
     $routes->get('datamesin', 'PackingController::mesin');
     $routes->get('editmesin', 'PackingController::mesin_update');
     $routes->get('rosso', 'PackingController::rosso');
