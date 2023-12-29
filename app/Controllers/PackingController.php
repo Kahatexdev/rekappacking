@@ -95,16 +95,19 @@ class PackingController extends BaseController
                         'inisial' =>  $data[1],
                         'po_inisial' =>  $data[2],
                         'colour' =>  $data[3],
-                        'delivery' => $delivery ? $delivery->format('Y-m-d') : null,
+                        'delivery' => $data[4],
                         'area' =>  $data[5],
                         'admin' => $admin
                     ];
-                    //exit();
+                    //dd($data2);
                     $result = $this->masterInisial->insert($data2);
                     if (!$result) {
                         var_dump($this->masterInisial->errors());
                     }
                 }
+                //dd($data2);
+                // exit();
+
                 return redirect()->to(base_url('/packing'))->with('success', 'Data imported and saved to database successfully');
             } else {
                 return redirect()->to(base_url('/packing'))->with('error', 'No data found in the Excel file');

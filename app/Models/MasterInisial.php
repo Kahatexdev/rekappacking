@@ -12,7 +12,7 @@ class MasterInisial extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['no_model', 'style', 'inisial', 'po_inisial', 'colour', 'delvery', 'area', 'admin', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['no_model', 'style', 'inisial', 'po_inisial', 'colour', 'delivery', 'area', 'admin', 'created_at', 'updated_at'];
 
     // Dates
     protected $useTimestamps = true;
