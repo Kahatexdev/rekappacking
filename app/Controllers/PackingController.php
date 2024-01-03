@@ -8,7 +8,10 @@ use App\Models\DataModel;
 use App\Models\PDKModels;
 use App\Models\FlowModels;
 use App\Models\MasterProses;
+use App\Models\ShipmentModel;
 use App\Models\MasterInisial;
+use App\Models\ProductionModel;
+use PhpParser\Node\Stmt\Echo_;
 
 class PackingController extends BaseController
 {
@@ -17,7 +20,9 @@ class PackingController extends BaseController
     protected $dataModel;
     protected $dataProses;
     protected $masterInisial;
+    protected $shipment;
     protected $flowModel;
+    protected $prodModel;
     public function __construct()
     {
         $this->dataModel = new DataModel();
@@ -25,6 +30,8 @@ class PackingController extends BaseController
         $this->dataProses = new MasterProses();
         $this->masterInisial = new MasterInisial();
         $this->flowModel = new FlowModels();
+        $this->shipment = new ShipmentModel();
+        $this->prodModel = new ProductionModel();
         if ($this->filters = ['role' => ['packing']] != session()->get('role')) {
             return redirect()->to(base_url('/login'));
         }
@@ -55,6 +62,7 @@ class PackingController extends BaseController
         if ($file->isValid() && !$file->hasMoved()) {
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
+
             if (!empty($data)) {
                 $no_model =  $data->getCell('B' . '4')->getValue();
                 $no_order =   $data->getCell('B' . '5')->getValue();
@@ -87,25 +95,36 @@ class PackingController extends BaseController
                     foreach ($cellIterator as $cell) {
                         $data[] = $cell->getValue();
                     }
-                    $delivery = date_create_from_format('Y-m-d', $data[4]);
 
                     $data2 = [
                         'no_model' => $no_model,
-                        'style' =>  $data[0],
-                        'inisial' =>  $data[1],
+                        'style' =>  $data[1],
+                        'inisial' =>  $data[0],
                         'po_inisial' =>  $data[2],
                         'colour' =>  $data[3],
-                        'delivery' => $data[4],
                         'area' =>  $data[5],
                         'admin' => $admin
                     ];
-                    //dd($data2);
                     $result = $this->masterInisial->insert($data2);
                     if (!$result) {
                         var_dump($this->masterInisial->errors());
                     }
+                    $dataInisial = $this->masterInisial->findAll();
+                    foreach ($dataInisial as $di) {
+                        $idInisial = $di['id_inisial'];
+                    }
+
+                    $data3 = [
+                        'id_inisial' => $idInisial,
+                        'delivery' => $data[4],
+                        'po_shipment' => $data[6],
+                        'admin' => $admin
+                    ];
+                    //dd($data3);
+
+                    $this->shipment->insert($data3);
                 }
-                //dd($data2);
+                // dd($data3);
                 // exit();
 
                 return redirect()->to(base_url('/packing'))->with('success', 'Data imported and saved to database successfully');
@@ -195,8 +214,7 @@ class PackingController extends BaseController
             'Judul' => 'Data Produksi Mesin',
             'User' => 'Packing',
             'Tabel' => 'Data Produksi Mesin',
-            'Produk' => $this->dataModel->paginate(15),
-            'pager' => $this->dataModel->pager,
+
         ];
         return view('Packing/Mesin/mesin', $data);
     }

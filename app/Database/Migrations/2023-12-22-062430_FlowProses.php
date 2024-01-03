@@ -22,62 +22,77 @@ class FlowProses extends Migration
             'proses_1' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_2' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_3' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_4' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_5' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_6' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_7' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_8' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_9' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_10' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_11' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_12' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_13' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_14' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'proses_15' => [
                 'type' => 'VARCHAR',
                 'constraint' => 25,
+                'null' => true,
             ],
             'keterangan' => [
                 'type' => 'TEXT',

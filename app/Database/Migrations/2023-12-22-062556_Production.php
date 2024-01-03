@@ -64,6 +64,11 @@ class Production extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 20,
             ],
+            'kode_shipment' => [
+                'type' => 'INT',
+                'unsigned' => true,
+
+            ]
         ]);
 
         $this->forge->addKey('id_production', true); // Primary Key

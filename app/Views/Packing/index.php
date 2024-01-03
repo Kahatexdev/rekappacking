@@ -118,7 +118,7 @@
                                         <td><?= $dt['no_model'] ?></td>
                                         <td><?= $dt['no_order'] ?></td>
                                         <td><?= $dt['buyer'] ?></td>
-                                        <td><?= $dt['po_global'] ?></td>
+                                        <td><?= $dt['po_inisial'] ?></td>
                                         <td><?= $dt['style'] ?></td>
                                         <td><?= $dt['area'] ?></td>
                                         <td><?= $dt['inisial'] ?></td>

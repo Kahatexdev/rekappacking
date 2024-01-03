@@ -38,10 +38,6 @@ class MasterInisial extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
-            'delivery' => [
-                'type' => 'VARCHAR',
-                'constraint' => 30
-            ],
             'created_at' => [
                 'type' => 'DATETIME',
             ],

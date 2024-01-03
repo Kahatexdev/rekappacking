@@ -24,6 +24,43 @@
     </div>
 
 </div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card pb-0">
+            <div class="card-header d-flex justify-content-between">
+                <h4>
+                    Import Data Master
+                </h4>
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+
+                    <div id="drop-area" class="border rounded d-flex justify-content-center align-item-center mx-3" style="height:200px; width: 100%; cursor:pointer;">
+                        <div class="text-center mt-5">
+                            <i class="icon-cloud-upload" style="font-size: 48px;">
+
+                            </i>
+                            <p class="mt-3" style="font-size: 28px;">
+                                Upload file here
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pl-0 pr-4">
+
+                        <form action="<?= base_url('packing/mesin/import') ?>" method="post" enctype="multipart/form-data">
+                            <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
+                            <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 <div class="row">
