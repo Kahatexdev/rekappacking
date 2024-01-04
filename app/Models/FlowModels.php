@@ -58,11 +58,9 @@ class FlowModels extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getIdProses($id_inisial)
+    public function getIdProses($getIdProses)
     {
-        $result = $this->where('id_inisial', $id_inisial)
+        return $this->where('id_inisial', $getIdProses)
             ->first();
-
-        return $result;
     }
 }
