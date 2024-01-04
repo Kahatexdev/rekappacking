@@ -207,12 +207,79 @@ class PackingController extends BaseController
         $this->flowModel->insert($data);
         return redirect()->to(base_url('packing/flowproses'))->with('success', 'Data Berhasil Di Input');
     }
+    // input produksi
+    public function importProduksi()
+    {
+        $file = $this->request->getFile('excel_file');
+
+        if ($file->isValid() && !$file->hasMoved()) {
+            $spreadsheet = IOFactory::load($file);
+            $data1 = $spreadsheet->getActiveSheet();
+            $startRow = 18; // Ganti dengan nomor baris mulai
+
+            // Loop untuk membaca setiap baris di Excel, dimulai dari baris ke-$startRow
+            foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
+                $cellIterator = $row->getCellIterator();
+                $cellIterator->setIterateOnlyExistingCells(false);
+
+                $data = [];
+                foreach ($cellIterator as $cell) {
+                    $data[] = $cell->getValue();
+                }
+
+                if (!empty($data)) {
+                    // validate this :
+                    $no_model = $data[21];
+                    $area = $data[26];
+                    $jc = $data[4];
+
+                    $validate = [
+                        'no_model' => $no_model,
+                        'area' => $area,
+                        'jc' => $jc
+                    ];
+                    $result = $this->masterInisial->getIdInisial($validate);
+
+                    if ($result && array_key_exists('id_inisial', $result)) {
+                        $id_inisial = $result['id_inisial'];
+                        $id_proses = $this->flowModel->getIdProses($id_inisial);
+                        if ($id_proses && array_key_exists('id_proses', $result)) {
+                            $idProses = $result['id_proses'];
+                            dd($idProses);
+                        } else {
+                            return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                        }
+                    } else {
+                        return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                    }
+
+                    // if data exist, insert this : 
+                    $bagian =  $data1->getCell('C' . '154')->getValue();
+                    $storage1 = $data[3];
+                    $storage2 = $data[10];
+                    $qty = $data[12];
+                    $no_box = $data[23];
+                    $no_label = $data[22];
+
+                    $dataInsert = [];
+                    $this->dataPDK->insert($dataInsert);
+                }
+
+
+                return redirect()->to(base_url('/packing'))->with('success', 'Data imported and saved to database successfully');
+            }
+        } else {
+            return redirect()->to(base_url('/packing'))->with('error', 'No data found in the Excel file');
+        }
+    }
+
+
     //mesin
     public function mesin()
     {
         $data = [
             'Judul' => 'Data Produksi Mesin',
-            'User' => 'Packing',
+            'User' => session()->get('username'),
             'Tabel' => 'Data Produksi Mesin',
 
         ];

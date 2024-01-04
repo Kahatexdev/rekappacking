@@ -37,4 +37,12 @@ class ProductionModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getProduksiMesin()
+    {
+        return $this->like('storage_awal', 'rs')
+            ->like('storage_akhir', 'st')
+            ->get()
+            ->getResultArray();
+    }
 }

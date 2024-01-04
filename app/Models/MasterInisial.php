@@ -61,4 +61,13 @@ class MasterInisial extends Model
             ->get()
             ->getResultArray();
     }
+    public function getIdInisial($validate)
+    {
+        $result = $this->where('no_model', $validate['no_model'])
+            ->where('area', $validate['area'])
+            ->where('style', $validate['jc'])
+            ->first(); // Menggunakan first() untuk mendapatkan satu baris pertama
+
+        return $result;
+    }
 }

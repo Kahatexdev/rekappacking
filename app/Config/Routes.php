@@ -34,6 +34,7 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('', 'PackingController::index');
     $routes->post('import', 'PackingController::importPDK');
+    $routes->post('importproduksi', 'PackingController::importProduksi');
     $routes->get('flowproses', 'PackingController::flowproses');
     $routes->post('getInisialByNoModel', 'PackingController::getInisialByNoModel');
     $routes->post('getDataByIdInisial', 'PackingController::getDataByIdInisial');

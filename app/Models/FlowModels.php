@@ -57,4 +57,12 @@ class FlowModels extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getIdProses($id_inisial)
+    {
+        $result = $this->where('id_inisial', $id_inisial)
+            ->first();
+
+        return $result;
+    }
 }
