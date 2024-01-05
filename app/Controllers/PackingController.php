@@ -69,7 +69,7 @@ class PackingController extends BaseController
 
 
             if (!empty($data)) {
-                $startRow = 11; // Ganti dengan nomor baris mulai
+                $startRow = 5; // Ganti dengan nomor baris mulai
                 foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
                     $cellIterator = $row->getCellIterator();
                     $cellIterator->setIterateOnlyExistingCells(false);

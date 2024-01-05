@@ -69,8 +69,7 @@
                     <ul class="clearfix">
 
                         <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
-                                <i class="mdi mdi-bell-outline"></i>
-                                <span class="badge badge-pill gradient-2">3</span>
+
                             </a>
                             <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
                                 <div class="dropdown-content-heading d-flex justify-content-between">
@@ -137,12 +136,17 @@
                     </li>
                     <li>
                         <a href="<?= base_url('packing/packing') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Packing</span>
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Pengeluaran Gudang</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?= base_url('packing/stoklot') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Stoklot</span>
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Inflow Stoklot</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/stoklot') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Perbaikan</span>
                         </a>
                     </li>
 
