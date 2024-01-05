@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\I18n\Time;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -13,9 +12,6 @@ use App\Models\MasterProses;
 use App\Models\ShipmentModel;
 use App\Models\MasterInisial;
 use App\Models\ProductionModel;
-use DateTime;
-use PhpParser\Node\Stmt\Echo_;
-use PHPUnit\Framework\Test;
 
 class PackingController extends BaseController
 {
@@ -29,14 +25,14 @@ class PackingController extends BaseController
     protected $prodModel;
     public function __construct()
     {
-        $this->dataModel = new DataModel();
-        $this->dataPDK = new PDKModels();
-        $this->dataProses = new MasterProses();
+        $this->dataModel     = new DataModel();
+        $this->dataPDK       = new PDKModels();
+        $this->dataProses    = new MasterProses();
         $this->masterInisial = new MasterInisial();
-        $this->flowModel = new FlowModels();
-        $this->shipment = new ShipmentModel();
-        $this->prodModel = new ProductionModel();
-        if ($this->filters = ['role' => ['packing']] != session()->get('role')) {
+        $this->flowModel     = new FlowModels();
+        $this->shipment      = new ShipmentModel();
+        $this->prodModel     = new ProductionModel();
+        if ($this->filters   = ['role' => ['packing']] != session()->get('role')) {
             return redirect()->to(base_url('/login'));
         }
         $this->isLogedin();
@@ -163,48 +159,48 @@ class PackingController extends BaseController
     public function getDataByIdInisial()
     {
         $idInisial = $this->request->getPost('id_inisial');
-        $data = $this->masterInisial->getDataByIdInisial($idInisial);
+        $data      = $this->masterInisial->getDataByIdInisial($idInisial);
         return $this->response->setJSON($data);
     }
 
     public function inputproses()
     {
-        $idInisial = $this->request->getPost('inisial');
-        $proses1 = $this->request->getPost('proses1');
-        $proses2 = $this->request->getPost('proses2');
-        $proses3 = $this->request->getPost('proses3');
-        $proses4 = $this->request->getPost('proses4');
-        $proses5 = $this->request->getPost('proses5');
-        $proses6 = $this->request->getPost('proses6');
-        $proses7 = $this->request->getPost('proses7');
-        $proses8 = $this->request->getPost('proses8');
-        $proses9 = $this->request->getPost('proses9');
-        $proses10 = $this->request->getPost('proses10');
-        $proses11 = $this->request->getPost('proses11');
-        $proses12 = $this->request->getPost('proses12');
-        $proses13 = $this->request->getPost('proses13');
-        $proses14 = $this->request->getPost('proses14');
-        $proses15 = $this->request->getPost('proses15');
+        $idInisial  = $this->request->getPost('inisial');
+        $proses1    = $this->request->getPost('proses1');
+        $proses2    = $this->request->getPost('proses2');
+        $proses3    = $this->request->getPost('proses3');
+        $proses4    = $this->request->getPost('proses4');
+        $proses5    = $this->request->getPost('proses5');
+        $proses6    = $this->request->getPost('proses6');
+        $proses7    = $this->request->getPost('proses7');
+        $proses8    = $this->request->getPost('proses8');
+        $proses9    = $this->request->getPost('proses9');
+        $proses10   = $this->request->getPost('proses10');
+        $proses11   = $this->request->getPost('proses11');
+        $proses12   = $this->request->getPost('proses12');
+        $proses13   = $this->request->getPost('proses13');
+        $proses14   = $this->request->getPost('proses14');
+        $proses15   = $this->request->getPost('proses15');
         $keterangan = $this->request->getPost('keterangan');
 
         $data = [
             'id_inisial' => $idInisial,
             'keterangan' => $keterangan,
-            'proses_1' => $proses1,
-            'proses_2' => $proses2,
-            'proses_3' => $proses3,
-            'proses_4' => $proses4,
-            'proses_5' => $proses5,
-            'proses_6' => $proses6,
-            'proses_7' => $proses7,
-            'proses_8' => $proses8,
-            'proses_9' => $proses9,
-            'proses_10' => $proses10,
-            'proses_11' => $proses11,
-            'proses_12' => $proses12,
-            'proses_13' => $proses13,
-            'proses_14' => $proses14,
-            'proses_15' => $proses15,
+            'proses_1'   => $proses1,
+            'proses_2'   => $proses2,
+            'proses_3'   => $proses3,
+            'proses_4'   => $proses4,
+            'proses_5'   => $proses5,
+            'proses_6'   => $proses6,
+            'proses_7'   => $proses7,
+            'proses_8'   => $proses8,
+            'proses_9'   => $proses9,
+            'proses_10'  => $proses10,
+            'proses_11'  => $proses11,
+            'proses_12'  => $proses12,
+            'proses_13'  => $proses13,
+            'proses_14'  => $proses14,
+            'proses_15'  => $proses15,
 
         ];
         $this->flowModel->insert($data);
@@ -244,9 +240,10 @@ class PackingController extends BaseController
 
                     if ($result && array_key_exists('id_inisial', $result)) {
                         $id_inisial = $result['id_inisial'];
+                        $kode_shipment = $this->shipment->getKodeShipment($id_inisial);
+                        $kd_shipment = $kode_shipment['kode_shipment'];
 
                         $id_proses = $this->flowModel->getIdProses($id_inisial);
-
                         if ($id_proses && array_key_exists('id_proses', $id_proses)) {
                             $idProses   = $id_proses['id_proses'];
                             $tglProd    = $data[1];
@@ -260,19 +257,24 @@ class PackingController extends BaseController
                             $no_box     = $data[23];
                             $no_label   = $data[22];
                             $admin      = session()->get('username');
-
                             $dataInsert = [
-                                'tgl_prod'      => $formated,
-                                'id_proses'     => $idProses,
-                                'bagian'        => $bagian,
-                                'storage_awal'  => $storage1,
-                                'storage_akhir' => $storage2,
-                                'qty_prod'      => $qty,
-                                'no_box'        => $no_box,
-                                'no_label'      => $no_label,
-                                'admin'         => $admin
+                                'tgl_prod'              => $formated,
+                                'id_proses'             => $idProses,
+                                'bagian'                => $bagian,
+                                'storage_awal'          => $storage1,
+                                'storage_akhir'         => $storage2,
+                                'qty_prod'              => $qty,
+                                'no_box'                => $no_box,
+                                'no_label'              => $no_label,
+                                'admin'                 => $admin,
+                                'kode_shipment'         => intval($kd_shipment)
                             ];
-                            $this->prodModel->insert($dataInsert);
+                            //dd($dataInsert);  
+                            $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses])->getRow();
+
+                            if (!$exististingPDK) {
+                                $this->prodModel->insert($dataInsert);
+                            }
                         } else {
                             return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input flow proses terlebih dahulu');
                         }
@@ -296,26 +298,17 @@ class PackingController extends BaseController
             'Judul' => 'Data Produksi Mesin',
             'User'  => session()->get('username'),
             'Tabel' => 'Data Produksi Mesin',
-
         ];
         return view('Packing/Mesin/mesin', $data);
     }
-    public function mesin_update()
-    {
-        $data = [
-            'Judul' => 'Edit Data Mesin',
-            'User' => 'Packing',
-            'Header' => 'Edit Data Produksi Mesin'
-        ];
-        return view('Packing/Mesin/editmesin', $data);
-    }
+
 
     //rosso
     public function rosso()
     {
         $data = [
             'Judul' => 'Data Produksi rosso',
-            'User' => 'Packing',
+            'User' =>  session()->get('username'),
             'Tabel' => 'Data Produksi rosso'
         ];
         return view('Packing/Rosso/rosso', $data);
@@ -326,7 +319,7 @@ class PackingController extends BaseController
     {
         $data = [
             'Judul' => 'Data Produksi setting',
-            'User'   => 'Packing',
+            'User'   =>  session()->get('username'),
             'Tabel' => 'Data Produksi setting'
         ];
         return view('Packing/Setting/setting', $data);

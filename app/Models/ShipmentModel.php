@@ -37,4 +37,11 @@ class ShipmentModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getKodeShipment($id_inisial)
+    {
+        $kode_shipment = $this->where('id_inisial', $id_inisial)
+            ->first();
+        return $kode_shipment;
+    }
 }
