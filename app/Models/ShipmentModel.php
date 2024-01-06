@@ -44,4 +44,9 @@ class ShipmentModel extends Model
             ->first();
         return $kode_shipment;
     }
+    public function getIdInisial($kode_shipment)
+    {
+        $id_inisial = $this->where('kode_shipment', $kode_shipment)->first();
+        return $id_inisial;
+    }
 }

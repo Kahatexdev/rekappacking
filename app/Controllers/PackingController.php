@@ -294,12 +294,35 @@ class PackingController extends BaseController
     //mesin
     public function mesin()
     {
-        $data = [
-            'Judul' => 'Data Produksi Mesin',
-            'User'  => session()->get('username'),
-            'Tabel' => 'Data Produksi Mesin',
-        ];
-        return view('Packing/Mesin/mesin', $data);
+        $dataProduksi = $this->prodModel->getAllData();
+        foreach ($dataProduksi as $row) {
+
+            $kode_shipment = $row['kode_shipment'];
+            $idInisial = $this->shipment->getIdInisial($kode_shipment);
+            $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
+
+            $dataJoined = [
+                'no_model'  => $dataInisial['no_model'],
+                'inisial'   => $dataInisial['inisial'],
+                'style'     => $dataInisial['style'],
+                'colour'    => $dataInisial['colour'],
+                'tgl_prod'  => $row['tgl_prod'],
+                'bagian'    => $row['bagian'],
+                'qty_prod'  => $row['qty_prod'],
+                'bs_prod'   => $row['bs_prod'],
+                'no_box'    => $row['no_box'],
+                'no_label'  => $row['no_label'],
+                'delivery'  => $row['delivery'],
+                'tgl_upload' => $row['created_at'],
+            ];
+            $data = [
+                'Judul' => 'Data Produksi Mesin',
+                'User'  => session()->get('username'),
+                'Tabel' => 'Data Produksi Mesin',
+                'Data'  => $dataJoined
+            ];
+            return view('Packing/Mesin/mesin', $data);
+        }
     }
 
 
