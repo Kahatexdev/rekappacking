@@ -302,10 +302,12 @@ class PackingController extends BaseController
             $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
 
             $dataJoined = [
+
                 'no_model'  => $dataInisial['no_model'],
                 'inisial'   => $dataInisial['inisial'],
                 'style'     => $dataInisial['style'],
                 'colour'    => $dataInisial['colour'],
+                'id_production' => $row['id_production'],
                 'tgl_prod'  => $row['tgl_prod'],
                 'bagian'    => $row['bagian'],
                 'qty_prod'  => $row['qty_prod'],

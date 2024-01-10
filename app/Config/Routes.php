@@ -23,10 +23,11 @@ $routes->group('/mesin', ['filter' => 'roles:mesin'], function ($routes) {
 });
 
 //exportcontroller
-$routes->post('export', 'ExportController::export');
 
 
-
+$routes->group('/export', function ($routes) {
+    $routes->get('mesin/(:any)', 'ExportController::exportMesin/$1');
+});
 
 
 //packing routes
