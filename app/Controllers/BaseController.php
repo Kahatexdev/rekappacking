@@ -9,6 +9,14 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use App\Models\DataModel;
+use App\Models\PDKModels;
+use App\Models\FlowModels;
+use App\Models\MasterProses;
+use App\Models\ShipmentModel;
+use App\Models\MasterInisial;
+use App\Models\ProductionModel;
+
 /**
  * Class BaseController
  *
@@ -22,6 +30,23 @@ use Psr\Log\LoggerInterface;
 abstract class BaseController extends Controller
 {
 
+    protected $dataPDK;
+    protected $dataModel;
+    protected $dataProses;
+    protected $masterInisial;
+    protected $shipment;
+    protected $flowModel;
+    protected $prodModel;
+    public function __construct()
+    {
+        $this->dataModel     = new DataModel();
+        $this->dataPDK       = new PDKModels();
+        $this->dataProses    = new MasterProses();
+        $this->masterInisial = new MasterInisial();
+        $this->flowModel     = new FlowModels();
+        $this->shipment      = new ShipmentModel();
+        $this->prodModel     = new ProductionModel();
+    }
     /**
      * Instance of the main Request object.
      *

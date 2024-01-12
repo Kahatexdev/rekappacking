@@ -15,8 +15,8 @@ use App\Models\ProductionModel;
 
 class PackingController extends BaseController
 {
-    protected $dataPDK;
     protected $filters;
+    protected $dataPDK;
     protected $dataModel;
     protected $dataProses;
     protected $masterInisial;
@@ -237,12 +237,10 @@ class PackingController extends BaseController
                         'jc' => $jc
                     ];
                     $result = $this->masterInisial->getIdInisial($validate);
-
                     if ($result && array_key_exists('id_inisial', $result)) {
                         $id_inisial = $result['id_inisial'];
                         $kode_shipment = $this->shipment->getKodeShipment($id_inisial);
                         $kd_shipment = $kode_shipment['kode_shipment'];
-
                         $id_proses = $this->flowModel->getIdProses($id_inisial);
                         if ($id_proses && array_key_exists('id_proses', $id_proses)) {
                             $idProses   = $id_proses['id_proses'];
@@ -269,7 +267,7 @@ class PackingController extends BaseController
                                 'admin'                 => $admin,
                                 'kode_shipment'         => intval($kd_shipment)
                             ];
-                            //dd($dataInsert);  
+                            ($dataInsert);
                             $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses])->getRow();
 
                             if (!$exististingPDK) {
@@ -295,13 +293,13 @@ class PackingController extends BaseController
     public function mesin()
     {
         $dataProduksi = $this->prodModel->getAllData();
+        $dataJoined = [];
         foreach ($dataProduksi as $row) {
 
             $kode_shipment = $row['kode_shipment'];
             $idInisial = $this->shipment->getIdInisial($kode_shipment);
             $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
-
-            $dataJoined = [
+            $dataJoined[] = [
 
                 'no_model'  => $dataInisial['no_model'],
                 'inisial'   => $dataInisial['inisial'],
@@ -317,14 +315,14 @@ class PackingController extends BaseController
                 'delivery'  => $row['delivery'],
                 'tgl_upload' => $row['created_at'],
             ];
-            $data = [
-                'Judul' => 'Data Produksi Mesin',
-                'User'  => session()->get('username'),
-                'Tabel' => 'Data Produksi Mesin',
-                'Data'  => $dataJoined
-            ];
-            return view('Packing/Mesin/mesin', $data);
         }
+        $data = [
+            'Judul' => 'Data Produksi Mesin',
+            'User'  => session()->get('username'),
+            'Tabel' => 'Data Produksi Mesin',
+            'Data'  => $dataJoined
+        ];
+        return view('Packing/Mesin/mesin', $data);
     }
 
 

@@ -1,25 +1,23 @@
-<!-- app/Views/pdf_template.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Export Selected Rows to PDF</title>
+    <title><?= $judul ?></title>
     <style>
         body {
-            background-image: url('path/to/your/background-image.jpg');
-            background-size: cover;
+
             font-family: Arial, sans-serif;
         }
 
         .container {
-            padding: 20px;
+            padding: 5px;
         }
 
         h2 {
-            color: #fff;
+            color: black;
+            text-align: center;
         }
 
         table {
@@ -29,14 +27,16 @@
 
         th,
         td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
+            border: 1px solid #000;
+            padding: 2px;
+            text-align: center;
         }
 
         th {
-            background-color: #4caf50;
-            color: white;
+            background-color: white;
+            color: black;
+            text-align: center;
+            text-decoration: solid;
         }
     </style>
 </head>
@@ -44,24 +44,34 @@
 <body>
 
     <div class="container">
-        <h2>Selected Rows Export</h2>
-
+        <h2>Export data Produksi Mesin</h2>
+        <img src="/bg2.png" alt="">
         <table>
             <tr>
                 <th>Tanggal Produksi</th>
                 <th>Bagian</th>
-                <th>Storage Awal</th>
-                <th>Storage Akhir</th>
-                <th>Qty Produksi</th>
+                <th>PDK</th>
+                <th>Inisial</th>
+                <th>Style</th>
+                <th>Colour</th>
+                <th>Qty Prod</th>
+                <th>BS Prod</th>
+                <th>No Box</th>
+                <th>No Label</th>
                 <!-- Add more header columns as needed -->
             </tr>
-            <?php foreach ($productionData as $row) : ?>
+            <?php foreach ($dataProd as $row) : ?>
                 <tr>
                     <td><?= $row['tgl_prod']; ?></td>
                     <td><?= $row['bagian']; ?></td>
-                    <td><?= $row['storage_awal']; ?></td>
-                    <td><?= $row['storage_akhir']; ?></td>
-                    <td><?= $row['qty_prod']; ?></td>
+                    <td><?= $row['no_model']; ?></td>
+                    <td><?= $row['inisial']; ?></td>
+                    <td><?= $row['style']; ?></td>
+                    <td><?= $row['colour']; ?></td>
+                    <td><?= $row['qty_prod'] ?></td>
+                    <td><?= $row['bs_prod'] ?></td>
+                    <td><?= $row['no_box'] ?></td>
+                    <td><?= $row['no_label'] ?></td>
                     <!-- Add more data columns as needed -->
                 </tr>
             <?php endforeach; ?>
@@ -70,4 +80,4 @@
 
 </body>
 
-</html>
+</html

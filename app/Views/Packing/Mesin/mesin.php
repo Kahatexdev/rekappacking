@@ -118,22 +118,24 @@
                             if (!empty($Data)) {
 
                             ?>
-                                <tr>
-                                    <td><input type="checkbox" class="exportCheckbox" data-id="<?= $Data['id_production']; ?>"></td>
-                                    <td><?= $Data['tgl_prod'] ?></td>
-                                    <td><?= $Data['bagian'] ?></td>
-                                    <td><?= $Data['no_model'] ?></td>
-                                    <td><?= $Data['inisial'] ?></td>
-                                    <td><?= $Data['style'] ?></td>
-                                    <td><?= $Data['colour'] ?></td>
-                                    <td><?= $Data['qty_prod'] ?></td>
-                                    <td><?= $Data['bs_prod'] ?></td>
-                                    <td><?= $Data['no_box'] ?></td>
-                                    <td><?= $Data['no_label'] ?></td>
-                                    <td><?= $Data['tgl_upload'] ?></td>
+                                <?php foreach ($Data as $Data) : ?>
+                                    <tr>
+                                        <td><input type="checkbox" class="exportCheckbox" data-id="<?= $Data['id_production']; ?>"></td>
+                                        <td><?= $Data['tgl_prod'] ?></td>
+                                        <td><?= $Data['bagian'] ?></td>
+                                        <td><?= $Data['no_model'] ?></td>
+                                        <td><?= $Data['inisial'] ?></td>
+                                        <td><?= $Data['style'] ?></td>
+                                        <td><?= $Data['colour'] ?></td>
+                                        <td><?= $Data['qty_prod'] ?></td>
+                                        <td><?= $Data['bs_prod'] ?></td>
+                                        <td><?= $Data['no_box'] ?></td>
+                                        <td><?= $Data['no_label'] ?></td>
+                                        <td><?= $Data['tgl_upload'] ?></td>
 
 
-                                </tr>
+                                    </tr>
+                                <?php endforeach ?>
                             <?php
 
                             } else {

@@ -1,0 +1,186 @@
+INFO - 2024-01-12 00:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-12 00:41:16 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'rekap_packing', 3306, '', 0)
+#1 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\rekappacking\app\Models\Usermodels.php(32): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\rekappacking\app\Controllers\AuthController.php(20): App\Models\Usermodels->login('userpacking1', 'packing')
+#8 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\AuthController->auth()
+#9 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\rekappacking\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\rekappacking\app\Models\Usermodels.php(32): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\rekappacking\app\Controllers\AuthController.php(20): App\Models\Usermodels->login('userpacking1', 'packing')
+#7 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\AuthController->auth()
+#8 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rekappacking\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-01-12 00:41:16 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `password` = :password:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\Usermodels.php(32): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\AuthController.php(20): App\Models\Usermodels->login('userpacking1', 'packing')
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AuthController->auth()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-01-12 00:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-12 00:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-12 00:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-12 00:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-12 00:41:49 --> Undefined array key "no_model"
+in APPPATH\Controllers\ExportController.php on line 175.
+ 1 APPPATH\Controllers\ExportController.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "no_model"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\ExportController.php', 175)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+CRITICAL - 2024-01-12 00:42:48 --> Undefined variable $cellspacingx
+in VENDORPATH\tecnickcom\tcpdf\tcpdf.php on line 18282.
+ 1 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(18282): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cellspacingx', 'C:\\xampp\\htdocs\\rekappacking\\vendor\\tecnickcom\\tcpdf\\tcpdf.php', 18282)
+ 2 APPPATH\Controllers\ExportController.php(188): TCPDF->writeHTML('<table border="0" style="width:100%"><tr>
+                    <th>Tanggal Produksi</th>
+                    <th>Bagian</th>
+                    <th>PDK</th>
+                    <th>Inisial</th>
+                    <th>Style</th>
+                    <th>Colour</th>
+                    <th>Qty Prod</th>
+                    <th>BS Prod</th>
+                    <th>No Box</th>
+                </tr</table><tr><td>2023-11-01</td><td>RS01</td><td>LN1656</td><td>C1</td><td>H54747-3 23X7</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr><tr><td>2023-11-21</td><td>RS02</td><td>SI2465</td><td>A1</td><td>G41255-1 16.5X16</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr></table>', true, false, true, false, '')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+CRITICAL - 2024-01-12 00:46:22 --> Undefined variable $cellspacingx
+in VENDORPATH\tecnickcom\tcpdf\tcpdf.php on line 18282.
+ 1 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(18282): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cellspacingx', 'C:\\xampp\\htdocs\\rekappacking\\vendor\\tecnickcom\\tcpdf\\tcpdf.php', 18282)
+ 2 APPPATH\Controllers\ExportController.php(187): TCPDF->writeHTML('<table border="0" style="width:100%"><tr>
+                    <th>Tanggal Produksi</th>
+                    <th>Bagian</th>
+                    <th>PDK</th>
+                    <th>Inisial</th>
+                    <th>Style</th>
+                    <th>Colour</th>
+                    <th>Qty Prod</th>
+                    <th>BS Prod</th>
+                    <th>No Box</th>
+                </tr<tr><td>2023-11-01</td><td>RS01</td><td>LN1656</td><td>C1</td><td>H54747-3 23X7</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr><tr><td>2023-11-21</td><td>RS02</td><td>SI2465</td><td>A1</td><td>G41255-1 16.5X16</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr></table>', true, false, true, false, '')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+CRITICAL - 2024-01-12 00:46:30 --> Undefined array key "trids"
+in VENDORPATH\tecnickcom\tcpdf\tcpdf.php on line 19704.
+ 1 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(19704): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "trids"', 'C:\\xampp\\htdocs\\rekappacking\\vendor\\tecnickcom\\tcpdf\\tcpdf.php', 19704)
+ 2 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(18451): TCPDF->closeHTMLTagHandler([...], 124, false, 102.17708400000001)
+ 3 APPPATH\Controllers\ExportController.php(187): TCPDF->writeHTML('<table border="0" style="width:100%"><tr>
+                    <th>Tanggal Produksi</th>
+                    <th>Bagian</th>
+                    <th>PDK</th>
+                    <th>Inisial</th>
+                    <th>Style</th>
+                    <th>Colour</th>
+                    <th>Qty Prod</th>
+                    <th>BS Prod</th>
+                    <th>No Box</th>
+                </tr><tr><td>2023-11-01</td><td>RS01</td><td>LN1656</td><td>C1</td><td>H54747-3 23X7</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr><tr><td>2023-11-21</td><td>RS02</td><td>SI2465</td><td>A1</td><td>G41255-1 16.5X16</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr></table>', true, false, true, false, '')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+CRITICAL - 2024-01-12 00:47:48 --> Undefined array key "trids"
+in VENDORPATH\tecnickcom\tcpdf\tcpdf.php on line 19704.
+ 1 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(19704): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "trids"', 'C:\\xampp\\htdocs\\rekappacking\\vendor\\tecnickcom\\tcpdf\\tcpdf.php', 19704)
+ 2 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(18451): TCPDF->closeHTMLTagHandler([...], 124, false, 102.17708400000001)
+ 3 APPPATH\Controllers\ExportController.php(186): TCPDF->writeHTML('<table border="0" style="width:100%"><tr>
+                    <th>Tanggal Produksi</th>
+                    <th>Bagian</th>
+                    <th>PDK</th>
+                    <th>Inisial</th>
+                    <th>Style</th>
+                    <th>Colour</th>
+                    <th>Qty Prod</th>
+                    <th>BS Prod</th>
+                    <th>No Box</th>
+                </tr><tr><td>2023-11-01</td><td>RS01</td><td>LN1656</td><td>C1</td><td>H54747-3 23X7</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr><tr><td>2023-11-21</td><td>RS02</td><td>SI2465</td><td>A1</td><td>G41255-1 16.5X16</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr></table>', true, false, true, false, '')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+CRITICAL - 2024-01-12 00:54:32 --> Undefined array key "trids"
+in VENDORPATH\tecnickcom\tcpdf\tcpdf.php on line 19704.
+ 1 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(19704): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "trids"', 'C:\\xampp\\htdocs\\rekappacking\\vendor\\tecnickcom\\tcpdf\\tcpdf.php', 19704)
+ 2 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(18451): TCPDF->closeHTMLTagHandler([...], 124, false, 102.17708400000001)
+ 3 APPPATH\Controllers\ExportController.php(196): TCPDF->writeHTML('<table border="0" style="width:100%"><tr>
+                    <th>Tanggal Produksi</th>
+                    <th>Bagian</th>
+                    <th>PDK</th>
+                    <th>Inisial</th>
+                    <th>Style</th>
+                    <th>Colour</th>
+                    <th>Qty Prod</th>
+                    <th>BS Prod</th>
+                    <th>No Box</th>
+                </tr><tr><td>2023-11-01</td><td>RS01</td><td>LN1656</td><td>C1</td><td>H54747-3 23X7</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr><tr><td>2023-11-21</td><td>RS02</td><td>SI2465</td><td>A1</td><td>G41255-1 16.5X16</td><td>NATURAL WHITE NEW BLACK RW AY</td><td>103</td><td></td><td>G37459</td><td>17</td>/<tr></table>', true, false, true, false, '')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-01-12 00:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-12 01:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-12 01:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-12 01:01:47 --> fopen(): Remote host file access not supported, file://export_data_mesin.pdf
+in VENDORPATH\tecnickcom\tcpdf\include\tcpdf_static.php on line 1811.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(): Remote host file access not supported, file://export_data_mesin.pdf', 'C:\\xampp\\htdocs\\rekappacking\\vendor\\tecnickcom\\tcpdf\\include\\tcpdf_static.php', 1811)
+ 2 VENDORPATH\tecnickcom\tcpdf\include\tcpdf_static.php(1811): fopen('file://export_data_mesin.pdf', 'wb')
+ 3 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(7769): TCPDF_STATIC::fopenLocal('file://export_data_mesin.pdf', 'wb')
+ 4 APPPATH\Controllers\ExportController.php(207): TCPDF->Output('export_data_mesin.pdf', 'F')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+CRITICAL - 2024-01-12 01:02:16 --> fopen(): Remote host file access not supported, file://export_data_mesin.pdf
+in VENDORPATH\tecnickcom\tcpdf\include\tcpdf_static.php on line 1811.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(): Remote host file access not supported, file://export_data_mesin.pdf', 'C:\\xampp\\htdocs\\rekappacking\\vendor\\tecnickcom\\tcpdf\\include\\tcpdf_static.php', 1811)
+ 2 VENDORPATH\tecnickcom\tcpdf\include\tcpdf_static.php(1811): fopen('file://export_data_mesin.pdf', 'wb')
+ 3 VENDORPATH\tecnickcom\tcpdf\tcpdf.php(7769): TCPDF_STATIC::fopenLocal('file://export_data_mesin.pdf', 'wb')
+ 4 APPPATH\Controllers\ExportController.php(207): TCPDF->Output('export_data_mesin.pdf', 'F')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ExportController->exportMesin('14,15')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExportController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
