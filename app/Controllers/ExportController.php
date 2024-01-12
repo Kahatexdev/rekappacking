@@ -19,40 +19,27 @@ class ExportController extends BaseController
             'module_height' => 1 // height of a single module in points
         );
 
-        // Set document properties
         $pdf->SetCreator('RnD Team');
         $pdf->SetAuthor('Notfoundra');
         $pdf->SetTitle('Export Data Produksi ');
         $pdf->SetSubject('Export Data Produksi ');
         $pdf->SetKeywords('Export Data Produksi ');
         $bMargin = $pdf->getBreakMargin();
-        // get current auto-page-break mode
         $auto_page_break = $pdf->getAutoPageBreak();
-        // disable auto-page-break
         $pdf->SetAutoPageBreak(false, 0);
-        // Add a page
         $pdf->AddPage('L', 'A4');
 
-        // Add header with images on both sides
         $leftImagePath = FCPATH . 'assets/images/kahatex.png'; // Adjust the path to your left image
         $backgroundImg = FCPATH . 'assets/images/bg2.png'; // Adjust the path to your right image
-        // Add left image
         $pdf->Image($leftImagePath, 300, 300, 200); // X, Y, Width
         $pdf->Image($backgroundImg, 0, 0, 320, 250, '', '', '', false, 300, '', false, false, 0);
-        // restore auto-page-break status
         $pdf->SetAutoPageBreak($auto_page_break, $bMargin);
-        // set the starting point for the page content
         $pdf->setPageMark();
 
-        // Move to the right for the right image
         $pdf->SetX($pdf->GetPageWidth() - 29);
-        // Add right image
-        // Center-align the text between the images
         $pdf->SetY(15);
-        // Set font
         $pdf->SetFont('times', 'B', 12);
         $pdf->Cell(0, 10, 'Export Data Produksi Mesin', 0, 1, 'C');
-        // Output the HTML content to the PDF
 
         $pdf->SetFont('times', 'B', 10);
         $admin = session()->get('username');
@@ -103,16 +90,11 @@ class ExportController extends BaseController
         // Output the HTML content to the PDF
         $pdf->writeHTML($html, true, false, true, false, '');
 
-        $directory = FCPATH . 'exports/pdf'; // You can change this to your desired directory
-        $nama = 'export Data Produksi';
-        // Ensure the directory exists, if not, create it
-        if (!is_dir($directory)) {
-            mkdir($directory, 0777, true);
-        }
-        // Specify the file path
-        $filePath = $directory . '' . $nama . '.pdf';
+        $directory = WRITEPATH . 'exports/mesin'; // You can change this to your desired directory
+        $nama = 'export Data Produksi Mesin';
+
+        $filePath = $directory . '/' . $nama . '.pdf';
         // Save the PDF to the specified directory
-        $pdf->Output($filePath, 'f');
-        return redirect()->to('packing/datamesin');
+        $pdf->Output($filePath, 'D');
     }
 }

@@ -195,7 +195,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; RPL TEAM - SYSTEM DEVELOPMENT</p>
+                <p>Copyright &copy; RnD TEAM - SYSTEM DEVELOPMENT</p>
             </div>
         </div>
         <!--**********************************
