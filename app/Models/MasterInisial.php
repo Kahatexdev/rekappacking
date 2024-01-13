@@ -70,4 +70,12 @@ class MasterInisial extends Model
 
         return $result;
     }
+    public function getIdForShipment($validate)
+    {
+        $result = $this->where('inisial', $validate['inisial'])
+            ->where('no_model', $validate['no_model'])
+            ->where('style', $validate['style'])
+            ->findAll();
+        return $result;
+    }
 }

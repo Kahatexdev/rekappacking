@@ -69,7 +69,6 @@ class PackingController extends BaseController
                 foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
                     $cellIterator = $row->getCellIterator();
                     $cellIterator->setIterateOnlyExistingCells(false);
-
                     $data = [];
                     foreach ($cellIterator as $cell) {
                         $data[] = $cell->getValue();
@@ -93,7 +92,6 @@ class PackingController extends BaseController
                         $this->dataPDK->insert($data1);
                     }
 
-                    // Loop untuk membaca setiap baris di Excel, dimulai dari baris ke-$startRow
 
                     $inisial = $data[4];
                     $data2 = [
@@ -105,26 +103,28 @@ class PackingController extends BaseController
                         'area' =>  $data[10],
                         'admin' => $admin
                     ];
-                    $existingInisial = $this->masterInisial->getWhere(['inisial' => $inisial])->getRow();
+                    $existingInisial = $this->masterInisial->getWhere(['inisial' => $inisial, 'no_model' => $no_model])->getRow();
                     if (!$existingInisial) {
                         $this->masterInisial->insert($data2);
                     }
-                    $dataInisial = $this->masterInisial->findAll();
+                    $validate = [
+                        'no_model' => $no_model,
+                        'inisial' => $inisial,
+                        'style' => $data[5]
+                    ];
+                    $dataInisial = $this->masterInisial->getIdForShipment($validate);
                     foreach ($dataInisial as $di) {
                         $idInisial = $di['id_inisial'];
+                        $data3 = [
+                            'id_inisial' => $idInisial,
+                            'delivery' => $data[0],
+                            'po_shipment' => $data[9],
+                            'admin' => $admin
+                        ];
+                        $this->shipment->insert($data3);
                     }
-                    $data3 = [
-                        'id_inisial' => $idInisial,
-                        'delivery' => $data[0],
-                        'po_shipment' => $data[9],
-                        'admin' => $admin
-                    ];
-                    //dd($data3);
-
-                    $this->shipment->insert($data3);
                 }
-                // dd($data3);
-                // exit();
+
 
                 return redirect()->to(base_url('/packing'))->with('success', 'Data imported and saved to database successfully');
             } else {
@@ -332,7 +332,7 @@ class PackingController extends BaseController
         $data = [
             'Judul' => 'Data Produksi rosso',
             'User' =>  session()->get('username'),
-            'Tabel' => 'Data Produksi rosso'
+            'Tabel' => 'Data Produksi Rosso'
         ];
         return view('Packing/Rosso/rosso', $data);
     }
