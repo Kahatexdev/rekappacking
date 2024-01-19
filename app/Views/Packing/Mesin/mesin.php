@@ -15,11 +15,27 @@
                         </ul>
                         <br>
                         <?php if (session()->getFlashdata('success')) : ?>
-                            <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                            <script>
+                                $(document).ready(function() {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Success!',
+                                        text: '<?= session()->getFlashdata('success') ?>',
+                                    });
+                                });
+                            </script>
                         <?php endif; ?>
 
                         <?php if (session()->getFlashdata('error')) : ?>
-                            <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                            <script>
+                                $(document).ready(function() {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error!',
+                                        text: '<?= session()->getFlashdata('error') ?>',
+                                    });
+                                });
+                            </script>
                         <?php endif; ?>
                     </div>
 
@@ -56,7 +72,7 @@
                 <div class="row">
                     <div class="col-12 pl-0 pr-4">
 
-                        <form action="<?= base_url('packing/importproduksi') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url('packing/importproduksiMesin') ?>" method="post" enctype="multipart/form-data">
                             <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
                             <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
                         </form>
@@ -101,7 +117,6 @@
                             <tr>
                                 <th>Select</th>
                                 <th>Tgl Produksi</th>
-                                <th>Bagian</th>
                                 <th>No PDK</th>
                                 <th>Inisial</th>
                                 <th>Style</th>
@@ -122,7 +137,6 @@
                                     <tr>
                                         <td><input type="checkbox" class="exportCheckbox" data-id="<?= $Data['id_production']; ?>"></td>
                                         <td><?= $Data['tgl_prod'] ?></td>
-                                        <td><?= $Data['bagian'] ?></td>
                                         <td><?= $Data['no_model'] ?></td>
                                         <td><?= $Data['inisial'] ?></td>
                                         <td><?= $Data['style'] ?></td>
@@ -132,8 +146,6 @@
                                         <td><?= $Data['no_box'] ?></td>
                                         <td><?= $Data['no_label'] ?></td>
                                         <td><?= $Data['tgl_upload'] ?></td>
-
-
                                     </tr>
                                 <?php endforeach ?>
                             <?php

@@ -20,6 +20,7 @@
     <!-- Custom Stylesheet -->
     <link href="<?= base_url('assets/plugins/tables/css/datatable/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/plugins/tables/css/datatable/select.dataTables.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/node_modules/sweetalert2/dist/sweetalert2.min.css') ?>" rel="stylesheet">
 
     <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
     <!-- <script src="<?= base_url('assets\plugins\jquery\jquery.min.js') ?>"> -->
@@ -210,12 +211,13 @@
         Scripts
     ***********************************-->
 
+
     <script src="<?= base_url('assets/plugins/common/common.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/custom.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/settings.js') ?>"></script>
     <script src="<?= base_url('assets/js/gleek.js') ?>"></script>
     <script src="<?= base_url('assets/js/styleSwitcher.js') ?>"></script>
-
+    <script src="<?= base_url('assets/node_modules/sweetalert2/dist/sweetalert2.min.js') ?>"></script>
 
     <script src="<?= base_url('assets/plugins/tables/js/jquery.dataTables.min.js') ?>"></script>
     <script src="<?= base_url('assets/plugins/tables/js/datatable-init/datatable-basic.min.js') ?>"></script>

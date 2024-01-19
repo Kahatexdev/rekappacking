@@ -76,7 +76,7 @@ class PackingController extends BaseController
                     $no_model = $data[3];
                     $no_order =  $data[2];
                     $buyer = $data[1];
-                    $po_global = $data[7];
+                    $po_global = $data[9];
                     $admin = session()->get('username');
                     $data1 = [
                         'no_model' => $no_model,
@@ -118,7 +118,7 @@ class PackingController extends BaseController
                         $data3 = [
                             'id_inisial' => $idInisial,
                             'delivery' => $data[0],
-                            'po_shipment' => $data[9],
+                            'po_shipment' => $data[7],
                             'admin' => $admin
                         ];
                         $this->shipment->insert($data3);
@@ -203,11 +203,17 @@ class PackingController extends BaseController
             'proses_15'  => $proses15,
 
         ];
-        $this->flowModel->insert($data);
-        return redirect()->to(base_url('packing/flowproses'))->with('success', 'Data Berhasil Di Input');
+        $existingProses = $this->flowModel->getWhere(['id_inisial' => $idInisial])->getRow();
+        if (!$existingProses) {
+
+            $this->flowModel->insert($data);
+            return redirect()->to(base_url('packing/flowproses'))->with('success', 'Data Berhasil Di Input');
+        } else {
+            return redirect()->to(base_url('packing/flowproses'))->with('error', 'Data dari PDK dan Inisal tersebut sudah diinput, silahkan cek kembali');
+        }
     }
     // input produksi
-    public function importProduksi()
+    public function importProduksiMesin()
     {
         $file = $this->request->getFile('excel_file');
 
@@ -215,73 +221,70 @@ class PackingController extends BaseController
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
             $startRow = 18; // Ganti dengan nomor baris mulai
-            // Loop untuk membaca setiap baris di Excel, dimulai dari baris ke-$startRow
             foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
                 $cellIterator = $row->getCellIterator();
                 $cellIterator->setIterateOnlyExistingCells(false);
-
                 $data = [];
                 foreach ($cellIterator as $cell) {
                     $data[] = $cell->getValue();
                 }
-
                 if (!empty($data)) {
                     // validate this :
                     $no_model = $data[21];
                     $area = $data[26];
                     $jc = $data[4];
-
-                    $validate = [
-                        'no_model' => $no_model,
-                        'area' => $area,
-                        'jc' => $jc
-                    ];
-                    $result = $this->masterInisial->getIdInisial($validate);
-                    if ($result && array_key_exists('id_inisial', $result)) {
-                        $id_inisial = $result['id_inisial'];
-                        $kode_shipment = $this->shipment->getKodeShipment($id_inisial);
-                        $kd_shipment = $kode_shipment['kode_shipment'];
-                        $id_proses = $this->flowModel->getIdProses($id_inisial);
-                        if ($id_proses && array_key_exists('id_proses', $id_proses)) {
-                            $idProses   = $id_proses['id_proses'];
-                            $tglProd    = $data[1];
-                            $strReplace = str_replace('.', '-', $tglProd);
-                            $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);
-                            $formated   = $dateTime->format('Y-m-d');
-                            $bagian     = $data[2];
-                            $storage1   = $data[2];
-                            $storage2   = $data[10];
-                            $qty        = $data[12];
-                            $no_box     = $data[23];
-                            $no_label   = $data[22];
-                            $admin      = session()->get('username');
-                            $dataInsert = [
-                                'tgl_prod'              => $formated,
-                                'id_proses'             => $idProses,
-                                'bagian'                => $bagian,
-                                'storage_awal'          => $storage1,
-                                'storage_akhir'         => $storage2,
-                                'qty_prod'              => $qty,
-                                'no_box'                => $no_box,
-                                'no_label'              => $no_label,
-                                'admin'                 => $admin,
-                                'kode_shipment'         => intval($kd_shipment)
-                            ];
-                            ($dataInsert);
-                            $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses])->getRow();
-
-                            if (!$exististingPDK) {
-                                $this->prodModel->insert($dataInsert);
+                    $validate = ['no_model' => $no_model, 'area' => $area, 'jc' => $jc];
+                    if ($data[0] == null) {
+                        break;
+                    } else {
+                        if ($data[10] == null) {
+                            $result = $this->masterInisial->getIdInisial($validate);
+                            if ($result && array_key_exists('id_inisial', $result)) {
+                                $id_inisial = $result['id_inisial'];
+                                $kode_shipment = $this->shipment->getKodeShipment($id_inisial);
+                                $kd_shipment = $kode_shipment['kode_shipment'];
+                                $id_proses = $this->flowModel->getIdProses($id_inisial);
+                                if ($id_proses && array_key_exists('id_proses', $id_proses)) {
+                                    $idProses   = $id_proses['id_proses'];
+                                    $tglProd    = $data[1];
+                                    $strReplace = str_replace('.', '-', $tglProd);
+                                    $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);
+                                    $formated   = $dateTime->format('Y-m-d');
+                                    $bagian     = $data[2];
+                                    $storage1   = $data[2];
+                                    $storage2   = $data[10];
+                                    $qty        = $data[12];
+                                    $no_box     = $data[23];
+                                    $no_label   = $data[22];
+                                    $admin      = session()->get('username');
+                                    $dataInsert = [
+                                        'tgl_prod'              => $formated,
+                                        'id_proses'             => $idProses,
+                                        'bagian'                => $bagian,
+                                        'storage_awal'          => $storage1,
+                                        'storage_akhir'         => $storage2,
+                                        'qty_prod'              => $qty,
+                                        'no_box'                => $no_box,
+                                        'no_label'              => $no_label,
+                                        'admin'                 => $admin,
+                                        'kode_shipment'         => intval($kd_shipment)
+                                    ];
+                                    $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses])->getRow();
+                                    if (!$exististingPDK) {
+                                        $this->prodModel->insert($dataInsert);
+                                    }
+                                } else {
+                                    return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                                }
+                            } else {
+                                return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
                             }
                         } else {
-                            return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                            return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input DATA PRODUKSI MESIN (Input ROSSO)');
                         }
-                    } else {
-                        return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
                     }
                 }
             }
-
             return redirect()->to(base_url('/packing/datamesin'))->with('success', 'Data imported and saved to database successfully');
         } else {
             return redirect()->to(base_url('/packing/datamesin'))->with('error', 'No data found in the Excel file');
@@ -292,7 +295,7 @@ class PackingController extends BaseController
     //mesin
     public function mesin()
     {
-        $dataProduksi = $this->prodModel->getAllData();
+        $dataProduksi = $this->prodModel->getMesinProduksi();
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
 
@@ -327,15 +330,6 @@ class PackingController extends BaseController
 
 
     //rosso
-    public function rosso()
-    {
-        $data = [
-            'Judul' => 'Data Produksi rosso',
-            'User' =>  session()->get('username'),
-            'Tabel' => 'Data Produksi Rosso'
-        ];
-        return view('Packing/Rosso/rosso', $data);
-    }
 
     //setting
     public function setting()

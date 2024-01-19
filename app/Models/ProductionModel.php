@@ -38,13 +38,7 @@ class ProductionModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getProduksiMesin()
-    {
-        return $this->like('storage_awal', 'rs')
-            ->like('storage_akhir', 'st')
-            ->get()
-            ->getResultArray();
-    }
+
 
     public function getAllData()
     {
@@ -61,20 +55,35 @@ class ProductionModel extends Model
     }
     public function getMesinProduksi()
     {
-        $data = $this->where('storage_akhir', null)->findAll();
         $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
         $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
-        $this->select(
-            $data,
-            'shipment . delivery,
-            shipment . po_shipment,
-            flow_proses . proses_1,
-            flow_proses . proses_2,
-            flow_proses . proses_3,
-            flow_proses . proses_4,
-            flow_proses . proses_5,'
-        );
 
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->where('production.storage_akhir', null);
+
+        // Lakukan query dan kembalikan hasil
+        $result = $this->findAll();
+        return $result;
+    }
+    public function getRossoProduksi()
+    {
+        $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+        $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->like('production.storage_awal', 'rs')->where('production.storage_akhir IS NOT NULL');
+
+        // Lakukan query dan kembalikan hasil
         $result = $this->findAll();
         return $result;
     }

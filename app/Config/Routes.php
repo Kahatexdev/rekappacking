@@ -27,6 +27,7 @@ $routes->group('/mesin', ['filter' => 'roles:mesin'], function ($routes) {
 
 $routes->group('/export', function ($routes) {
     $routes->get('mesin/(:any)', 'ExportController::exportMesin/$1');
+    $routes->get('rosso/(:any)', 'ExportController::exportRosso/$1');
 });
 
 
@@ -35,15 +36,19 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('', 'PackingController::index');
     $routes->post('import', 'PackingController::importPDK');
-    $routes->post('importproduksi', 'PackingController::importProduksi');
+    $routes->post('importproduksiMesin', 'PackingController::importProduksiMesin');
+    $routes->post('importproduksiRosso', 'RossoController::importProduksiRosso');
     $routes->get('flowproses', 'PackingController::flowproses');
     $routes->post('getInisialByNoModel', 'PackingController::getInisialByNoModel');
     $routes->post('getDataByIdInisial', 'PackingController::getDataByIdInisial');
     $routes->post('inputproses', 'PackingController::inputproses');
     $routes->get('datamesin', 'PackingController::mesin');
     $routes->get('editmesin', 'PackingController::mesin_update');
-    $routes->get('rosso', 'PackingController::rosso');
-    $routes->get('setting', 'PackingController::setting');
+
+    $routes->get('rosso', 'RossoController::rosso');
+
+    $routes->get('setting', 'SettingController::setting');
+
     $routes->get('packing', 'PackingController::packing');
     $routes->get('stoklot', 'PackingController::stoklot');
 });

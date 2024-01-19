@@ -9,16 +9,32 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <i class="icon-info menu-icon"></i> <strong>Silahkan Import Data Master Order.</strong>
-
-
-                        <br>
                         <?php if (session()->getFlashdata('success')) : ?>
-                            <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                            <script>
+                                $(document).ready(function() {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Success!',
+                                        text: '<?= session()->getFlashdata('success') ?>',
+                                    });
+                                });
+                            </script>
                         <?php endif; ?>
 
                         <?php if (session()->getFlashdata('error')) : ?>
-                            <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                            <script>
+                                $(document).ready(function() {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error!',
+                                        text: '<?= session()->getFlashdata('error') ?>',
+                                    });
+                                });
+                            </script>
                         <?php endif; ?>
+
+                        <br>
+
                     </div>
                     <div class="col-lg-8">
                         <div class="d-flex justify-content-end">
@@ -100,7 +116,7 @@
                                 <th>No Model</th>
                                 <th>No Order</th>
                                 <th>Buyer</th>
-                                <th>PO </th>
+                                <th>PO Inisial</th>
                                 <th>Style </th>
                                 <th>Area </th>
                                 <th>Inisial </th>
