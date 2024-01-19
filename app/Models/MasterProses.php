@@ -38,7 +38,7 @@ class MasterProses extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function allowedRosso($filterThis)
+    public function filterProses($filterThis)
     {
         $result = $this->where('nama_proses', $filterThis)->first();
 

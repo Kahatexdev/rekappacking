@@ -131,13 +131,44 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('packing /setting') ?>" aria-expanded="false">
+                        <a href="<?= base_url('packing/setting') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Setting</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('packing/packing') ?>" aria-expanded="false">
+                        <a href="<?= base_url('packing/handprint') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Handprint</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/bordir') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Bordir</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/lipat') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Lipat</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/aplikasi') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Aplikasi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/potongcorak') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Potong Corak</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="<?= base_url('packing/outgudang') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Pengeluaran Gudang</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/qbc') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data In QBC </span>
                         </a>
                     </li>
                     <li>

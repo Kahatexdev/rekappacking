@@ -3,11 +3,50 @@
 namespace App\Controllers;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
+
 use App\Controllers\BaseController;
 
-class RossoController extends BaseController
+class HandprintController extends BaseController
 {
-    public function importProduksiRosso()
+    public function handprint()
+    {
+        $dataProduksi = $this->prodModel->getHandprintProduksi();
+
+        $dataJoined = [];
+        foreach ($dataProduksi as $row) {
+
+            $kode_shipment = $row['kode_shipment'];
+            $idInisial = $this->shipment->getIdInisial($kode_shipment);
+            $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
+            $dataJoined[] = [
+
+                'no_model'  => $dataInisial['no_model'],
+                'inisial'   => $dataInisial['inisial'],
+                'style'     => $dataInisial['style'],
+                'colour'    => $dataInisial['colour'],
+                'id_production' => $row['id_production'],
+                'tgl_prod'  => $row['tgl_prod'],
+                'bagian'    => $row['bagian'],
+                'storage_akhir' => $row['storage_akhir'],
+                'qty_prod'  => $row['qty_prod'],
+                'bs_prod'   => $row['bs_prod'],
+                'no_box'    => $row['no_box'],
+                'no_label'  => $row['no_label'],
+                'delivery'  => $row['delivery'],
+                'tgl_upload' => $row['created_at'],
+            ];
+        }
+        $data = [
+            'Judul' => 'Data Produksi Handprint',
+            'User' =>  session()->get('username'),
+            'Tabel' => 'Data Produksi Handprint',
+            'Data' => $dataJoined
+        ];
+
+        return view('Packing/Handprint/handprint', $data);
+    }
+
+    public function importProduksiHandprint()
     {
         $file = $this->request->getFile('excel_file');
 
@@ -36,7 +75,7 @@ class RossoController extends BaseController
                         if ($result && array_key_exists('kategori', $result)) {
                             $kategori = $result['kategori'];
 
-                            if ($kategori == 'Rosso') {
+                            if ($kategori == 'Handprint') {
                                 $result = $this->masterInisial->getIdInisial($validate);
                                 if ($result && array_key_exists('id_inisial', $result)) {
                                     $id_inisial = $result['id_inisial'];
@@ -73,13 +112,13 @@ class RossoController extends BaseController
                                             $this->prodModel->insert($dataInsert);
                                         }
                                     } else {
-                                        return redirect()->to(base_url('/packing/rosso'))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                                        return redirect()->to(base_url('/packing/handprint'))->with('error', 'Silahkan input flow proses terlebih dahulu');
                                     }
                                 } else {
-                                    return redirect()->to(base_url('/packing/rosso'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                                    return redirect()->to(base_url('/packing/handprint'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
                                 }
                             } else {
-                                return redirect()->to(base_url('/packing/rosso'))->with('error', 'Silahkan input DATA PRODUKSI Rosso (Outflow ROSSO)');
+                                return redirect()->to(base_url('/packing/handprint'))->with('error', 'Silahkan input DATA PRODUKSI handprint (Outflow handprint)');
                             }
                         } else {
                             dd('not array found');
@@ -87,47 +126,9 @@ class RossoController extends BaseController
                     }
                 }
             }
-            return redirect()->to(base_url('/packing/rosso'))->with('success', 'Data imported and saved to database successfully');
+            return redirect()->to(base_url('/packing/handprint'))->with('success', 'Data imported and saved to database successfully');
         } else {
-            return redirect()->to(base_url('/packing/rosso'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/packing/handprint'))->with('error', 'No data found in the Excel file');
         }
-    }
-
-    //
-    public function rosso()
-    {
-        $dataProduksi = $this->prodModel->getRossoProduksi();
-
-        $dataJoined = [];
-        foreach ($dataProduksi as $row) {
-
-            $kode_shipment = $row['kode_shipment'];
-            $idInisial = $this->shipment->getIdInisial($kode_shipment);
-            $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
-            $dataJoined[] = [
-
-                'no_model'  => $dataInisial['no_model'],
-                'inisial'   => $dataInisial['inisial'],
-                'style'     => $dataInisial['style'],
-                'colour'    => $dataInisial['colour'],
-                'id_production' => $row['id_production'],
-                'tgl_prod'  => $row['tgl_prod'],
-                'bagian'    => $row['bagian'],
-                'storage_akhir' => $row['storage_akhir'],
-                'qty_prod'  => $row['qty_prod'],
-                'bs_prod'   => $row['bs_prod'],
-                'no_box'    => $row['no_box'],
-                'no_label'  => $row['no_label'],
-                'delivery'  => $row['delivery'],
-                'tgl_upload' => $row['created_at'],
-            ];
-        }
-        $data = [
-            'Judul' => 'Data Produksi rosso',
-            'User' =>  session()->get('username'),
-            'Tabel' => 'Data Produksi Rosso',
-            'Data' => $dataJoined
-        ];
-        return view('Packing/Rosso/rosso', $data);
     }
 }

@@ -269,7 +269,7 @@ class PackingController extends BaseController
                                         'admin'                 => $admin,
                                         'kode_shipment'         => intval($kd_shipment)
                                     ];
-                                    $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses])->getRow();
+                                    $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated])->getRow();
                                     if (!$exististingPDK) {
                                         $this->prodModel->insert($dataInsert);
                                     }

@@ -48,6 +48,10 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
     $routes->get('rosso', 'RossoController::rosso');
 
     $routes->get('setting', 'SettingController::setting');
+    $routes->post('importproduksiSetting', 'SettingController::importProduksiSetting');
+
+    $routes->get('handprint', 'HandprintController::handprint');
+    $routes->get('importProduksiHandprint', 'HandprintController::importProduksiHandprint');
 
     $routes->get('packing', 'PackingController::packing');
     $routes->get('stoklot', 'PackingController::stoklot');
