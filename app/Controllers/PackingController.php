@@ -100,7 +100,7 @@ class PackingController extends BaseController
                         'inisial' =>  $inisial,
                         'po_inisial' =>  $data[8],
                         'colour' =>  $data[6],
-                        'area' =>  $data[10],
+                        'area' =>  $data[9],
                         'admin' => $admin
                     ];
                     $existingInisial = $this->masterInisial->getWhere(['inisial' => $inisial, 'no_model' => $no_model])->getRow();

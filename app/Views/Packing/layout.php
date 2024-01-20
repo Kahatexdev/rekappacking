@@ -44,7 +44,7 @@
                     <b class="logo-abbr"><img src="<?= base_url('assets/images/small.png') ?>" alt=""> </b>
                     <span class="logo-compact"><img src="<?= base_url('assets/images/small.png') ?>" alt=""></span>
                     <span class="brand-title">
-                        <img src="<?= base_url('assets/images/kahatex.png') ?>" alt="">
+                        <img src="<?= base_url('assets/images/logo.png') ?>" alt="">
                     </span>
                 </a>
             </div>

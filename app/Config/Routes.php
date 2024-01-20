@@ -30,7 +30,6 @@ $routes->group('/export', function ($routes) {
     $routes->get('rosso/(:any)', 'ExportController::exportRosso/$1');
 });
 
-
 //packing routes
 $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 

@@ -45,7 +45,6 @@
               <img src="assets/images/kahatex.png" alt="">
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2 text-center">Rekap Packing System</h4>
             <!-- Tampilkan pesan error jika ada -->
             <?php if (session()->has('error')) : ?>
         <p style="color: red;"><?= session('error') ?></p>

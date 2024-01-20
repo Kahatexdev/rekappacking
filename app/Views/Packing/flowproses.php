@@ -13,11 +13,27 @@
 
                         <br>
                         <?php if (session()->getFlashdata('success')) : ?>
-                            <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                            <script>
+                                $(document).ready(function() {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Success!',
+                                        text: '<?= session()->getFlashdata('success') ?>',
+                                    });
+                                });
+                            </script>
                         <?php endif; ?>
 
                         <?php if (session()->getFlashdata('error')) : ?>
-                            <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                            <script>
+                                $(document).ready(function() {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error!',
+                                        text: '<?= session()->getFlashdata('error') ?>',
+                                    });
+                                });
+                            </script>
                         <?php endif; ?>
                     </div>
                     <div class="col-lg-8">
