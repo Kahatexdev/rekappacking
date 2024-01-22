@@ -11,7 +11,7 @@
                         <i class="icon-info menu-icon"></i> <strong>Notes! </strong>
 
                         <ul>
-                            <li>Data Produksi handprint = Outflow handprint di ERP</li>
+                            <li>Data Produksi bordir = Outflow bordir di ERP</li>
                         </ul>
                         <br>
                         <?php if (session()->getFlashdata('success')) : ?>
@@ -53,7 +53,7 @@
         <div class="card pb-0">
             <div class="card-header d-flex justify-content-between">
                 <h4>
-                    Import Data Produksi handprint
+                    Import Data Produksi bordir
             </div>
             <div class="card-body">
                 <div class="row">
@@ -72,7 +72,7 @@
                 <div class="row">
                     <div class="col-12 pl-0 pr-4">
 
-                        <form action="<?= base_url('packing/importproduksiHandprint') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url('packing/importproduksibordir') ?>" method="post" enctype="multipart/form-data">
                             <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
                             <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
                         </form>
@@ -199,7 +199,7 @@
         });
 
         // Redirect to the export endpoint with selected IDs
-        var url = '<?= base_url('export/handprint'); ?>';
+        var url = '<?= base_url('export/bordir'); ?>';
         if (selectedIds.length > 0) {
             url += '/' + selectedIds.join(',');
         }

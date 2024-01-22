@@ -130,7 +130,7 @@ class ExportController extends BaseController
         $pdf->SetX($pdf->GetPageWidth() - 29);
         $pdf->SetY(15);
         $pdf->SetFont('times', 'B', 12);
-        $pdf->Cell(0, 10, 'Export Data Produksi Mesin', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Export Data Produksi Rosso', 0, 1, 'C');
 
         $pdf->SetFont('times', 'B', 10);
         $admin = session()->get('username');

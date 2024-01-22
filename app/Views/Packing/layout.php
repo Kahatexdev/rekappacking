@@ -160,6 +160,11 @@
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Potong Corak</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('packing/obras') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Obras</span>
+                        </a>
+                    </li>
 
                     <li>
                         <a href="<?= base_url('packing/outgudang') ?>" aria-expanded="false">
@@ -167,8 +172,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('packing/qbc') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data In QBC </span>
+                        <a href="<?= base_url('packing/qbs') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data QBS </span>
                         </a>
                     </li>
                     <li>

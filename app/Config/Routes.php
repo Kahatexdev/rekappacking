@@ -28,6 +28,9 @@ $routes->group('/mesin', ['filter' => 'roles:mesin'], function ($routes) {
 $routes->group('/export', function ($routes) {
     $routes->get('mesin/(:any)', 'ExportController::exportMesin/$1');
     $routes->get('rosso/(:any)', 'ExportController::exportRosso/$1');
+    $routes->get('handprint/(:any)', 'HandprintController::exportHandprint/$1');
+    $routes->get('setting/(:any)', 'SettingController::exportSetting/$1');
+    $routes->get('bordir/(:any)', 'BordirController::exportBordir/$1');
 });
 
 //packing routes
@@ -50,7 +53,12 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
     $routes->post('importproduksiSetting', 'SettingController::importProduksiSetting');
 
     $routes->get('handprint', 'HandprintController::handprint');
-    $routes->get('importProduksiHandprint', 'HandprintController::importProduksiHandprint');
+    $routes->post('importproduksiHandprint', 'HandprintController::importProduksiHandprint');
+
+
+
+    $routes->get('bordir', 'BordirController::bordir');
+    $routes->post('importproduksibordir', 'BordirController::importProduksiBordir');
 
     $routes->get('packing', 'PackingController::packing');
     $routes->get('stoklot', 'PackingController::stoklot');

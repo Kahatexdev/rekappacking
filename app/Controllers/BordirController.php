@@ -4,14 +4,13 @@ namespace App\Controllers;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use TCPDF;
-
 use App\Controllers\BaseController;
 
-class SettingController extends BaseController
+class BordirController extends BaseController
 {
-    public function setting()
+    public function bordir()
     {
-        $dataProduksi = $this->prodModel->getSettingProduksi();
+        $dataProduksi = $this->prodModel->getBordirProduksi();
 
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
@@ -38,16 +37,16 @@ class SettingController extends BaseController
             ];
         }
         $data = [
-            'Judul' => 'Data Produksi Setting',
+            'Judul' => 'Data Produksi Bordir',
             'User' =>  session()->get('username'),
-            'Tabel' => 'Data Produksi Setting',
+            'Tabel' => 'Data Produksi Bordir',
             'Data' => $dataJoined
         ];
 
-        return view('Packing/Setting/setting', $data);
+        return view('Packing/Bordir/bordir', $data);
     }
 
-    public function importProduksiSetting()
+    public function importProduksiBordir()
     {
         $file = $this->request->getFile('excel_file');
 
@@ -76,7 +75,7 @@ class SettingController extends BaseController
                         if ($result && array_key_exists('kategori', $result)) {
                             $kategori = $result['kategori'];
 
-                            if ($kategori == 'Setting') {
+                            if ($kategori == 'Bordir') {
                                 $result = $this->masterInisial->getIdInisial($validate);
                                 if ($result && array_key_exists('id_inisial', $result)) {
                                     $id_inisial = $result['id_inisial'];
@@ -113,13 +112,13 @@ class SettingController extends BaseController
                                             $this->prodModel->insert($dataInsert);
                                         }
                                     } else {
-                                        return redirect()->to(base_url('/packing/setting'))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                                        return redirect()->to(base_url('/packing/bordir'))->with('error', 'Silahkan input flow proses terlebih dahulu');
                                     }
                                 } else {
-                                    return redirect()->to(base_url('/packing/setting'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                                    return redirect()->to(base_url('/packing/bordir'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
                                 }
                             } else {
-                                return redirect()->to(base_url('/packing/setting'))->with('error', 'Silahkan input DATA PRODUKSI Setting (Outflow Setting)');
+                                return redirect()->to(base_url('/packing/bordir'))->with('error', 'Silahkan input DATA PRODUKSI bordir (Outflow bordir)');
                             }
                         } else {
                             dd('not array found');
@@ -127,12 +126,12 @@ class SettingController extends BaseController
                     }
                 }
             }
-            return redirect()->to(base_url('/packing/setting'))->with('success', 'Data imported and saved to database successfully');
+            return redirect()->to(base_url('/packing/bordir'))->with('success', 'Data imported and saved to database successfully');
         } else {
-            return redirect()->to(base_url('/packing/setting'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/packing/bordir'))->with('error', 'No data found in the Excel file');
         }
     }
-    public function exportSetting($selectedIds)
+    public function exportBordir($selectedIds)
     {
 
         $pdf = new TCPDF();
@@ -166,7 +165,7 @@ class SettingController extends BaseController
         $pdf->SetX($pdf->GetPageWidth() - 29);
         $pdf->SetY(15);
         $pdf->SetFont('times', 'B', 12);
-        $pdf->Cell(0, 10, 'Export Data Produksi Setting', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Export Data Produksi Bordir', 0, 1, 'C');
 
         $pdf->SetFont('times', 'B', 10);
         $admin = session()->get('username');
@@ -220,7 +219,7 @@ class SettingController extends BaseController
         $pdf->writeHTML($html, true, false, true, false, '');
 
         $directory = WRITEPATH . 'exports/rosso'; // You can change this to your desired directory
-        $nama = 'export Data Produksi setting';
+        $nama = 'export Data Produksi Bordir';
 
         $filePath = $directory . '/' . $nama . '.pdf';
         // Save the PDF to the specified directory
