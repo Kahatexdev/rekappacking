@@ -78,4 +78,9 @@ class MasterInisial extends Model
             ->findAll();
         return $result;
     }
+    public function getIdForFLow($required)
+    {
+        $result = $this->where('no_model', $required['no_model'])->where('inisial', $required['inisial'])->first();
+        return $result;
+    }
 }

@@ -177,12 +177,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('packing/stoklot') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Inflow Stoklot</span>
+                        <a href="<?= base_url('packing/stocklot') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Inflow Stocklot</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('packing/stoklot') ?>" aria-expanded="false">
+                        <a href="<?= base_url('packing/perbaikan') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Perbaikan</span>
                         </a>
                     </li>

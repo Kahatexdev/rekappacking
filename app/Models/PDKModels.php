@@ -37,4 +37,10 @@ class PDKModels extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function validateModel($isModelExist)
+    {
+        $this->where('no_model', $isModelExist)->first();
+        return $isModelExist;
+    }
 }

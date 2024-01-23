@@ -328,6 +328,99 @@ class PackingController extends BaseController
         return view('Packing/Mesin/mesin', $data);
     }
 
+    public function downloadExcel()
+    {
+        // Tentukan path file Excel di folder public
+        $filePath = FCPATH . '/excel/FlowProses.xlsx';
+
+        // Pastikan file ada
+        if (!file_exists($filePath)) {
+            // File tidak ditemukan, berikan respons 404 (Not Found)
+            return $this->response->setStatusCode(404)->setJSON(['error' => 'File not found.']);
+        }
+
+        // Setel tipe MIME yang sesuai
+        $mimeType = mime_content_type($filePath);
+
+        // Paksa untuk mengunduh
+        $this->response->setHeader('Content-Type', $mimeType);
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="FlowProses.xlsx"');
+        $this->response->setBody(file_get_contents($filePath));
+        return $this->response;
+    }
+    public function importFlowProses()
+    {
+        $file = $this->request->getFile('excel_file');
+
+        if ($file->isValid() && !$file->hasMoved()) {
+            $spreadsheet = IOFactory::load($file);
+            $data = $spreadsheet->getActiveSheet();
+
+
+            if (!empty($data)) {
+                $no_model = $data->getCell('B2')->getValue();
+                $isModelExist = $this->dataPDK->validateModel($no_model);
+                if (!$isModelExist) {
+                    return redirect()->to(base_url('/packing/flowproses'))->with('error', 'No Model Tidak ditemukan, Silahkan Import Master Data Terlebih dahulu');
+                } else {
+                    $startRow = 5; // Ganti dengan nomor baris mulai
+                    foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
+                        $cellIterator = $row->getCellIterator();
+                        $cellIterator->setIterateOnlyExistingCells(false);
+                        $data = [];
+                        foreach ($cellIterator as $cell) {
+                            $data[] = $cell->getValue();
+                        }
+                        if ($data[0] == null) {
+                            break;
+                        } else {
+                            $inisial = $data[0];
+                            $required = [
+                                'no_model' => $no_model,
+                                'inisial' => $inisial
+                            ];
+
+                            $inisials = $this->masterInisial->getIdForFLow($required);
+                            if ($inisials && array_key_exists('id_inisial', $inisials)) {
+                                $idInisial = $inisials['id_inisial'];
+                                $data1 = [
+                                    'id_inisial' => $idInisial,
+                                    'proses_1' => $data[1],
+                                    'proses_2' => $data[2],
+                                    'proses_3' => $data[3],
+                                    'proses_4' => $data[4],
+                                    'proses_5' => $data[5],
+                                    'proses_6' => $data[6],
+                                    'proses_7' => $data[7],
+                                    'proses_8' => $data[8],
+                                    'proses_9' => $data[9],
+                                    'proses_10' => $data[10],
+                                    'proses_11' => $data[11],
+                                    'proses_12' => $data[12],
+                                    'proses_13' => $data[13],
+                                    'proses_14' => $data[14],
+                                    'proses_15' => $data[15],
+                                ];
+
+                                $existingProses = $this->flowModel->getWhere(['id_inisial' => $idInisial])->getRow();
+                                if (!$existingProses) {
+
+                                    $this->flowModel->insert($data1);
+                                }
+                            } else {
+                                return redirect()->to(base_url('/packing/flowproses'))->with('error', 'Inisial Tidak ditemukan, Silahkan Periksa Kembali');
+                            }
+                        }
+                    }
+                    return redirect()->to(base_url('/packing/flowproses'))->with('success', 'Data imported and saved to database successfully');
+                }
+            }
+        } else {
+            return redirect()->to(base_url('/packing/flowproses'))->with('error', 'No data found in the Excel file');
+        }
+        return redirect()->to(base_url('/packing/flowproses'))->with('error', 'No data found in the Excel file');
+    }
+
 
     //rosso
 
