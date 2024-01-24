@@ -35,6 +35,8 @@ $routes->group('/export', function ($routes) {
     $routes->get('aplikasi/(:any)', 'AplikasiController::exportAplikasi/$1');
     $routes->get('potongcorak/(:any)', 'PotongCorakController::exportPotongCorak/$1');
     $routes->get('obras/(:any)', 'ObrasController::exportObras/$1');
+    $routes->get('stocklot/(:any)', 'StocklotController::exportStocklot/$1');
+    $routes->get('outgudang/(:any)', 'StocklotController::exportStocklot/$1');
     $routes->get('format', 'PackingController::downloadExcel');
 });
 
@@ -75,6 +77,9 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('obras', 'ObrasController::obras');
     $routes->post('importproduksiobras', 'ObrasController::importProduksiObras');
+
+    $routes->get('outgudang', 'GudangController::outgudang');
+    $routes->post('importoutgudang', 'GudangController::importOutGudang');
 
     $routes->get('stocklot', 'StocklotController::stocklot');
 });

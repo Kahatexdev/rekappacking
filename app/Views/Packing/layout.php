@@ -119,6 +119,11 @@
                             <i class="icon-home menu-icon"></i><span class="nav-text">Master Data</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('/rekap') ?>" aria-expanded="false">
+                            <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
+                        </a>
+                    </li>
 
                     <li>
                         <a href="<?= base_url('packing/datamesin') ?>" aria-expanded="false">
@@ -167,13 +172,31 @@
                     </li>
 
                     <li>
-                        <a href="<?= base_url('packing/outgudang') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Pengeluaran Gudang</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="<?= base_url('packing/qbs') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data QBS </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Data perbaikan</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('packing/perbaikan') ?>" aria-expanded="false">
+                                    <i class="icon-chart menu-icon"></i><span class="nav-text">Data In Perbaikan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('packing/perbaikan') ?>" aria-expanded="false">
+                                    <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/outgudang') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Pengeluaran Gudang</span>
                         </a>
                     </li>
                     <li>
@@ -181,11 +204,7 @@
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Inflow Stocklot</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="<?= base_url('packing/perbaikan') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Perbaikan</span>
-                        </a>
-                    </li>
+
 
 
 
