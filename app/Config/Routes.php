@@ -36,7 +36,9 @@ $routes->group('/export', function ($routes) {
     $routes->get('potongcorak/(:any)', 'PotongCorakController::exportPotongCorak/$1');
     $routes->get('obras/(:any)', 'ObrasController::exportObras/$1');
     $routes->get('stocklot/(:any)', 'StocklotController::exportStocklot/$1');
-    $routes->get('outgudang/(:any)', 'StocklotController::exportStocklot/$1');
+    $routes->get('outgudang/(:any)', 'GudangController::exportOutGudang/$1');
+    $routes->get('qbs/(:any)', 'QbsController::exportQbs/$1');
+    $routes->get('qc/(:any)', 'QcController::exportQc/$1');
     $routes->get('format', 'PackingController::downloadExcel');
 });
 
@@ -80,6 +82,17 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('outgudang', 'GudangController::outgudang');
     $routes->post('importoutgudang', 'GudangController::importOutGudang');
+
+    $routes->get('qbs', 'QbsController::Qbs');
+    $routes->post('importoutqbs', 'QbsController::importOutQbs');
+
+    $routes->get('qc', 'QcController::Qc');
+    $routes->post('importoutqc', 'QcController::importOutQc');
+
+    $routes->get('inperbaikan', 'PerbaikanController::inPerbaikan');
+    $routes->get('outperbaikan', 'PerbaikanController::outPerbaikan');
+    $routes->post('importouperbaikan', 'PerbaikanController::importOutPerbaikan');
+
 
     $routes->get('stocklot', 'StocklotController::stocklot');
 });

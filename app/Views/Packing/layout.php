@@ -176,6 +176,11 @@
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data QBS </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('packing/qc') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data QC </span>
+                        </a>
+                    </li>
 
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -183,12 +188,12 @@
                         </a>
                         <ul aria-expanded="false">
                             <li>
-                                <a href="<?= base_url('packing/perbaikan') ?>" aria-expanded="false">
+                                <a href="<?= base_url('packing/inperbaikan') ?>" aria-expanded="false">
                                     <i class="icon-chart menu-icon"></i><span class="nav-text">Data In Perbaikan</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url('packing/perbaikan') ?>" aria-expanded="false">
+                                <a href="<?= base_url('packing/outperbaikan') ?>" aria-expanded="false">
                                     <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan</span>
                                 </a>
                             </li>

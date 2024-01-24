@@ -239,4 +239,77 @@ class ProductionModel extends Model
         $result = $this->findAll();
         return $result;
     }
+    public function getQbsData()
+    {
+        $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+        $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->like('production.storage_awal', 'QBS')->where('production.storage_akhir IS NOT NULL');
+
+        // Lakukan query dan kembalikan hasil
+        $result = $this->findAll();
+        return $result;
+    }
+    public function getQcData()
+    {
+        $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+        $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->like('production.storage_awal', 'QC')->where('production.storage_akhir IS NOT NULL');
+
+        // Lakukan query dan kembalikan hasil
+        $result = $this->findAll();
+        return $result;
+    }
+    public function getOutPerbaikan()
+    {
+        $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+        $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->like('production.storage_awal', 'PA01')
+            ->like('production.storage_awal', 'PA02')
+            ->like('production.storage_awal', 'PB01')
+            ->where('production.storage_akhir IS NOT NULL');
+
+        // Lakukan query dan kembalikan hasil
+        $result = $this->findAll();
+        return $result;
+    }
+    public function getInPerbaikan()
+    {
+        $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+        $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->like('production.storage_akhir', 'PA01')
+            ->like('production.storage_akhir', 'PA02')
+            ->like('production.storage_akhir', 'PB01');
+
+        // Lakukan query dan kembalikan hasil
+        $result = $this->findAll();
+        return $result;
+    }
 }
