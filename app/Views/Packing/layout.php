@@ -120,7 +120,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('/rekap') ?>" aria-expanded="false">
+                        <a href="<?= base_url('packing/rekap') ?>" aria-expanded="false">
                             <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
                         </a>
                     </li>

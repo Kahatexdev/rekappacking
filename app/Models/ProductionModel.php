@@ -312,4 +312,8 @@ class ProductionModel extends Model
         $result = $this->findAll();
         return $result;
     }
+
+    public function getDataRekapan()
+    {
+    }
 }
