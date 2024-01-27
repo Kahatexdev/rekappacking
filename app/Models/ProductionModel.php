@@ -315,5 +315,19 @@ class ProductionModel extends Model
 
     public function getDataRekapan()
     {
+        $builder = $this->db->table('production');
+        $builder->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+        $builder->join('master_inisial', 'master_inisial.id_inisial = flow_proses.id_inisial');
+        $builder->join('master_pdk', 'master_pdk.no_model = master_inisial.no_model');
+        $builder->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+
+        // Pilih kolom yang ingin ditampilkan
+        $builder->select('production.*, flow_proses.*, master_inisial.*, master_pdk.*, shipment.*');
+
+        // Eksekusi query
+        $query = $builder->get();
+
+        // Mengembalikan hasil query sebagai array
+        return $query->getResultArray();
     }
 }

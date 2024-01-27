@@ -91,7 +91,9 @@ class LipatController extends BaseController
                                         $bagian     = $data[2];
                                         $storage1   = $data[2];
                                         $storage2   = $data[10];
-                                        $qty        = $data[12];
+                                        $qtyerp        = $data[12];
+                                        $qty = str_replace('-', '', $qtyerp);
+                                        $shift = $data[30];
                                         $no_box     = $data[23];
                                         $no_label   = $data[22];
                                         $admin      = session()->get('username');
@@ -105,9 +107,10 @@ class LipatController extends BaseController
                                             'no_box'                => $no_box,
                                             'no_label'              => $no_label,
                                             'admin'                 => $admin,
-                                            'kode_shipment'         => intval($kd_shipment)
+                                            'kode_shipment'         => intval($kd_shipment),
+                                            'shift'                 => $shift
                                         ];
-                                        $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated, 'storage_akhir' => $storage2])->getRow();
+                                        $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated, 'storage_akhir' => $storage2, 'shift' => $shift])->getRow();
                                         if (!$exististingPDK) {
                                             $this->prodModel->insert($dataInsert);
                                         }

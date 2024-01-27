@@ -70,6 +70,11 @@ class MasterInisial extends Model
 
         return $result;
     }
+    public function getIdInisialByPdk($pdk)
+    {
+        $result = $this->where('no_model', $pdk)->findAll();
+        return $result;
+    }
     public function getIdForShipment($validate)
     {
         $result = $this->where('inisial', $validate['inisial'])

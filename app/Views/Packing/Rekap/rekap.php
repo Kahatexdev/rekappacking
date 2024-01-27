@@ -22,6 +22,8 @@
                         <thead>
                             <tr>
                                 <th>No PDK</th>
+                                <th>Area</th>
+                                <th>Tanggal Delivery</th>
                                 <th> Aksi </th>
                             </tr>
                         </thead>
@@ -30,12 +32,14 @@
                             if (!empty($Data)) {
 
                             ?>
-                                <?php foreach ($Data as $Data) : ?>
+                                <?php foreach ($Data as $Item) : ?>
                                     <tr>
-                                        <td><?= $Data['no_model'] ?></td>
+                                        <td><?= $Item['no_model'] ?></td>
+                                        <td><?= $Item['area'] ?></td>
+                                        <td><?= $Item['delivery'] ?></td>
                                         <td>
-                                            <form action="<?= base_url('packing/exportrekap/' . $Data['no_model']); ?>" id="" method="get">
-                                                <button type="submit" class="btn btn-success detail ">Detail</button>
+                                            <form action="<?= base_url('packing/exportrekap/' . $Item['id_inisial']); ?>" id="" method="post">
+                                                <button type="submit" class="btn btn-success detail text-white  ">Export Rekapan</button>
                                             </form>
                                         </td>
 

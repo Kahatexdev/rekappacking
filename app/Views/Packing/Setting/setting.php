@@ -117,7 +117,7 @@
                             <tr>
                                 <th>Select</th>
                                 <th>Tgl Produksi</th>
-                                <th>Bagian</th>
+                                <th>Storage Awal</th>
                                 <th>Storage Akhir</th>
                                 <th>No PDK</th>
                                 <th>Inisial</th>

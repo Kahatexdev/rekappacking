@@ -73,55 +73,61 @@ class PackingController extends BaseController
                     foreach ($cellIterator as $cell) {
                         $data[] = $cell->getValue();
                     }
-                    $no_model = $data[3];
-                    $no_order =  $data[2];
-                    $buyer = $data[1];
-                    $po_global = $data[9];
-                    $admin = session()->get('username');
-                    $data1 = [
-                        'no_model' => $no_model,
-                        'no_order' => $no_order,
-                        'buyer' => $buyer,
-                        'po_global' => $po_global,
-                        'admin' => $admin,
-                    ];
+                    if ($data[0] == null) {
+                        break;
+                    } else {
+                        $no_model = $data[3];
+                        $no_order =  $data[2];
+                        $buyer = $data[1];
+                        $po_global = $data[9];
+                        $admin = session()->get('username');
+                        $data1 = [
+                            'no_model' => $no_model,
+                            'no_order' => $no_order,
+                            'buyer' => $buyer,
+                            'po_global' => $po_global,
+                            'admin' => $admin,
+                        ];
 
-                    $exististingPDK = $this->dataPDK->getWhere(['no_model' => $no_model])->getRow();
+                        $exististingPDK = $this->dataPDK->getWhere(['no_model' => $no_model])->getRow();
 
-                    if (!$exististingPDK) {
-                        $this->dataPDK->insert($data1);
-                    }
+                        if (!$exististingPDK) {
+                            $this->dataPDK->insert($data1);
+                        }
 
-
-                    $inisial = $data[4];
-                    $data2 = [
-                        'no_model' => $no_model,
-                        'style' =>  $data[5],
-                        'inisial' =>  $inisial,
-                        'po_inisial' =>  $data[8],
-                        'colour' =>  $data[6],
-                        'area' =>  $data[9],
-                        'admin' => $admin
-                    ];
-                    $existingInisial = $this->masterInisial->getWhere(['inisial' => $inisial, 'no_model' => $no_model])->getRow();
-                    if (!$existingInisial) {
-                        $this->masterInisial->insert($data2);
-                    }
-                    $validate = [
-                        'no_model' => $no_model,
-                        'inisial' => $inisial,
-                        'style' => $data[5]
-                    ];
-                    $dataInisial = $this->masterInisial->getIdForShipment($validate);
-                    foreach ($dataInisial as $di) {
-                        $idInisial = $di['id_inisial'];
-                        $data3 = [
-                            'id_inisial' => $idInisial,
-                            'delivery' => $data[0],
-                            'po_shipment' => $data[7],
+                        $inisial = $data[4];
+                        $data2 = [
+                            'no_model' => $no_model,
+                            'style' =>  $data[5],
+                            'inisial' =>  $inisial,
+                            'po_inisial' =>  $data[8],
+                            'colour' =>  $data[6],
+                            'area' =>  $data[9],
                             'admin' => $admin
                         ];
-                        $this->shipment->insert($data3);
+                        $existingInisial = $this->masterInisial->getWhere(['inisial' => $inisial, 'no_model' => $no_model])->getRow();
+                        if (!$existingInisial) {
+                            $this->masterInisial->insert($data2);
+                        }
+                        $validate = [
+                            'no_model' => $no_model,
+                            'inisial' => $inisial,
+                            'style' => $data[5]
+                        ];
+                        $dataInisial = $this->masterInisial->getIdForShipment($validate);
+                        foreach ($dataInisial as $di) {
+                            $idInisial = $di['id_inisial'];
+                            $tglDeliv = $data[0];
+                            $unixTimeStamp = ($tglDeliv - 25569) * 86400;
+                            $formattedDate = date("Y-m-d", $unixTimeStamp);
+                            $data3 = [
+                                'id_inisial' => $idInisial,
+                                'delivery' => $formattedDate,
+                                'po_shipment' => $data[7],
+                                'admin' => $admin
+                            ];
+                            $this->shipment->insert($data3);
+                        }
                     }
                 }
 
@@ -253,9 +259,11 @@ class PackingController extends BaseController
                                     $bagian     = $data[2];
                                     $storage1   = $data[2];
                                     $storage2   = $data[10];
-                                    $qty        = $data[12];
+                                    $qtypcs        = $data[12];
+                                    $qty = $qtypcs;
                                     $no_box     = $data[23];
                                     $no_label   = $data[22];
+                                    $shift      = $data[30];
                                     $admin      = session()->get('username');
                                     $dataInsert = [
                                         'tgl_prod'              => $formated,
@@ -267,9 +275,10 @@ class PackingController extends BaseController
                                         'no_box'                => $no_box,
                                         'no_label'              => $no_label,
                                         'admin'                 => $admin,
-                                        'kode_shipment'         => intval($kd_shipment)
+                                        'kode_shipment'         => intval($kd_shipment),
+                                        'shift'                 => $shift
                                     ];
-                                    $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated])->getRow();
+                                    $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated, 'shift' => $shift])->getRow();
                                     if (!$exististingPDK) {
                                         $this->prodModel->insert($dataInsert);
                                     }
