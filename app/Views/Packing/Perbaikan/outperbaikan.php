@@ -117,14 +117,13 @@
                             <tr>
                                 <th>Select</th>
                                 <th>Tgl Produksi</th>
-                                <th>Bagian</th>
+                                <th>Storage Awal</th>
                                 <th>Storage Akhir</th>
                                 <th>No PDK</th>
                                 <th>Inisial</th>
                                 <th>Style</th>
                                 <th>Colour</th>
-                                <th>QTY Prod</th>
-                                <th>BS Prod</th>
+                                <th>QTY</th>
                                 <th>No Box</th>
                                 <th>No Label</th>
                                 <th>Tgl Upload</th>
@@ -146,7 +145,6 @@
                                         <td><?= $Data['style'] ?></td>
                                         <td><?= $Data['colour'] ?></td>
                                         <td><?= $Data['qty_prod'] ?></td>
-                                        <td><?= $Data['bs_prod'] ?></td>
                                         <td><?= $Data['no_box'] ?></td>
                                         <td><?= $Data['no_label'] ?></td>
                                         <td><?= $Data['tgl_upload'] ?></td>

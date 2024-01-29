@@ -11,7 +11,6 @@ class PerbaikanController extends BaseController
     public function inPerbaikan()
     {
         $dataProduksi = $this->prodModel->getinPerbaikan();
-
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
 

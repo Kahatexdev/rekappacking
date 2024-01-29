@@ -41,7 +41,7 @@ class ShipmentModel extends Model
     public function getKodeShipment($id_inisial)
     {
         $kode_shipment = $this->where('id_inisial', $id_inisial)
-            ->first();
+            ->findAll();
         return $kode_shipment;
     }
     public function getIdInisial($kode_shipment)

@@ -247,43 +247,46 @@ class PackingController extends BaseController
                             $result = $this->masterInisial->getIdInisial($validate);
                             if ($result && array_key_exists('id_inisial', $result)) {
                                 $id_inisial = $result['id_inisial'];
+                                //dibikin foreach untuk getKodeShipment
                                 $kode_shipment = $this->shipment->getKodeShipment($id_inisial);
-                                $kd_shipment = $kode_shipment['kode_shipment'];
-                                $id_proses = $this->flowModel->getIdProses($id_inisial);
-                                if ($id_proses && array_key_exists('id_proses', $id_proses)) {
-                                    $idProses   = $id_proses['id_proses'];
-                                    $tglProd    = $data[1];
-                                    $strReplace = str_replace('.', '-', $tglProd);
-                                    $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);
-                                    $formated   = $dateTime->format('Y-m-d');
-                                    $bagian     = $data[2];
-                                    $storage1   = $data[2];
-                                    $storage2   = $data[10];
-                                    $qtypcs        = $data[12];
-                                    $qty = $qtypcs;
-                                    $no_box     = $data[23];
-                                    $no_label   = $data[22];
-                                    $shift      = $data[30];
-                                    $admin      = session()->get('username');
-                                    $dataInsert = [
-                                        'tgl_prod'              => $formated,
-                                        'id_proses'             => $idProses,
-                                        'bagian'                => $bagian,
-                                        'storage_awal'          => $storage1,
-                                        'storage_akhir'         => $storage2,
-                                        'qty_prod'              => $qty,
-                                        'no_box'                => $no_box,
-                                        'no_label'              => $no_label,
-                                        'admin'                 => $admin,
-                                        'kode_shipment'         => intval($kd_shipment),
-                                        'shift'                 => $shift
-                                    ];
-                                    $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated, 'shift' => $shift])->getRow();
-                                    if (!$exististingPDK) {
-                                        $this->prodModel->insert($dataInsert);
+                                foreach ($kode_shipment as $kd) {
+                                    $kd_shipment = $kd['kode_shipment'];
+                                    $id_proses = $this->flowModel->getIdProses($id_inisial);
+                                    if ($id_proses && array_key_exists('id_proses', $id_proses)) {
+                                        $idProses   = $id_proses['id_proses'];
+                                        $tglProd    = $data[1];
+                                        $strReplace = str_replace('.', '-', $tglProd);
+                                        $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);
+                                        $formated   = $dateTime->format('Y-m-d');
+                                        $bagian     = $data[2];
+                                        $storage1   = $data[2];
+                                        $storage2   = $data[10];
+                                        $qtypcs        = $data[12];
+                                        $qty = $qtypcs;
+                                        $no_box     = $data[23];
+                                        $no_label   = $data[22];
+                                        $shift      = $data[30];
+                                        $admin      = session()->get('username');
+                                        $dataInsert = [
+                                            'tgl_prod'              => $formated,
+                                            'id_proses'             => $idProses,
+                                            'bagian'                => $bagian,
+                                            'storage_awal'          => $storage1,
+                                            'storage_akhir'         => $storage2,
+                                            'qty_prod'              => $qty,
+                                            'no_box'                => $no_box,
+                                            'no_label'              => $no_label,
+                                            'admin'                 => $admin,
+                                            'kode_shipment'         => intval($kd_shipment),
+                                            'shift'                 => $shift
+                                        ];
+                                        $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated, 'shift' => $shift])->getRow();
+                                        if (!$exististingPDK) {
+                                            $this->prodModel->insert($dataInsert);
+                                        }
+                                    } else {
+                                        return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input flow proses terlebih dahulu');
                                     }
-                                } else {
-                                    return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input flow proses terlebih dahulu');
                                 }
                             } else {
                                 return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');

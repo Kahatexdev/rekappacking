@@ -54,7 +54,7 @@
                                         <td><?= $Data['inisial'] ?></td>
                                         <td><?= $Data['style'] ?></td>
                                         <td><?= $Data['colour'] ?></td>
-                                        <td><?= $Data['bs_prod'] ?></td>
+                                        <td><?= $Data['qty_prod'] ?></td>
                                     </tr>
                                 <?php endforeach ?>
                             <?php

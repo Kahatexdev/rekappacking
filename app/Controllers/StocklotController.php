@@ -26,7 +26,7 @@ class StocklotController extends BaseController
                 'colour'    => $dataInisial['colour'],
                 'id_production' => $row['id_production'],
                 'storage_awal'    => $row['storage_awal'],
-                'bs_prod'   => $row['bs_prod'],
+                'qty_prod'   => $row['qty_prod'],
             ];
         }
         $data = [
@@ -92,7 +92,6 @@ class StocklotController extends BaseController
                         <th>Style</th>
                         <th>Colour</th>
                         <th>Qty Prod</th>
-                        <th>BS Prod</th>
                         <th>No Box</th>
                     </tr>';
         // Output the HTML content to the PDF
@@ -114,7 +113,6 @@ class StocklotController extends BaseController
             $html .= '<td>' . $dataInisial['style'] . '</td>';
             $html .= '<td>' . $dataInisial['colour'] . '</td>';
             $html .= '<td>' . $row['qty_prod'] . '</td>';
-            $html .= '<td>' . $row['bs_prod'] . '</td>';
             $html .= '<td>' . $row['no_box'] . '</td>';
             $html .= '<td>' . $row['no_label'] . '</td>';
             $html .= '</tr>';

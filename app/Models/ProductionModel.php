@@ -12,7 +12,7 @@ class ProductionModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tgl_prod', 'id_proses', 'bagian', 'storage_awal', 'storage_akhir', 'qty_prod', 'bs_prod', 'kategori_bs', 'no_box', 'no_label', 'created_at', 'updated_at', 'admin', 'kode_shipment'];
+    protected $allowedFields    = ['tgl_prod', 'id_proses', 'bagian', 'storage_awal', 'storage_akhir', 'qty_prod', 'bs_prod', 'kategori_bs', 'no_box', 'no_label', 'created_at', 'updated_at', 'admin', 'kode_shipment', 'shift'];
 
     // Dates
     protected $useTimestamps = true;
@@ -284,10 +284,7 @@ class ProductionModel extends Model
              ');
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
-        $this->like('production.storage_awal', 'PA01')
-            ->like('production.storage_awal', 'PA02')
-            ->like('production.storage_awal', 'PB01')
-            ->where('production.storage_akhir IS NOT NULL');
+        $this->where("(production.storage_akhir LIKE 'PA02%' OR production.storage_akhir LIKE 'PR02%' OR production.storage_akhir LIKE 'PA01%' OR production.storage_akhir LIKE 'PR01%' OR production.storage_akhir LIKE 'PB02%' OR production.storage_akhir LIKE 'PA01%')");
 
         // Lakukan query dan kembalikan hasil
         $result = $this->findAll();
@@ -304,9 +301,7 @@ class ProductionModel extends Model
              ');
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
-        $this->like('production.storage_akhir', 'PA01')
-            ->like('production.storage_akhir', 'PA02')
-            ->like('production.storage_akhir', 'PB01');
+        $this->where("(production.storage_akhir LIKE 'PA02%' OR production.storage_akhir LIKE 'PR02%' OR production.storage_akhir LIKE 'PA01%' OR production.storage_akhir LIKE 'PR01%' OR production.storage_akhir LIKE 'PB02%' OR production.storage_akhir LIKE 'PA01%')");
 
         // Lakukan query dan kembalikan hasil
         $result = $this->findAll();
@@ -316,13 +311,15 @@ class ProductionModel extends Model
     public function getDataRekapan()
     {
         $builder = $this->db->table('production');
-        $builder->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
-        $builder->join('master_inisial', 'master_inisial.id_inisial = flow_proses.id_inisial');
-        $builder->join('master_pdk', 'master_pdk.no_model = master_inisial.no_model');
+        //  $builder->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+        // $builder->join('master_inisial', 'master_inisial.id_inisial = flow_proses.id_inisial');
+        //  $builder->join('master_pdk', 'master_pdk.no_model = master_inisial.no_model');
         $builder->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
 
         // Pilih kolom yang ingin ditampilkan
-        $builder->select('production.*, flow_proses.*, master_inisial.*, master_pdk.*, shipment.*');
+        $builder->select(' 
+    
+         shipment.*');
 
         // Eksekusi query
         $query = $builder->get();

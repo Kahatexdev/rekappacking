@@ -29,14 +29,13 @@
                         </thead>
                         <tbody>
                             <?php
-                            if (!empty($Data)) {
+                            if (!empty($data)) {
 
                             ?>
                                 <?php foreach ($Data as $Item) : ?>
                                     <tr>
                                         <td><?= $Item['no_model'] ?></td>
                                         <td><?= $Item['area'] ?></td>
-                                        <td><?= $Item['delivery'] ?></td>
                                         <td>
                                             <form action="<?= base_url('packing/exportrekap/' . $Item['id_inisial']); ?>" id="" method="post">
                                                 <button type="submit" class="btn btn-success detail text-white  ">Export Rekapan</button>

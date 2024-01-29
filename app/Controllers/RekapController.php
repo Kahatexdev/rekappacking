@@ -8,18 +8,24 @@ class RekapController extends BaseController
 {
     public function rekapPacking()
     {
-        $data = $this->prodModel->getDataRekapan();
-        dd($data);
+        $dataProd = $this->prodModel->getDataRekapan();
         $dataJoined = [];
-
-        foreach ($data as $np) {
-
-
-            $dataJoined[] = [];
+        dd($dataProd);
+        foreach ($dataProd as $prod) {
+            $no_model = $prod['no_model'];
+            $area  = $prod['area'];
+            $delivery = $prod['delivery'];
+            $id_inisial = $prod['id_inisial'];
+            $dataJoined[] = [
+                'no_model'   => $no_model,
+                'area' => $area,
+                'delivery' => $delivery,
+                'id_inisial' => $id_inisial,
+            ];
         }
-
+        dd($dataJoined);
         $data = [
-            'Data'   => $dataJoined,
+            'Data' => $dataJoined,
             'Tabel'  => "Tabel Rekapan Packing",
             'Judul'  => "Rekapan Packing",
             'User'   => session()->get('username'),
