@@ -33,9 +33,10 @@ class RekapController extends BaseController
     {
         $dataPdk = $this->dataPDK->where(['no_model' => $noModel])->first();
         $dataInisial = $this->masterInisial->getInisialsByNoModel($noModel);
+        $fromInisial = [];
         foreach ($dataInisial as $dataIns) {
 
-            $fromInisial = [
+            $fromInisial[] = [
                 'style' => $dataIns['style'],
                 'inisial' => $dataIns['inisial'],
                 'area' => $dataIns['area'],
