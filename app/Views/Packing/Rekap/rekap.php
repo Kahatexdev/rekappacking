@@ -22,22 +22,19 @@
                         <thead>
                             <tr>
                                 <th>No PDK</th>
-                                <th>Area</th>
-                                <th>Tanggal Delivery</th>
                                 <th> Aksi </th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            if (!empty($data)) {
+                            if (!empty($inidata)) {
 
                             ?>
-                                <?php foreach ($Data as $Item) : ?>
+                                <?php foreach ($inidata as $Item) : ?>
                                     <tr>
                                         <td><?= $Item['no_model'] ?></td>
-                                        <td><?= $Item['area'] ?></td>
                                         <td>
-                                            <form action="<?= base_url('packing/exportrekap/' . $Item['id_inisial']); ?>" id="" method="post">
+                                            <form action="<?= base_url('packing/detailrekap/' . $Item['no_model']); ?>" id="" method="post">
                                                 <button type="submit" class="btn btn-success detail text-white  ">Export Rekapan</button>
                                             </form>
                                         </td>

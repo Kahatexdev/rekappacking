@@ -94,6 +94,7 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
     $routes->post('importoutperbaikan', 'PerbaikanController::importOutPerbaikan');
 
     $routes->get('rekap', 'RekapController::rekapPacking');
+    $routes->post('detailrekap/(:any)', 'RekapController::detailRekap/$1');
 
 
 

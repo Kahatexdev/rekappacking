@@ -8,29 +8,51 @@ class RekapController extends BaseController
 {
     public function rekapPacking()
     {
-        $dataProd = $this->prodModel->getDataRekapan();
+        $dataPdk = $this->dataPDK->findAll();
         $dataJoined = [];
-        dd($dataProd);
-        foreach ($dataProd as $prod) {
-            $no_model = $prod['no_model'];
-            $area  = $prod['area'];
-            $delivery = $prod['delivery'];
-            $id_inisial = $prod['id_inisial'];
+        foreach ($dataPdk as $dp) {
+            $no_model = $dp['no_model'];
+
+
             $dataJoined[] = [
-                'no_model'   => $no_model,
-                'area' => $area,
-                'delivery' => $delivery,
-                'id_inisial' => $id_inisial,
+                'no_model' => $no_model
             ];
         }
-        dd($dataJoined);
+
+
         $data = [
-            'Data' => $dataJoined,
+            'inidata' => $dataJoined,
             'Tabel'  => "Tabel Rekapan Packing",
             'Judul'  => "Rekapan Packing",
             'User'   => session()->get('username'),
         ];
 
         return view('Packing/Rekap/rekap', $data);
+    }
+    public function detailRekap($noModel)
+    {
+        $dataPdk = $this->dataPDK->where(['no_model' => $noModel])->first();
+        $dataInisial = $this->masterInisial->getInisialsByNoModel($noModel);
+        foreach ($dataInisial as $dataIns) {
+
+            $fromInisial = [
+                'style' => $dataIns['style'],
+                'inisial' => $dataIns['inisial'],
+                'area' => $dataIns['area'],
+                'qtyIns' => $dataIns['po_inisial'],
+                'colour' => $dataIns['colour']
+            ];
+        }
+
+        $data = [
+            'Judul' => 'Detail PDK',
+            'User' => session()->get('username'),
+            'pdk' => $dataPdk['no_model'],
+            'no_order' => $dataPdk['no_order'],
+            'buyer' => $dataPdk['buyer'],
+            'inisial' => $fromInisial
+        ];
+
+        return view('Packing/Rekap/detail', $data);
     }
 }
