@@ -80,7 +80,7 @@ class RossoController extends BaseController
                                             'kode_shipment'         => intval($kd_shipment),
                                             'shift'                 => $shift
                                         ];
-                                        $exististingPDK = $this->prodModel->getWhere(['id_proses' => $idProses, 'tgl_prod' => $formated, 'storage_akhir' => $storage2, 'shift' => $shift])->getRow();
+                                        $exististingPDK = $this->prodModel->existingData($dataInsert);
                                         if (!$exististingPDK) {
                                             $this->prodModel->insert($dataInsert);
                                         }

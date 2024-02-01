@@ -327,4 +327,17 @@ class ProductionModel extends Model
         // Mengembalikan hasil query sebagai array
         return $query->getResultArray();
     }
+
+
+    public function existingData($dataInsert)
+    {
+        $query = $this->where('id_proses', $dataInsert['id_proses'])
+            ->where('tgl_prod', $dataInsert['tgl_prod'])
+            ->where('no_box', $dataInsert['no_box'])
+            ->where('storage_akhir', $dataInsert['storage_akhir'])
+            ->where('qty_prod', $dataInsert['qty_prod'])
+            ->where('shift', $dataInsert['shift'])->get();
+        $result = $query->getRow();
+        return $result;
+    }
 }

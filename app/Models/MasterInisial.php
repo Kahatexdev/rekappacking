@@ -88,4 +88,13 @@ class MasterInisial extends Model
         $result = $this->where('no_model', $required['no_model'])->where('inisial', $required['inisial'])->first();
         return $result;
     }
+    public function sumQTY($noModel)
+    {
+        $query = $this->selectSum('po_inisial', 'total_QTY') // Menambahkan alias untuk hasil sum
+            ->where('no_model', $noModel)
+            ->get();
+
+        $result = $query->getRow();
+        return $result->total_QTY;
+    }
 }

@@ -6,14 +6,14 @@
         <h4>Rekap Data <?= $pdk ?></h4>
         <a href="" class="btn btn-info">Export Data</a>
     </div>
-    <div class="card-body ">
+    <div class="card-body border">
         <div class="row text-center align-items-center border">
             <div class="col-lg-2 ">
                 <img src="<?= base_url('assets/images/loho.png') ?>" class="w-50" alt="">
                 <br>
                 <b> PT KAHATEX </b>
             </div>
-            <div class="col-lg-10  ">
+            <div class="col-lg-10 ">
                 <h5>
                     FORMULIR
                 </h5>
@@ -29,7 +29,7 @@
 
             </div>
         </div>
-        <div class="row border">
+        <div class="row border rounded">
             <div class="col-lg-6">
                 <div class="label py-0 mt-2 mb-0">
 
@@ -51,7 +51,7 @@
                 </div>
                 <div class="label py-0  mb-0">
 
-                    <label for="qty" id="total"> Total Qty PDK :</label>
+                    <label for="qty" id="total"> Total Qty PDK : <?= $poInisial ?></label>
                 </div>
                 <div class="label py-0  mb-0">
 
@@ -88,7 +88,8 @@
             </div>
         </div>
         <div class="row">
-            <table class="table-responsive text-center" border="1" id="myTable">
+            <table class="table-responsive text-center" border="1" id="myTable" style=" background-image: url('<?= base_url('assets/images/bg5.png') ?>');
+            background-size: cover; ">
                 <thead>
                     <tr>
                         <th rowspan="2">Style</th>
@@ -134,19 +135,19 @@
                                 <td><?= $Data['inisial'] ?></td>
                                 <td class="qty"><?= $Data['qtyIns'] ?></td>
                                 <td><?= $Data['colour'] ?></td>
+                                <td><?= $Data['mesin'] ?></td>
+                                <td><?= $Data['sisaRosso'] ?></td>
+                                <td><?= $Data['rosso'] ?></td>
                                 <td>0</td>
+                                <td><?= $Data['setting'] ?></td>
+                                <td><?= $Data['perbaikanIn'] ?></td>
+                                <td><?= $Data['perbaikanOut'] ?></td>
+                                <td><?= $Data['sisaPerbaikan'] ?></td>
+                                <td><?= $Data['stocklot'] ?></td>
                                 <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
+                                <td><?= $Data['gsIn'] ?></td>
+                                <td><?= $Data['gsOut'] ?></td>
+                                <td><?= $Data['sisaGudang'] ?></td>
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>

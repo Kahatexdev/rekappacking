@@ -16,6 +16,7 @@ use App\Models\MasterProses;
 use App\Models\ShipmentModel;
 use App\Models\MasterInisial;
 use App\Models\ProductionModel;
+use App\Models\RekapModel;
 
 /**
  * Class BaseController
@@ -37,6 +38,7 @@ abstract class BaseController extends Controller
     protected $shipment;
     protected $flowModel;
     protected $prodModel;
+    protected $rekapModel;
     public function __construct()
     {
         $this->dataModel     = new DataModel();
@@ -46,6 +48,7 @@ abstract class BaseController extends Controller
         $this->flowModel     = new FlowModels();
         $this->shipment      = new ShipmentModel();
         $this->prodModel     = new ProductionModel();
+        $this->rekapModel     = new RekapModel();
     }
     /**
      * Instance of the main Request object.
