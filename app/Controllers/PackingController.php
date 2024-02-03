@@ -130,11 +130,11 @@ class PackingController extends BaseController
                         }
                     }
                 }
-                return redirect()->to(base_url('/packing'))->with('success', 'Data imported and saved to database successfully');
+                return redirect()->to(base_url('/ppc'))->with('success', 'Data imported and saved to database successfully');
             } else {
-                return redirect()->to(base_url('/packing'))->with('error', 'No data found in the Excel file');
+                return redirect()->to(base_url('/ppc'))->with('error', 'No data found in the Excel file');
             }
-            return redirect()->to(base_url('/packing'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/ppc'))->with('error', 'No data found in the Excel file');
         }
     }
 
@@ -211,9 +211,9 @@ class PackingController extends BaseController
         if (!$existingProses) {
 
             $this->flowModel->insert($data);
-            return redirect()->to(base_url('packing/flowproses'))->with('success', 'Data Berhasil Di Input');
+            return redirect()->to(base_url('ppc/flowproses'))->with('success', 'Data Berhasil Di Input');
         } else {
-            return redirect()->to(base_url('packing/flowproses'))->with('error', 'Data dari PDK dan Inisal tersebut sudah diinput, silahkan cek kembali');
+            return redirect()->to(base_url('ppc/flowproses'))->with('error', 'Data dari PDK dan Inisal tersebut sudah diinput, silahkan cek kembali');
         }
     }
     // input produksi
@@ -423,17 +423,17 @@ class PackingController extends BaseController
                                     $this->flowModel->insert($data1);
                                 }
                             } else {
-                                return redirect()->to(base_url('/packing/flowproses'))->with('error', 'Inisial Tidak ditemukan, Silahkan Periksa Kembali');
+                                return redirect()->to(base_url('/ppc/flowproses'))->with('error', 'Inisial Tidak ditemukan, Silahkan Periksa Kembali');
                             }
                         }
                     }
-                    return redirect()->to(base_url('/packing/flowproses'))->with('success', 'Data imported and saved to database successfully');
+                    return redirect()->to(base_url('/ppc/flowproses'))->with('success', 'Data imported and saved to database successfully');
                 }
             }
         } else {
-            return redirect()->to(base_url('/packing/flowproses'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/ppc/flowproses'))->with('error', 'No data found in the Excel file');
         }
-        return redirect()->to(base_url('/packing/flowproses'))->with('error', 'No data found in the Excel file');
+        return redirect()->to(base_url('/ppc/flowproses'))->with('error', 'No data found in the Excel file');
     }
 
 

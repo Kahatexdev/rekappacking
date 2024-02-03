@@ -26,6 +26,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'packingAuth' => \App\Filters\PackingAuth::class,
+        'ppcAuth' => \App\Filters\PpcAuth::class,
         'monitoringAuth' => \App\Filters\MonitoringAuth::class,
 
     ];

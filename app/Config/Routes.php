@@ -40,13 +40,19 @@ $routes->group('/export', function ($routes) {
     $routes->get('qbs/(:any)', 'QbsController::exportQbs/$1');
     $routes->get('qc/(:any)', 'QcController::exportQc/$1');
     $routes->get('format', 'PackingController::downloadExcel');
+    $routes->get('formatPdk', 'PpcController::downloadExcel');
+});
+
+$routes->group('/ppc', ['filter' => 'ppcAuth'], function ($routes) {
+    $routes->get('', 'PpcController::index');
+    $routes->post('getInisial', 'PpcController::getInisial');
+    $routes->post('import', 'PackingController::importPDK');
 });
 
 //packing routes
 $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('', 'PackingController::index');
-    $routes->post('import', 'PackingController::importPDK');
     $routes->post('importFlowProses', 'PackingController::importFlowProses');
     $routes->post('importproduksiMesin', 'PackingController::importProduksiMesin');
     $routes->post('importproduksiRosso', 'RossoController::importProduksiRosso');

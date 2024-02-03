@@ -30,6 +30,9 @@ class AuthController extends BaseController
             case 'monitoring':
                 return redirect()->to(base_url('/monitoring'));
                 break;
+            case 'ppc':
+                return redirect()->to(base_url('/ppc'));
+                break;
 
             default:
                 return redirect()->to(base_url('/login'));

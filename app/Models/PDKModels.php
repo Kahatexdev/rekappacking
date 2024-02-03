@@ -43,4 +43,14 @@ class PDKModels extends Model
         $this->where('no_model', $isModelExist)->first();
         return $isModelExist;
     }
+
+    public function getMasterData()
+    {
+        $this->join('master_inisial', 'master_inisial.no_model = master_pdk.no_model');
+
+        $this->select('master_pdk.*,
+                        master_inisial.inisial');
+        $result = $this->findAll();
+        return $result;
+    }
 }
