@@ -119,11 +119,7 @@
                             <i class="icon-home menu-icon"></i><span class="nav-text">Master Data</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="<?= base_url('packing/rekap') ?>" aria-expanded="false">
-                            <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
-                        </a>
-                    </li>
+
                 </ul>
             </div>
         </div>

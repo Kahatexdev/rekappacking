@@ -1,17 +1,20 @@
 <?php $this->extend('Ppc/layout'); ?>
 <?php $this->section('content'); ?>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="row">
     <div class="col-lg-12">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h4>
-                        Master Data
+                        Data Flow Proses <?= $no_model ?>
                     </h4>
                     <div>
-                        <a href="<?= base_url('export/formatPdk') ?>" class="btn btn-success text-white shadow"> <i class="icon-doc"></i>
-                            Download Format Master PDK
+                        <a href="<?= base_url('ppc') ?>" class="btn btn-info text-white shadow"> <i class="icon-arrow-left"></i>
+                            Kembali
+                        </a>
+                        <a href="<?= base_url('export/format') ?>" class="btn btn-success text-white shadow"> <i class="icon-doc"></i>
+                            Download Format Flowproses
                         </a>
                     </div>
                 </div>
@@ -50,14 +53,24 @@
                             <div class="row align-items-center">
                                 <div class="table-responsive">
 
-                                    <table class="table responsive table-striped table-bordered vertical-middle zero-configuration" id="tabel">
+                                    <table class="table  table-striped table-bordered vertical-middle zero-configuration" id="tabel">
                                         <thead>
                                             <tr>
-                                                <th>No Model</th>
-                                                <th>No Order</th>
-                                                <th>Buyer</th>
-                                                <th>Inisial </th>
-                                                <th>Proses </th>
+                                                <th>Inisial</th>
+                                                <th>P1 </th>
+                                                <th>P2 </th>
+                                                <th>P3 </th>
+                                                <th>P4 </th>
+                                                <th>P5 </th>
+                                                <th>P6 </th>
+                                                <th>P7 </th>
+                                                <th>P8 </th>
+                                                <th>P9 </th>
+                                                <th>P11 </th>
+                                                <th>P12 </th>
+                                                <th>P13 </th>
+                                                <th>P14 </th>
+                                                <th>P15 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -66,19 +79,22 @@
                                                 foreach ($Data as $dt) {
                                             ?>
                                                     <tr>
-                                                        <td data-id="<?= $dt['no_model'] ?>"><?= $dt['no_model'] ?></td>
-
-                                                        <td><?= $dt['no_order'] ?></td>
-                                                        <td><?= $dt['buyer'] ?></td>
-                                                        <td> <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-no-model="<?= $dt['no_model'] ?>">
-                                                                List Inisial
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <form action="<?= base_url('ppc/flowproses/' . $dt['no_model']); ?>" id="" method="get">
-                                                                <button type="submit" class="btn btn-success detail text-white  ">Flowproses</button>
-                                                            </form>
-                                                        </td>
+                                                        <td><?= $dt['inisial'] ?></td>
+                                                        <td><?= $dt['proses1'] ?></td>
+                                                        <td><?= $dt['proses2'] ?></td>
+                                                        <td><?= $dt['proses3'] ?></td>
+                                                        <td><?= $dt['proses4'] ?></td>
+                                                        <td><?= $dt['proses5'] ?></td>
+                                                        <td><?= $dt['proses6'] ?></td>
+                                                        <td><?= $dt['proses7'] ?></td>
+                                                        <td><?= $dt['proses8'] ?></td>
+                                                        <td><?= $dt['proses9'] ?></td>
+                                                        <td><?= $dt['proses10'] ?></td>
+                                                        <td><?= $dt['proses11'] ?></td>
+                                                        <td><?= $dt['proses12'] ?></td>
+                                                        <td><?= $dt['proses13'] ?></td>
+                                                        <td><?= $dt['proses14'] ?></td>
+                                                        <td><?= $dt['proses15'] ?></td>
                                                     </tr>
                                                 <?php
                                                 }
@@ -143,7 +159,7 @@
                             <div class="row">
                                 <div class="col-12 pl-0 pr-4">
 
-                                    <form action="<?= base_url('ppc/import') ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?= base_url('packing/importFlowProses') ?>" method="post" enctype="multipart/form-data">
                                         <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
                                         <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
                                     </form>
@@ -161,32 +177,5 @@
 
 
 
-
-<script>
-    $(document).ready(function() {
-        $('.btn-list-inisial').on('click', function() {
-            var noModel = $(this).data('no-model');
-            console.log(noModel)
-            $.ajax({
-                url: 'ppc/getInisial',
-                type: 'POST',
-                data: {
-                    no_model: noModel
-                },
-                dataType: 'json',
-                success: function(data) {
-                    // Kosongkan tabel sebelum mengisi data baru
-                    $('#inisial-list-table').empty();
-
-                    // Loop untuk setiap data inisial dan tambahkan ke tabel
-                    for (var i = 0; i < data.length; i++) {
-                        var row = '<tr><td>' + data[i].inisial + '</td><td>' + data[i].po_inisial + '</td></tr>';
-                        $('#inisial-list-table').append(row);
-                    }
-                }
-            });
-        });
-    });
-</script>
 
 <?php $this->endSection(); ?>

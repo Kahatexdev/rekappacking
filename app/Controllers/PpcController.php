@@ -96,4 +96,45 @@ class PpcController extends BaseController
 
         return $this->response->setJSON($jsonResponse);
     }
+    public function flowproses($noModel)
+    {
+        $id_inisial = $this->masterInisial->getInisialsByNoModel($noModel);
+        $dataJoined = [];
+        foreach ($id_inisial as $id) {
+            $idInisial = $id['id_inisial'];
+            $getIdProses = $this->flowModel->getIdProsess($idInisial);
+            foreach ($getIdProses as $proses) {
+
+                $dataJoined[] = [
+
+                    'inisial' => $id['inisial'],
+                    'proses1' => $proses['proses_1'],
+                    'proses2' => $proses['proses_2'],
+                    'proses3' => $proses['proses_3'],
+                    'proses4' => $proses['proses_4'],
+                    'proses5' => $proses['proses_5'],
+                    'proses6' => $proses['proses_6'],
+                    'proses7' => $proses['proses_7'],
+                    'proses8' => $proses['proses_8'],
+                    'proses9' => $proses['proses_9'],
+                    'proses10' => $proses['proses_10'],
+                    'proses11' => $proses['proses_11'],
+                    'proses12' => $proses['proses_12'],
+                    'proses13' => $proses['proses_13'],
+                    'proses14' => $proses['proses_14'],
+                    'proses15' => $proses['proses_15'],
+                ];
+            }
+        }
+
+        $data = [
+            'Judul' => 'Input flowproses',
+            'User' => session()->get('username'),
+            'Header' => 'Input Flow Proses',
+            'Data' => $dataJoined,
+            'no_model' => $noModel,
+
+        ];
+        return view('Ppc/flowproses', $data);
+    }
 }

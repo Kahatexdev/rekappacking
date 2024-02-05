@@ -140,20 +140,7 @@ class PackingController extends BaseController
 
     //flowproses
 
-    public function flowproses()
-    {
 
-        $data = [
-            'Judul' => 'Input flowproses',
-            'User' => session()->get('username'),
-            'Header' => 'Input Flow Proses',
-            'Proses' => $this->dataProses->findAll(),
-            'DB' => $this->masterInisial->findAll(),
-            'Data' => $this->masterInisial->getAllDataWithFlowProses(),
-
-        ];
-        return view('Packing/flowproses', $data);
-    }
     public function getInisialByNoModel()
     {
         $noModel = $this->request->getPost('no_model');

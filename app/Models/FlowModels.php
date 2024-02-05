@@ -63,4 +63,9 @@ class FlowModels extends Model
         return $this->where('id_inisial', $getIdProses)
             ->first();
     }
+    public function getIdProsess($getIdProses)
+    {
+        return $this->where('id_inisial', $getIdProses)
+            ->findAll();
+    }
 }
