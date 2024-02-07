@@ -68,4 +68,33 @@ class FlowModels extends Model
         return $this->where('id_inisial', $getIdProses)
             ->findAll();
     }
+    public function updateFlow($id_proses, $data)
+    {
+        if ($this->where('id_proses', $id_proses)->countAllResults() > 0) {
+            // Jika ada, lakukan pembaruan
+            $this->where('id_proses', $id_proses)
+                ->set($data)
+                ->update();
+
+            return true; // Berhasil melakukan pembaruan
+        }
+
+        return false; // Tidak ada data yang sesuai
+    }
+    public function getUniqueProses($idInisial)
+    {
+        $flows = $this->where('id_inisial', $idInisial)->findAll();
+
+        $uniqueProcesses = [];
+
+        foreach ($flows as $flow) {
+            $processes = array_slice($flow, 2);
+
+            $uniqueProcesses = array_merge($uniqueProcesses, $processes);
+        }
+
+        $uniqueProcesses = array_unique($uniqueProcesses);
+
+        return $uniqueProcesses;
+    }
 }

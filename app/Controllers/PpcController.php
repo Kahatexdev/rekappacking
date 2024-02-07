@@ -11,7 +11,6 @@ use App\Models\MasterInisial;
 use App\Models\ProductionModel;
 
 
-
 use App\Controllers\BaseController;
 
 class PpcController extends BaseController
@@ -91,6 +90,7 @@ class PpcController extends BaseController
 
         $inisialData = $this->masterInisial->getInisialsByNoModel($noModel);
 
+
         // Konversi data menjadi format JSON
         $jsonResponse = json_encode($inisialData);
 
@@ -108,6 +108,7 @@ class PpcController extends BaseController
                 $dataJoined[] = [
 
                     'inisial' => $id['inisial'],
+                    'id_proses' => $proses['id_proses'],
                     'proses1' => $proses['proses_1'],
                     'proses2' => $proses['proses_2'],
                     'proses3' => $proses['proses_3'],
@@ -133,8 +134,32 @@ class PpcController extends BaseController
             'Header' => 'Input Flow Proses',
             'Data' => $dataJoined,
             'no_model' => $noModel,
+            'proses' => $this->dataProses->findAll(),
 
         ];
         return view('Ppc/flowproses', $data);
+    }
+    public function updateFlow($idProses)
+    {
+        $id_proses = intval($idProses);
+        $no_model = $this->request->getPost('noModel');
+        $data = [
+            'proses_1' => $this->request->getPost('proses1'),
+            'proses_2' => $this->request->getPost('proses2'),
+            'proses_3' => $this->request->getPost('proses3'),
+            'proses_4' => $this->request->getPost('proses4'),
+            'proses_5' => $this->request->getPost('proses5'),
+            'proses_6' => $this->request->getPost('proses6'),
+            'proses_7' => $this->request->getPost('proses7'),
+            'proses_8' => $this->request->getPost('proses8'),
+            'proses_9' => $this->request->getPost('proses9'),
+            'proses_10' => $this->request->getPost('proses10'),
+        ];
+        $result = $this->flowModel->updateFlow($id_proses, $data);
+        if ($result) {
+            return redirect()->to(base_url('ppc/flowproses/' . $no_model))->with('success', 'Berhasil Memperbarui Data');
+        } else {
+            return redirect()->to(base_url('ppc/flowproses/' . $no_model))->with('error', 'Gagal Memperbarui Data');
+        }
     }
 }

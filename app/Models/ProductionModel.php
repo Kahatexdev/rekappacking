@@ -306,7 +306,12 @@ class ProductionModel extends Model
              ');
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
-        $this->where("(production.storage_akhir LIKE 'PA02%' OR production.storage_akhir LIKE 'PR02%' OR production.storage_akhir LIKE 'PA01%' OR production.storage_akhir LIKE 'PR01%' OR production.storage_akhir LIKE 'PB02%' OR production.storage_akhir LIKE 'PA01%')");
+        $this->where("(production.storage_akhir LIKE 'PA02%' OR
+                       production.storage_akhir LIKE 'PR02%' OR 
+                       production.storage_akhir LIKE 'PA01%' OR 
+                       production.storage_akhir LIKE 'PR01%' OR 
+                       production.storage_akhir LIKE 'PB02%' OR 
+                       production.storage_akhir LIKE 'PA01%')");
 
         // Lakukan query dan kembalikan hasil
         $result = $this->findAll();

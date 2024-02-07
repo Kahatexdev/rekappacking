@@ -1,4 +1,4 @@
-<?php $this->extend('Ppc/layout'); ?>
+<?php $this->extend('Packing/layout'); ?>
 <?php $this->section('content'); ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="row">
@@ -10,12 +10,10 @@
                         Data Flow Proses <?= $no_model ?>
                     </h4>
                     <div>
-                        <a href="<?= base_url('ppc') ?>" class="btn btn-info text-white shadow"> <i class="icon-arrow-left"></i>
+                        <a href="<?= base_url('packing') ?>" class="btn btn-info text-white shadow"> <i class="icon-arrow-left"></i>
                             Kembali
                         </a>
-                        <a href="<?= base_url('export/format') ?>" class="btn btn-success text-white shadow"> <i class="icon-doc"></i>
-                            Download Format Flowproses
-                        </a>
+
                     </div>
                 </div>
                 <div class="card-body">
@@ -56,7 +54,6 @@
                                     <table class="table  table-striped table-bordered vertical-middle zero-configuration" id="tabel">
                                         <thead>
                                             <tr>
-                                                <th>Inisial</th>
                                                 <th>P1 </th>
                                                 <th>P2 </th>
                                                 <th>P3 </th>

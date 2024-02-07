@@ -51,9 +51,26 @@ class PackingController extends BaseController
         $data = [
             'Judul' => 'Dashboard Packing',
             'User' => session()->get('username'),
-            'Data' =>  $this->masterInisial->getAllData()
+            'Data' =>  $this->dataPDK->findAll()
         ];
         return view('Packing/index', $data);
+    }
+    public function details($no_model)
+    {
+        $id_inisial = $this->masterInisial->getInisialsByNoModel($no_model);
+        foreach ($id_inisial as $idInisial) {
+            $dataProses = $this->flowModel->getUniqueProses($idInisial['id_inisial']);
+            $dataprs = [
+                'data' => $dataProses,
+            ];
+        }
+
+        dd($dataProses);
+        $data = [
+            'no_model' => $no_model,
+
+        ];
+        return view('Packing/detail', $data);
     }
     public function importPDK()
     {
@@ -410,17 +427,17 @@ class PackingController extends BaseController
                                     $this->flowModel->insert($data1);
                                 }
                             } else {
-                                return redirect()->to(base_url('/ppc/flowproses'))->with('error', 'Inisial Tidak ditemukan, Silahkan Periksa Kembali');
+                                return redirect()->to(base_url('/ppc'))->with('error', 'Inisial Tidak ditemukan, Silahkan Periksa Kembali');
                             }
                         }
                     }
-                    return redirect()->to(base_url('/ppc/flowproses'))->with('success', 'Data imported and saved to database successfully');
+                    return redirect()->to(base_url('/ppc'))->with('success', 'Data imported and saved to database successfully');
                 }
             }
         } else {
-            return redirect()->to(base_url('/ppc/flowproses'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/ppc'))->with('error', 'No data found in the Excel file');
         }
-        return redirect()->to(base_url('/ppc/flowproses'))->with('error', 'No data found in the Excel file');
+        return redirect()->to(base_url('/ppc'))->with('error', 'No data found in the Excel file');
     }
 
 
@@ -435,28 +452,5 @@ class PackingController extends BaseController
             'Tabel' => 'Data Produksi setting'
         ];
         return view('Packing/Setting/setting', $data);
-    }
-
-
-    // packing
-    public function packing()
-    {
-        $data = [
-            'Judul' => 'Data Produksi packing',
-            'User' => 'Packing',
-            'Tabel' => 'Data Produksi packing'
-        ];
-        return view('Packing/Packing/packing', $data);
-    }
-
-    //stoklot
-    public function stoklot()
-    {
-        $data = [
-            'Judul' => 'Data stoklot',
-            'User' => 'Packing',
-            'Tabel' => 'Data  stoklot'
-        ];
-        return view('Packing/Stoklot/stoklot', $data);
     }
 }

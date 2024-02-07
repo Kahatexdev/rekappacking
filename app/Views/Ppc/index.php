@@ -97,13 +97,15 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">List Inisial</h5>
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">List Inisial </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body align-items-center">
                                                     <!-- Tabel untuk menampilkan data inisial -->
+                                                    <p id="jumInisial"></p>
+                                                    <p id="totalPo"></p>
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
@@ -122,8 +124,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -177,12 +177,17 @@
                 success: function(data) {
                     // Kosongkan tabel sebelum mengisi data baru
                     $('#inisial-list-table').empty();
-
+                    document.getElementById('exampleModalLongTitle').textContent = "List Inisial " + noModel
                     // Loop untuk setiap data inisial dan tambahkan ke tabel
+                    var total = data.length
+                    var totalPo = 0;
+                    document.getElementById('jumInisial').textContent = "Jumlah inisial : " + total
                     for (var i = 0; i < data.length; i++) {
                         var row = '<tr><td>' + data[i].inisial + '</td><td>' + data[i].po_inisial + '</td></tr>';
                         $('#inisial-list-table').append(row);
+                        totalPo += parseFloat(data[i].po_inisial);
                     }
+                    document.getElementById('totalPo').textContent = "Total Po : " + totalPo
                 }
             });
         });

@@ -116,7 +116,7 @@
                     <li class="nav-label">Dashboard</li>
                     <li>
                         <a href="<?= base_url('/packing') ?>" aria-expanded="false">
-                            <i class="icon-home menu-icon"></i><span class="nav-text">Master Data</span>
+                            <i class="icon-home menu-icon"></i><span class="nav-text">Data Produksi</span>
                         </a>
                     </li>
                     <li>
@@ -124,61 +124,14 @@
                             <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="<?= base_url('packing/datamesin') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Mesin</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/rosso') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Rosso</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/setting') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Setting</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/handprint') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Handprint</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/bordir') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Bordir</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/lipat') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Lipat</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/aplikasi') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Aplikasi</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/potongcorak') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Potong Corak</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/obras') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Produksi Obras</span>
-                        </a>
-                    </li>
-
                     <li>
                         <a href="<?= base_url('packing/qbs') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data QBS </span>
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out QBS </span>
                         </a>
                     </li>
                     <li>
                         <a href="<?= base_url('packing/qc') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data QC </span>
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out QC </span>
                         </a>
                     </li>
 
@@ -209,10 +162,6 @@
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Inflow Stocklot</span>
                         </a>
                     </li>
-
-
-
-
                 </ul>
             </div>
         </div>

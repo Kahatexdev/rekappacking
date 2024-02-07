@@ -48,6 +48,7 @@ $routes->group('/ppc', ['filter' => 'ppcAuth'], function ($routes) {
     $routes->post('getInisial', 'PpcController::getInisial');
     $routes->post('import', 'PackingController::importPDK');
     $routes->get('flowproses/(:any)', 'PpcController::flowproses/$1');
+    $routes->post('flowproses/update/(:any)', 'PpcController::updateFlow/$1');
     $routes->post('importFlowProses', 'PackingController::importFlowProses');
 });
 
@@ -55,6 +56,7 @@ $routes->group('/ppc', ['filter' => 'ppcAuth'], function ($routes) {
 $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('', 'PackingController::index');
+    $routes->get('details/(:any)', 'PackingController::details/$1');
     $routes->post('importproduksiMesin', 'PackingController::importProduksiMesin');
     $routes->post('importproduksiRosso', 'RossoController::importProduksiRosso');
     $routes->post('getInisialByNoModel', 'PackingController::getInisialByNoModel');
