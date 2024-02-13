@@ -8,9 +8,9 @@ use App\Controllers\BaseController;
 
 class PerbaikanController extends BaseController
 {
-    public function inPerbaikan()
+    public function perbaikanArea()
     {
-        $dataProduksi = $this->prodModel->getinPerbaikan();
+        $dataProduksi = $this->prodModel->getPerbaikanArea();
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
 
@@ -36,13 +36,49 @@ class PerbaikanController extends BaseController
             ];
         }
         $data = [
-            'Judul' => 'Data in Perbaikan',
+            'Judul' => 'Data Perbaikan Area',
             'User' =>  session()->get('username'),
             'Tabel' => 'Data in Perbaikan',
             'Data' => $dataJoined
         ];
 
-        return view('Packing/Perbaikan/inperbaikan', $data);
+        return view('Packing/Perbaikan/perbaikanarea', $data);
+    }
+    public function perbaikanRosso()
+    {
+        $dataProduksi = $this->prodModel->getPerbaikanRosso();
+        $dataJoined = [];
+        foreach ($dataProduksi as $row) {
+
+            $kode_shipment = $row['kode_shipment'];
+            $idInisial = $this->shipment->getIdInisial($kode_shipment);
+            $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
+            $dataJoined[] = [
+
+                'no_model'  => $dataInisial['no_model'],
+                'inisial'   => $dataInisial['inisial'],
+                'style'     => $dataInisial['style'],
+                'colour'    => $dataInisial['colour'],
+                'id_production' => $row['id_production'],
+                'tgl_prod'  => $row['tgl_prod'],
+                'bagian'    => $row['bagian'],
+                'storage_akhir' => $row['storage_akhir'],
+                'qty_prod'  => $row['qty_prod'],
+                'bs_prod'   => $row['bs_prod'],
+                'no_box'    => $row['no_box'],
+                'no_label'  => $row['no_label'],
+                'delivery'  => $row['delivery'],
+                'tgl_upload' => $row['created_at'],
+            ];
+        }
+        $data = [
+            'Judul' => 'Data Perbaikan Rosso',
+            'User' =>  session()->get('username'),
+            'Tabel' => 'Data Perbaikan Rosso',
+            'Data' => $dataJoined
+        ];
+
+        return view('Packing/Perbaikan/perbaikanrosso', $data);
     }
     public function outPerbaikan()
     {

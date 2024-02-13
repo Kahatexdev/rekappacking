@@ -295,7 +295,7 @@ class ProductionModel extends Model
         $result = $this->findAll();
         return $result;
     }
-    public function getInPerbaikan()
+    public function getPerbaikanArea()
     {
         $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
         $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
@@ -307,11 +307,42 @@ class ProductionModel extends Model
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
         $this->where("(production.storage_akhir LIKE 'PA02%' OR
-                       production.storage_akhir LIKE 'PR02%' OR 
-                       production.storage_akhir LIKE 'PA01%' OR 
-                       production.storage_akhir LIKE 'PR01%' OR 
                        production.storage_akhir LIKE 'PB02%' OR 
-                       production.storage_akhir LIKE 'PA01%')");
+                       production.storage_akhir LIKE 'PA01%' OR 
+                       production.storage_akhir LIKE 'PC02%' OR 
+                       production.storage_akhir LIKE 'PG05%' OR 
+                       production.storage_akhir LIKE 'PK07%' OR 
+                       production.storage_akhir LIKE 'PL_07%' OR 
+                       production.storage_akhir LIKE 'PD09%' OR 
+                       production.storage_akhir LIKE 'PD08%' OR 
+                       production.storage_akhir LIKE 'PF08%' OR 
+                       production.storage_akhir LIKE 'PJ08%' OR 
+                       production.storage_akhir LIKE 'PE10%' OR 
+                       production.storage_akhir LIKE 'PM11%' OR 
+                       production.storage_akhir LIKE 'PM11%' OR 
+                       production.storage_akhir LIKE 'PB01%')");
+
+        // Lakukan query dan kembalikan hasil
+        $result = $this->findAll();
+        return $result;
+    }
+    public function getPerbaikanRosso()
+    {
+        $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+        $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->where("(production.storage_akhir LIKE 'PR01%' OR
+                        production.storage_akhir LIKE 'PR05% OR
+                        production.storage_akhir LIKE 'PR07% OR
+                        production.storage_akhir LIKE 'PR08% OR
+                        production.storage_akhir LIKE 'PR011% OR
+                        production.storage_akhir LIKE 'PR02%')");
 
         // Lakukan query dan kembalikan hasil
         $result = $this->findAll();

@@ -85,16 +85,7 @@ class FlowModels extends Model
     {
         $flows = $this->where('id_inisial', $idInisial)->findAll();
 
-        $uniqueProcesses = [];
 
-        foreach ($flows as $flow) {
-            $processes = array_slice($flow, 2);
-
-            $uniqueProcesses = array_merge($uniqueProcesses, $processes);
-        }
-
-        $uniqueProcesses = array_unique($uniqueProcesses);
-
-        return $uniqueProcesses;
+        return $flows;
     }
 }

@@ -58,19 +58,27 @@ class PackingController extends BaseController
     public function details($no_model)
     {
         $id_inisial = $this->masterInisial->getInisialsByNoModel($no_model);
-        foreach ($id_inisial as $idInisial) {
-            $dataProses = $this->flowModel->getUniqueProses($idInisial['id_inisial']);
-            $dataprs = [
-                'data' => $dataProses,
-            ];
+        if ($id_inisial) {
+            foreach ($id_inisial as $ins) {
+                $idInisial =
+                    ['id_inisial' => $ins['id_inisial']];
+                $dataProses = $this->flowModel->findAll();
+                if ($dataProses) {
+
+                    $data = [
+                        'no_model' => $no_model,
+                        'data' => $dataProses,
+                        'Judul' => 'Import Data Produksi',
+                        'User' => session()->get('username'),
+                    ];
+                    return view('Packing/detail', $data);
+                } else {
+                    return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki flow proses, Hubungi PPC');
+                }
+            }
+        } else {
+            return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki Inisial Hubungi PPC');
         }
-
-        dd($dataProses);
-        $data = [
-            'no_model' => $no_model,
-
-        ];
-        return view('Packing/detail', $data);
     }
     public function importPDK()
     {
@@ -224,11 +232,13 @@ class PackingController extends BaseController
     public function importProduksiMesin()
     {
         $file = $this->request->getFile('excel_file');
+        $noModel = $this->request->getPost('noModel');
 
         if ($file->isValid() && !$file->hasMoved()) {
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
             $startRow = 18; // Ganti dengan nomor baris mulai
+
             foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
                 $cellIterator = $row->getCellIterator();
                 $cellIterator->setIterateOnlyExistingCells(false);
@@ -293,20 +303,20 @@ class PackingController extends BaseController
                                         $this->prodModel->insert($dataInsert);
                                     }
                                 } else {
-                                    return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                                    return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input flow proses terlebih dahulu');
                                 }
                             } else {
-                                return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                                return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
                             }
                         } else {
-                            return redirect()->to(base_url('/packing/datamesin'))->with('error', 'Silahkan input DATA PRODUKSI MESIN (Input ROSSO)');
+                            return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input DATA PRODUKSI MESIN (Input ROSSO)');
                         }
                     }
                 }
             }
-            return redirect()->to(base_url('/packing/datamesin'))->with('success', 'Data imported and saved to database successfully');
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('success', 'Data imported and saved to database successfully');
         } else {
-            return redirect()->to(base_url('/packing/datamesin'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'No data found in the Excel file');
         }
     }
 

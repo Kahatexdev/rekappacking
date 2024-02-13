@@ -10,7 +10,7 @@ class RossoController extends BaseController
     public function importProduksiRosso()
     {
         $file = $this->request->getFile('excel_file');
-
+        $noModel = $this->request->getPost('noModel');
         if ($file->isValid() && !$file->hasMoved()) {
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
@@ -85,13 +85,13 @@ class RossoController extends BaseController
                                             $this->prodModel->insert($dataInsert);
                                         }
                                     } else {
-                                        return redirect()->to(base_url('/packing/rosso'))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                                        return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input flow proses terlebih dahulu');
                                     }
                                 } else {
-                                    return redirect()->to(base_url('/packing/rosso'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                                    return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
                                 }
                             } else {
-                                return redirect()->to(base_url('/packing/rosso'))->with('error', 'Silahkan input DATA PRODUKSI Rosso (Outflow ROSSO)');
+                                return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input DATA PRODUKSI Rosso (Outflow ROSSO)');
                             }
                         } else {
                             dd('not array found');
@@ -99,9 +99,9 @@ class RossoController extends BaseController
                     }
                 }
             }
-            return redirect()->to(base_url('/packing/rosso'))->with('success', 'Data imported and saved to database successfully');
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('success', 'Data imported and saved to database successfully');
         } else {
-            return redirect()->to(base_url('/packing/rosso'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'No data found in the Excel file');
         }
     }
 
