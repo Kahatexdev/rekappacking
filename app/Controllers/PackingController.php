@@ -59,23 +59,33 @@ class PackingController extends BaseController
     {
         $id_inisial = $this->masterInisial->getInisialsByNoModel($no_model);
         if ($id_inisial) {
-            foreach ($id_inisial as $ins) {
-                $idInisial =
-                    ['id_inisial' => $ins['id_inisial']];
-                $dataProses = $this->flowModel->findAll();
-                if ($dataProses) {
-
-                    $data = [
-                        'no_model' => $no_model,
-                        'data' => $dataProses,
-                        'Judul' => 'Import Data Produksi',
-                        'User' => session()->get('username'),
-                    ];
-                    return view('Packing/detail', $data);
+            $newArr = [];
+            $parentProsess = array();
+            foreach ($id_inisial as $value) {
+                $idInisial = $value['id_inisial'];
+                $result = $this->flowModel->getUniqueProses($idInisial);
+                if ($result != []) {
+                    for ($i = 1; $i <= 10; $i++) {
+                        if ($result[0]["proses_" . $i] != null) {
+                            $parentProsess[] = $result[0]["proses_" . $i];
+                        }
+                    }
                 } else {
-                    return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki flow proses, Hubungi PPC');
+                    return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki Inisial Hubungi PPC');
                 }
             }
+
+            foreach ($parentProsess as $value) {
+                $newArr[$value] = $value;
+            }
+            $data = [
+                'no_model' => $no_model,
+                'data' => $newArr,
+                'Judul' => 'Import Data Produksi',
+                'User' => session()->get('username'),
+            ];
+
+            return view('Packing/detail', $data);
         } else {
             return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki Inisial Hubungi PPC');
         }

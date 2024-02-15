@@ -49,26 +49,20 @@
                             </thead>
                             <tbody>
                                 <?php
-                                if (!empty($data)) {
-                                    foreach ($data as $dp) {
+                                if (!empty($data)) :
+                                    foreach ($data as $val) :
                                 ?>
                                         <tr>
-                                            <td><?= $dp['proses_3'] ?></td>
+                                            <td><?= $val ?></td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="<?= $dp['proses_3'] ?>" data-no-model="<?= $no_model ?>">
+                                                <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="<?= $val ?>" data-no-model="<?= $no_model ?>">
                                                     Import Produksi
                                                 </button>
                                             </td>
-
                                         </tr>
-                                    <?php
-                                    }
-                                } else {
-                                    ?> <tr>
-                                        <td colspan="2" class="text-center">Tidak ada data</td>
-                                    </tr>
                                 <?php
-                                }
+                                    endforeach;
+                                endif;
                                 ?>
                             </tbody>
                         </table>
