@@ -85,7 +85,6 @@ class FlowModels extends Model
     {
         $flows = $this->where('id_inisial', $idInisial)->findAll();
 
-
         return $flows;
     }
 }

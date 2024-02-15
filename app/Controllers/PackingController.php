@@ -57,25 +57,29 @@ class PackingController extends BaseController
     }
     public function details($no_model)
     {
-        $id_inisial = $this->masterInisial->getInisialsByNoModel($no_model);
-        if ($id_inisial) {
-            foreach ($id_inisial as $ins) {
-                $idInisial =
-                    ['id_inisial' => $ins['id_inisial']];
-                $dataProses = $this->flowModel->findAll();
-                if ($dataProses) {
-
-                    $data = [
-                        'no_model' => $no_model,
-                        'data' => $dataProses,
-                        'Judul' => 'Import Data Produksi',
-                        'User' => session()->get('username'),
-                    ];
-                    return view('Packing/detail', $data);
-                } else {
-                    return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki flow proses, Hubungi PPC');
-                }
+        $result = $this->masterInisial->getInisialsByNoModel($no_model);
+        if ($result && array_key_exists('id_inisial', $result)) {
+            $idInisial[] = $result['id_inisial'];
+            dd($idInisial);
+            $dataProsess = $this->flowModel->getUniqueProses($idInisial);
+            foreach ($dataProsess as $dp) {
+                $data = [
+                    'proses' => $dp['0'],
+                ];
             }
+            // if ($dataProses) {
+
+            //     $data = [
+            //         'no_model' => $no_model,
+            //         'data' => $dataProses,
+            //         'Judul' => 'Import Data Produksi',
+            //         'User' => session()->get('username'),
+            //     ];
+            //     return view('Packing/detail', $data);
+            // } else {
+            //     return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki flow proses, Hubungi PPC');
+            // }
+            dd($data);
         } else {
             return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki Inisial Hubungi PPC');
         }
@@ -246,6 +250,7 @@ class PackingController extends BaseController
                 foreach ($cellIterator as $cell) {
                     $data[] = $cell->getValue();
                 }
+
                 if (!empty($data)) {
                     // validate this :
                     $no_model = $data[21];
