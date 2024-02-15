@@ -222,6 +222,22 @@ class ProductionModel extends Model
         $result = $this->findAll();
         return $result;
     }
+    public function getDataInGudang()
+    {
+        $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
+        $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+
+        $this->select('production.*,
+             shipment.delivery, shipment.po_shipment,
+             flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             ');
+
+        // Tambahkan kondisi WHERE untuk filter storage_akhir null
+        $this->like('production.storage_akhir', 'GS');
+        // Lakukan query dan kembalikan hasil
+        $result = $this->findAll();
+        return $result;
+    }
     public function getDataOutGudang()
     {
         $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
@@ -338,10 +354,10 @@ class ProductionModel extends Model
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
         $this->where("(production.storage_akhir LIKE 'PR01%' OR
-                        production.storage_akhir LIKE 'PR05% OR
-                        production.storage_akhir LIKE 'PR07% OR
-                        production.storage_akhir LIKE 'PR08% OR
-                        production.storage_akhir LIKE 'PR011% OR
+                        production.storage_akhir LIKE 'PR05%' OR
+                        production.storage_akhir LIKE 'PR07%' OR
+                        production.storage_akhir LIKE 'PR08%' OR
+                        production.storage_akhir LIKE 'PR011%' OR
                         production.storage_akhir LIKE 'PR02%')");
 
         // Lakukan query dan kembalikan hasil

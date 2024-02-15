@@ -449,18 +449,4 @@ class PackingController extends BaseController
         }
         return redirect()->to(base_url('/ppc'))->with('error', 'No data found in the Excel file');
     }
-
-
-    //rosso
-
-    //setting
-    public function setting()
-    {
-        $data = [
-            'Judul' => 'Data Produksi setting',
-            'User'   =>  session()->get('username'),
-            'Tabel' => 'Data Produksi setting'
-        ];
-        return view('Packing/Setting/setting', $data);
-    }
 }

@@ -8,6 +8,42 @@ use App\Controllers\BaseController;
 
 class GudangController extends BaseController
 {
+    public function ingudang()
+    {
+        $dataProduksi = $this->prodModel->getDataInGudang();
+        $dataJoined = [];
+        foreach ($dataProduksi as $row) {
+
+            $kode_shipment = $row['kode_shipment'];
+            $idInisial = $this->shipment->getIdInisial($kode_shipment);
+            $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
+            $dataJoined[] = [
+
+                'no_model'  => $dataInisial['no_model'],
+                'inisial'   => $dataInisial['inisial'],
+                'style'     => $dataInisial['style'],
+                'colour'    => $dataInisial['colour'],
+                'id_production' => $row['id_production'],
+                'tgl_prod'  => $row['tgl_prod'],
+                'bagian'    => $row['bagian'],
+                'storage_akhir' => $row['storage_akhir'],
+                'qty_prod'  => $row['qty_prod'],
+                'bs_prod'   => $row['bs_prod'],
+                'no_box'    => $row['no_box'],
+                'no_label'  => $row['no_label'],
+                'delivery'  => $row['delivery'],
+                'tgl_upload' => $row['created_at'],
+            ];
+        }
+        $data = [
+            'Judul' => 'Data In Gudang',
+            'User' =>  session()->get('username'),
+            'Tabel' => 'Data In Gudang',
+            'Data' => $dataJoined
+        ];
+
+        return view('Packing/Gudang/ingudang', $data);
+    }
     public function outgudang()
     {
         $dataProduksi = $this->prodModel->getDataOutGudang();

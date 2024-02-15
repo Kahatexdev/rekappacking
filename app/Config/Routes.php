@@ -88,6 +88,7 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
     $routes->get('obras', 'ObrasController::obras');
     $routes->post('importproduksiobras', 'ObrasController::importProduksiObras');
 
+    $routes->get('ingudang', 'GudangController::ingudang');
     $routes->get('outgudang', 'GudangController::outgudang');
     $routes->post('importoutgudang', 'GudangController::importOutGudang');
 

@@ -53,9 +53,9 @@
                                     foreach ($data as $dp) {
                                 ?>
                                         <tr>
-                                            <td><?= $dp['proses_1'] ?></td>
+                                            <td><?= $dp['proses_3'] ?></td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="<?= $dp['proses_1'] ?>" data-no-model="<?= $no_model ?>">
+                                                <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="<?= $dp['proses_3'] ?>" data-no-model="<?= $no_model ?>">
                                                     Import Produksi
                                                 </button>
                                             </td>
