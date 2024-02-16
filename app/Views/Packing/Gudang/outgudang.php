@@ -72,7 +72,7 @@
                 <div class="row">
                     <div class="col-12 pl-0 pr-4">
 
-                        <form action="<?= base_url('packing/importoutgudang') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url('packing/importproduksiGudang') ?>" method="post" enctype="multipart/form-data">
                             <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
                             <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
                         </form>

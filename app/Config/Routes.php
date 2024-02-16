@@ -90,7 +90,7 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('ingudang', 'GudangController::ingudang');
     $routes->get('outgudang', 'GudangController::outgudang');
-    $routes->post('importoutgudang', 'GudangController::importOutGudang');
+    $routes->post('importproduksiGudang', 'GudangController::importOutGudang');
 
     $routes->get('qbs', 'QbsController::Qbs');
     $routes->post('importoutqbs', 'QbsController::importOutQbs');

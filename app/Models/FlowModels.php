@@ -84,7 +84,6 @@ class FlowModels extends Model
     public function getUniqueProses($idInisial)
     {
         $flows = $this->where('id_inisial', $idInisial)->findAll();
-
         return $flows;
     }
 }

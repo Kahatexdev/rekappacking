@@ -57,29 +57,36 @@ class PackingController extends BaseController
     }
     public function details($no_model)
     {
-        $result = $this->masterInisial->getInisialsByNoModel($no_model);
-        if ($result && array_key_exists('id_inisial', $result)) {
-            $idInisial[] = $result['id_inisial'];
-            dd($idInisial);
-            $dataProsess = $this->flowModel->getUniqueProses($idInisial);
-            foreach ($dataProsess as $dp) {
-                $data = [
-                    'proses' => $dp['0'],
-                ];
-            }
-            // if ($dataProses) {
 
-            //     $data = [
-            //         'no_model' => $no_model,
-            //         'data' => $dataProses,
-            //         'Judul' => 'Import Data Produksi',
-            //         'User' => session()->get('username'),
-            //     ];
-            //     return view('Packing/detail', $data);
-            // } else {
-            //     return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki flow proses, Hubungi PPC');
-            // }
-            dd($data);
+        $id_inisial = $this->masterInisial->getInisialsByNoModel($no_model);
+        if ($id_inisial) {
+            $newArr = [];
+            $parentProsess = array();
+            foreach ($id_inisial as $value) {
+                $idInisial = $value['id_inisial'];
+                $result = $this->flowModel->getUniqueProses($idInisial);
+                if ($result != []) {
+                    for ($i = 1; $i <= 10; $i++) {
+                        if ($result[0]["proses_" . $i] != null) {
+                            $parentProsess[] = $result[0]["proses_" . $i];
+                        }
+                    }
+                } else {
+                    return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki Inisial Hubungi PPC');
+                }
+            }
+
+            foreach ($parentProsess as $value) {
+                $newArr[$value] = $value;
+            }
+            $data = [
+                'no_model' => $no_model,
+                'data' => $newArr,
+                'Judul' => 'Import Data Produksi',
+                'User' => session()->get('username'),
+            ];
+
+            return view('Packing/detail', $data);
         } else {
             return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki Inisial Hubungi PPC');
         }
