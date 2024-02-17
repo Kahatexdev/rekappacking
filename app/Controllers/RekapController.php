@@ -52,14 +52,13 @@ class RekapController extends BaseController
                 $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
 
                 //formated result
-                $pin_ = number_format($pin, 1, '.', '');
-                $pout_ = number_format($pout, 1, '.', '');
-                $stocklot_ = number_format($stocklot, 1, '.', '');
-                $sisaPerbaikan_ = number_format($sisaPerbaikan, 1, '.', '');
-                $gsIn_ = number_format($gsIn, 1, '.', '');
-                $gsOut_ = number_format($gsOut, 1, '.', '');
-                $sisaGudang = $gsIn - $gsOut;
-                $sisaGudang_ =  number_format($sisaGudang, 1, '.', '');
+                $pin_ = round(number_format($pin, 1, '.', ''));
+                $pout_ = round(number_format($pout, 1, '.', ''));
+                $stocklot_ = round(number_format($stocklot, 1, '.', ''));
+                $sisaPerbaikan_ = round(number_format($sisaPerbaikan, 1, '.', ''));
+                $gsIn_ = round(number_format($gsIn, 1, '.', ''));
+                $gsOut_ = round(number_format($gsOut, 1, '.', ''));
+                $sisaGudang = $gsIn_ - $gsOut_;
 
                 $fromInisial[] = [
                     'style' => $dataIns['style'],
@@ -77,7 +76,7 @@ class RekapController extends BaseController
                     'sisaPerbaikan' => $sisaPerbaikan_,
                     'gsIn' => $gsIn_,
                     'gsOut' => $gsOut_,
-                    'sisaGudang' => $sisaGudang_,
+                    'sisaGudang' => $sisaGudang,
 
                 ];
             }
