@@ -124,16 +124,7 @@
                             <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="<?= base_url('packing/qbs') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out QBS </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('packing/qc') ?>" aria-expanded="false">
-                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out QC </span>
-                        </a>
-                    </li>
+                    <!--  -->
 
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -167,17 +158,18 @@
                                     <i class="icon-chart menu-icon"></i><span class="nav-text">Data In Gudang</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="<?= base_url('packing/outgudang') ?>" aria-expanded="false">
-                                    <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Gudang</span>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
 
                     <li>
                         <a href="<?= base_url('packing/stocklot') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data Inflow Stocklot</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('packing/rekap') ?>" aria-expanded="false">
+                            <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
                         </a>
                     </li>
                 </ul>
