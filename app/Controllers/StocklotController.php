@@ -27,6 +27,8 @@ class StocklotController extends BaseController
                 'id_production' => $row['id_production'],
                 'storage_awal'    => $row['storage_awal'],
                 'qty_prod'   => $row['qty_prod'],
+                'no_box'   => $row['no_box'],
+                'no_label'   => $row['no_label'],
             ];
         }
         $data = [

@@ -40,13 +40,36 @@
                         </script>
                     <?php endif; ?>
                     <ul class="nav nav-pills mb-3">
-                        <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Data PDK</a>
+                        <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Import Data</a>
                         </li>
-                        <li class="nav-item"><a href="#navpills-2" class="nav-link" data-toggle="tab" aria-expanded="false">Import Data</a>
+                        <li class="nav-item"><a href="#navpills-2" class="nav-link " data-toggle="tab" aria-expanded="false">Data PDK</a>
                         </li>
                     </ul>
                     <div class="tab-content br-n pn">
                         <div id="navpills-1" class="tab-pane active">
+                            <div class="row align-items-center">
+                                <div id="drop-area" class="border rounded d-flex justify-content-center align-item-center mx-3" style="height:200px; width: 100%; cursor:pointer;">
+                                    <div class="text-center mt-5">
+                                        <i class="icon-cloud-upload" style="font-size: 48px;">
+
+                                        </i>
+                                        <p class="mt-3" style="font-size: 28px;">
+                                            Upload file here
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 pl-0 pr-4">
+
+                                    <form action="<?= base_url('ppc/import') ?>" method="post" enctype="multipart/form-data">
+                                        <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
+                                        <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="navpills-2" class="tab-pane ">
                             <div class="row align-items-center">
                                 <div class="table-responsive">
 
@@ -127,29 +150,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="navpills-2" class="tab-pane">
-                            <div class="row align-items-center">
-                                <div id="drop-area" class="border rounded d-flex justify-content-center align-item-center mx-3" style="height:200px; width: 100%; cursor:pointer;">
-                                    <div class="text-center mt-5">
-                                        <i class="icon-cloud-upload" style="font-size: 48px;">
 
-                                        </i>
-                                        <p class="mt-3" style="font-size: 28px;">
-                                            Upload file here
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 pl-0 pr-4">
-
-                                    <form action="<?= base_url('ppc/import') ?>" method="post" enctype="multipart/form-data">
-                                        <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
-                                        <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>

@@ -54,6 +54,10 @@ class MasterInisial extends Model
             ->get()
             ->getResultArray();
     }
+    public function getArea($noModel)
+    {
+        return $this->where('no_model', $noModel)->first();
+    }
     public function getAllDataWithFlowProses()
     {
         return $this->db->table('master_inisial')

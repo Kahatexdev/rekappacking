@@ -34,6 +34,8 @@ class RekapController extends BaseController
         $dataPdk = $this->dataPDK->where(['no_model' => $noModel])->first();
         $dataInisial = $this->masterInisial->getInisialsByNoModel($noModel);
         $qtyInisial = $this->masterInisial->sumQTY($noModel);
+        $Darea = $this->masterInisial->getArea($noModel);
+        $area = $Darea['area'];
         $fromInisial = [];
         foreach ($dataInisial as $dataIns) {
             $idInisial = $dataIns['id_inisial'];
@@ -44,12 +46,14 @@ class RekapController extends BaseController
                 $rosso = $this->rekapModel->sumRosso($idProses) / 24;
                 $sisaRosso = $mesin - $rosso;
                 $setting = $this->rekapModel->sumSetting($idProses) / 24;
+                $sisaSetting = $rosso - $setting;
                 $pin = $this->rekapModel->sumPin($idProses) / 24;
                 $pout = $this->rekapModel->sumPout($idProses) / 24;
                 $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
                 $sisaPerbaikan = $pin - $pout - $stocklot;
                 $gsIn = $this->rekapModel->sumGsin($idProses) / 24;
                 $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
+
 
                 //formated result
                 $pin_ = round(number_format($pin, 1, '.', ''));
@@ -59,6 +63,13 @@ class RekapController extends BaseController
                 $gsIn_ = round(number_format($gsIn, 1, '.', ''));
                 $gsOut_ = round(number_format($gsOut, 1, '.', ''));
                 $sisaGudang = $gsIn_ - $gsOut_;
+                $qtyIns = $dataIns['po_inisial'];
+                $tagihanMesin = 0;
+                $lebihMesin = 0;
+                if ($mesin > $qtyIns) {
+                    $tagihanMesin = $qtyIns - $mesin;
+                    $lebihMesin = $mesin - ($qtyIns + $stocklot_);
+                }
 
                 $fromInisial[] = [
                     'style' => $dataIns['style'],
@@ -77,6 +88,9 @@ class RekapController extends BaseController
                     'gsIn' => $gsIn_,
                     'gsOut' => $gsOut_,
                     'sisaGudang' => $sisaGudang,
+                    'sisaSetting' => $sisaSetting,
+                    'tagihanMesin' => $tagihanMesin,
+                    'lebihMesin' => $lebihMesin,
 
                 ];
             }
@@ -87,7 +101,8 @@ class RekapController extends BaseController
                 'no_order' => $dataPdk['no_order'],
                 'buyer' => $dataPdk['buyer'],
                 'poInisial' => $qtyInisial,
-                'inisial' => $fromInisial
+                'inisial' => $fromInisial,
+                'area' => $area,
             ];
         }
         return view('Packing/Rekap/detail', $data);

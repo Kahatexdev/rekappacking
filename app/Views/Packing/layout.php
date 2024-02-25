@@ -120,13 +120,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url('packing/rekap') ?>" aria-expanded="false">
-                            <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
-                        </a>
-                    </li>
-                    <!--  -->
-
-                    <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-graph menu-icon"></i> <span class="nav-text">Data perbaikan</span>
                         </a>
@@ -142,24 +135,21 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url('packing/outperbaikan') ?>" aria-expanded="false">
-                                    <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan</span>
+                                <a href="<?= base_url('packing/outperbaikanarea') ?>" aria-expanded="false">
+                                    <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan Area</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('packing/outperbaikanrosso') ?>" aria-expanded="false">
+                                    <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan Rosso</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Data Gudang</span>
+                        <a href="<?= base_url('packing/ingudang') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Data In Gudang</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url('packing/ingudang') ?>" aria-expanded="false">
-                                    <i class="icon-chart menu-icon"></i><span class="nav-text">Data In Gudang</span>
-                                </a>
-                            </li>
-
-                        </ul>
                     </li>
 
                     <li>
