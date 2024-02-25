@@ -32,16 +32,16 @@ class RekapController extends BaseController
     public function detailRekap($noModel)
     {
         $dataPdk = $this->dataPDK->where(['no_model' => $noModel])->first();
-        $dataInisial = $this->masterInisial->getInisialsByNoModel($noModel);
-        $qtyInisial = $this->masterInisial->sumQTY($noModel);
-        $Darea = $this->masterInisial->getArea($noModel);
-        $area = $Darea['area'];
+        $Disisial = $this->masterInisial->getMasterInisial($noModel);
+        $dataInisial = $this->masterInisial->where('no_model', $noModel)->findAll();
         $fromInisial = [];
-        foreach ($dataInisial as $dataIns) {
-            $idInisial = $dataIns['id_inisial'];
-            $id_proses = $this->flowModel->getIdProses($idInisial);
+        foreach ($dataInisial as $key => $value) {
+            $id_proses = $this->flowModel->getIdProses($value['id_inisial']);
+
+
+
             if ($id_proses && array_key_exists('id_proses', $id_proses)) {
-                $idProses   = $id_proses['id_proses'];
+                $idProses = $id_proses['id_proses'];
                 $mesin = $this->rekapModel->sumMesin($idProses) / 24;
                 $rosso = $this->rekapModel->sumRosso($idProses) / 24;
                 $sisaRosso = $mesin - $rosso;
@@ -50,20 +50,11 @@ class RekapController extends BaseController
                 $pin = $this->rekapModel->sumPin($idProses) / 24;
                 $pout = $this->rekapModel->sumPout($idProses) / 24;
                 $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
+                $stocklot_ = round(number_format($stocklot, 1, '.', ''));
                 $sisaPerbaikan = $pin - $pout - $stocklot;
                 $gsIn = $this->rekapModel->sumGsin($idProses) / 24;
                 $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
-
-
-                //formated result
-                $pin_ = round(number_format($pin, 1, '.', ''));
-                $pout_ = round(number_format($pout, 1, '.', ''));
-                $stocklot_ = round(number_format($stocklot, 1, '.', ''));
-                $sisaPerbaikan_ = round(number_format($sisaPerbaikan, 1, '.', ''));
-                $gsIn_ = round(number_format($gsIn, 1, '.', ''));
-                $gsOut_ = round(number_format($gsOut, 1, '.', ''));
-                $sisaGudang = $gsIn_ - $gsOut_;
-                $qtyIns = $dataIns['po_inisial'];
+                $qtyIns = $value['po_inisial'];
                 $tagihanMesin = 0;
                 $lebihMesin = 0;
                 if ($mesin > $qtyIns) {
@@ -72,39 +63,41 @@ class RekapController extends BaseController
                 }
 
                 $fromInisial[] = [
-                    'style' => $dataIns['style'],
-                    'inisial' => $dataIns['inisial'],
-                    'area' => $dataIns['area'],
-                    'qtyIns' => $dataIns['po_inisial'],
-                    'colour' => $dataIns['colour'],
                     'mesin' => $mesin,
                     'rosso' => $rosso,
                     'sisaRosso' => $sisaRosso,
                     'setting' => $setting,
-                    'perbaikanIn' => $pin_,
-                    'perbaikanOut' => $pout_,
-                    'stocklot' => $stocklot_,
-                    'sisaPerbaikan' => $sisaPerbaikan_,
-                    'gsIn' => $gsIn_,
-                    'gsOut' => $gsOut_,
-                    'sisaGudang' => $sisaGudang,
                     'sisaSetting' => $sisaSetting,
+                    'perbaikanIn' => round(number_format($pin, 1, '.', '')),
+                    'perbaikanOut' =>  round(number_format($pout, 1, '.', '')),
+                    'stocklot' =>  $stocklot_,
+                    'sisaPerbaikan' => round(number_format($sisaPerbaikan, 1, '.', '')),
+                    'gsIn' => round(number_format($gsIn, 1, '.', '')),
+                    'gsOut' => round(number_format($gsOut, 1, '.', '')),
+                    'sisaGudang' => round(number_format($gsIn, 1, '.', '')) - round(number_format($gsOut, 1, '.', '')),
                     'tagihanMesin' => $tagihanMesin,
                     'lebihMesin' => $lebihMesin,
-
+                    'style' => $value['style'],
+                    'inisial' => $value['inisial'],
+                    'area' => $value['area'],
+                    'qtyIns' => $value['po_inisial'],
+                    'colour' => $value['colour'],
                 ];
             }
-            $data = [
-                'Judul' => 'Detail PDK',
-                'User' => session()->get('username'),
-                'pdk' => $dataPdk['no_model'],
-                'no_order' => $dataPdk['no_order'],
-                'buyer' => $dataPdk['buyer'],
-                'poInisial' => $qtyInisial,
-                'inisial' => $fromInisial,
-                'area' => $area,
-            ];
         }
+
+
+        $data = [
+            'Judul' => 'Detail PDK',
+            'pdk' => $noModel,
+            'poInisial' => $Disisial['po_inisial'],
+            'User' => session()->get('username'),
+            'buyer' => $dataPdk["buyer"],
+            'area' => $Disisial['area'],
+            'no_order' => $dataPdk["no_order"],
+            'inisial' => $fromInisial,
+
+        ];
         return view('Packing/Rekap/detail', $data);
     }
 }

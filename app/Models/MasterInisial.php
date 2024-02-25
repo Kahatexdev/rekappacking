@@ -38,10 +38,7 @@ class MasterInisial extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getInisialsByNoModel($noModel)
-    {
-        return $this->where('no_model', $noModel)->findAll();
-    }
+
     public function getDataByIdInisial($idInisial)
     {
         // Sesuaikan dengan struktur tabel dan kolom yang sesuai di database
@@ -94,11 +91,34 @@ class MasterInisial extends Model
     }
     public function sumQTY($noModel)
     {
-        $query = $this->selectSum('po_inisial', 'total_QTY') // Menambahkan alias untuk hasil sum
+        $query = $this->selectSum('po_inisial') // Menambahkan alias untuk hasil sum
             ->where('no_model', $noModel)
-            ->get();
+            ->first();
 
-        $result = $query->getRow();
-        return $result->total_QTY;
+        return $query;
     }
+
+    public function getMasterInisial($noModel)
+    {
+        $query = $this->select('area, sum(po_inisial) as po_inisial') // Menambahkan alias untuk hasil sum
+            ->where('no_model', $noModel)
+            ->first();
+
+        return $query;
+    }
+
+
+    // public function getInisialsByNoModel($noModel)
+    // {
+    //     return $this->where('no_model', $noModel)->findAll();
+    // }
+    // public function sumQTY($noModel)
+    // {
+    //     $query = $this->selectSum('po_inisial', 'total_QTY') // Menambahkan alias untuk hasil sum
+    //         ->where('no_model', $noModel)
+    //         ->get();
+
+    //     $result = $query->getRow();
+    //     return $result->total_QTY;
+    // }
 }
