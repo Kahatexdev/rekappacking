@@ -108,10 +108,10 @@ class MasterInisial extends Model
     }
 
 
-    // public function getInisialsByNoModel($noModel)
-    // {
-    //     return $this->where('no_model', $noModel)->findAll();
-    // }
+    public function getInisialsByNoModel($noModel)
+    {
+        return $this->where('no_model', $noModel)->findAll();
+    }
     // public function sumQTY($noModel)
     // {
     //     $query = $this->selectSum('po_inisial', 'total_QTY') // Menambahkan alias untuk hasil sum
