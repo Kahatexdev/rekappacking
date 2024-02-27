@@ -50,7 +50,7 @@ class RekapController extends BaseController
                 $pout = $this->rekapModel->sumPout($idProses) / 24;
                 $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
                 $stocklot_ = round(number_format($stocklot, 1, '.', ''));
-                $sisaPerbaikan = $pin - $pout - $stocklot;
+                $sisaPerbaikan = $pin - $pout;
                 $gsIn = $this->rekapModel->sumGsin($idProses) / 24;
                 $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
                 $qtyIns = $value['po_inisial'];
