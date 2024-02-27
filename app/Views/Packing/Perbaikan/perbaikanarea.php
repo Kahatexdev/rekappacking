@@ -6,14 +6,17 @@
     <div class="col-lg-12">
         <div class="card pb-0">
             <div class="card-header d-flex justify-content-between">
-                <div class="col-lg-6">
+                <h4>
+                    Data Perbaikan Area
+                </h4>
+                <div>
+                    <a href="<?= base_url('packing/details/' .  $no_model) ?>" class="btn btn-info text-white shadow"> <i class="icon-arrow-left"></i>
+                        Kembali
+                    </a>
 
-                    <h4>
-                        <?= $Tabel ?>
-                    </h4>
                 </div>
-
             </div>
+
             <div class="card-body">
                 <div class="d-flex flex justify-content-between mx-3">
 

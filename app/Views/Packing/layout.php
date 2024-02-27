@@ -134,7 +134,7 @@
                                     <i class="icon-chart menu-icon"></i><span class="nav-text">Data In Perbaikan Roso</span>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="<?= base_url('packing/outperbaikanarea') ?>" aria-expanded="false">
                                     <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan Area</span>
                                 </a>
@@ -143,7 +143,7 @@
                                 <a href="<?= base_url('packing/outperbaikanrosso') ?>" aria-expanded="false">
                                     <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan Rosso</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <li>

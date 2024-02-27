@@ -99,7 +99,7 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
     $routes->post('importoutqc', 'QcController::importOutQc');
 
     $routes->get('perbaikanarea/(:any)', 'PerbaikanController::perbaikanArea/$1');
-    $routes->get('perbaikanrosso', 'PerbaikanController::perbaikanRosso');
+    $routes->get('perbaikanrosso/(:any)', 'PerbaikanController::perbaikanRosso/$1');
     $routes->get('outperbaikanrosso', 'PerbaikanController::outPerbaikanArea');
     $routes->get('outperbaikanarea', 'PerbaikanController::outPerbaikanRosso');
     $routes->post('importproduksioutperbaikan', 'PerbaikanController::importOutPerbaikan');

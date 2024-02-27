@@ -11,9 +11,9 @@ class PerbaikanController extends BaseController
     public function perbaikanArea($noModel)
     {
         $dataProduksi = $this->prodModel->getPerbaikanArea($noModel);
+
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
-
             $kode_shipment = $row['kode_shipment'];
             $idInisial = $this->shipment->getIdInisial($kode_shipment);
             $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
@@ -39,14 +39,15 @@ class PerbaikanController extends BaseController
             'Judul' => 'Data Perbaikan Area',
             'User' =>  session()->get('username'),
             'Tabel' => 'Data in Perbaikan',
-            'Data' => $dataJoined
+            'Data' => $dataJoined,
+            'no_model' => $noModel
         ];
 
         return view('Packing/Perbaikan/perbaikanarea', $data);
     }
-    public function perbaikanRosso()
+    public function perbaikanRosso($noModel)
     {
-        $dataProduksi = $this->prodModel->getPerbaikanRosso();
+        $dataProduksi = $this->prodModel->getPerbaikanRosso($noModel);
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
 
@@ -75,7 +76,9 @@ class PerbaikanController extends BaseController
             'Judul' => 'Data Perbaikan Rosso',
             'User' =>  session()->get('username'),
             'Tabel' => 'Data Perbaikan Rosso',
-            'Data' => $dataJoined
+            'Data' => $dataJoined,
+            'no_model' => $noModel
+
         ];
 
         return view('Packing/Perbaikan/perbaikanrosso', $data);

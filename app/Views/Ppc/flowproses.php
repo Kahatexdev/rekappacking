@@ -56,7 +56,7 @@
                                     <div class="text-center mt-5">
                                         <i class="icon-cloud-upload" style="font-size: 48px;">
 
-                                        </i>wvg
+                                        </i>
                                         <p class="mt-3" style="font-size: 28px;">
                                             Upload file here
                                         </p>

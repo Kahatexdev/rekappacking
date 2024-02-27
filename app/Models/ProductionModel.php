@@ -315,13 +315,14 @@ class ProductionModel extends Model
     {
         $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
         $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
-        $this->join('');
+        $this->join('master_inisial', 'master_inisial.id_inisial = flow_proses.id_inisial');
 
         $this->select('production.*,
              shipment.delivery, shipment.po_shipment,
              flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             master_inisial.no_model
              ');
-        $this->where('no_model', $noModel)->get();
+        $this->where('no_model', $noModel);
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
         $this->where("(
@@ -345,15 +346,18 @@ class ProductionModel extends Model
         $result = $this->findAll();
         return $result;
     }
-    public function getPerbaikanRosso()
+    public function getPerbaikanRosso($noModel)
     {
         $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
         $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+        $this->join('master_inisial', 'master_inisial.id_inisial = flow_proses.id_inisial');
+
 
         $this->select('production.*,
              shipment.delivery, shipment.po_shipment,
              flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
              ');
+        $this->where('no_model', $noModel);
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
         $this->where("(production.storage_akhir LIKE 'PR01%' OR

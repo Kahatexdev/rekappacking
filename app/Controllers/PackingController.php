@@ -245,7 +245,7 @@ class PackingController extends BaseController
     {
         $file = $this->request->getFile('excel_file');
         $noModel = $this->request->getPost('noModel');
-
+        $storage = $this->request->getPost('storage');
         if ($file->isValid() && !$file->hasMoved()) {
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
@@ -272,12 +272,11 @@ class PackingController extends BaseController
                             $result = $this->masterInisial->getIdInisial($validate);
                             if ($result && array_key_exists('id_inisial', $result)) {
                                 $id_inisial = $result['id_inisial'];
-                                $tglDeliv = $data[31];
-                                $unixTimeStamp = ($tglDeliv - 25569) * 86400;
-                                $deliv = date("Y-m-d", $unixTimeStamp);
+                                // $tglDeliv = $data[31];
+                                // $unixTimeStamp = ($tglDeliv - 25569) * 86400;
+                                // $deliv = date("Y-m-d", $unixTimeStamp);
                                 $validateShipment = [
                                     'inisial' => $id_inisial,
-                                    'delivery' => $deliv
                                 ];
                                 //dibikin foreach untuk getKodeShipment
                                 $kode_shipment = $this->shipment->getKodeShipment($validateShipment);

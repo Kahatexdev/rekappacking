@@ -46,7 +46,6 @@ class RekapController extends BaseController
                 $rosso = $this->rekapModel->sumRosso($idProses) / 24;
                 $sisaRosso = $mesin - $rosso;
                 $setting = $this->rekapModel->sumSetting($idProses) / 24;
-                $sisaSetting = $rosso - $setting;
                 $pin = $this->rekapModel->sumPin($idProses) / 24;
                 $pout = $this->rekapModel->sumPout($idProses) / 24;
                 $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
@@ -55,6 +54,7 @@ class RekapController extends BaseController
                 $gsIn = $this->rekapModel->sumGsin($idProses) / 24;
                 $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
                 $qtyIns = $value['po_inisial'];
+                $sisaSetting = $rosso - ($setting - $pin - $stocklot);
                 $tagihanMesin = 0;
                 $lebihMesin = 0;
                 if ($mesin > $qtyIns) {
@@ -63,11 +63,11 @@ class RekapController extends BaseController
                 }
 
                 $fromInisial[] = [
-                    'mesin' => $mesin,
-                    'rosso' => $rosso,
-                    'sisaRosso' => $sisaRosso,
-                    'setting' => $setting,
-                    'sisaSetting' => $sisaSetting,
+                    'mesin' => round(number_format($mesin, 1, '.', '')),
+                    'rosso' => round(number_format($rosso, 1, '.', '')),
+                    'sisaRosso' => round(number_format($sisaRosso, 1, '.', '')),
+                    'setting' => round(number_format($setting, 1, '.', '')),
+                    'sisaSetting' => round(number_format($sisaSetting, 1, '.', '')),
                     'perbaikanIn' => round(number_format($pin, 1, '.', '')),
                     'perbaikanOut' =>  round(number_format($pout, 1, '.', '')),
                     'stocklot' =>  $stocklot_,
@@ -75,8 +75,8 @@ class RekapController extends BaseController
                     'gsIn' => round(number_format($gsIn, 1, '.', '')),
                     'gsOut' => round(number_format($gsOut, 1, '.', '')),
                     'sisaGudang' => round(number_format($gsIn, 1, '.', '')) - round(number_format($gsOut, 1, '.', '')),
-                    'tagihanMesin' => $tagihanMesin,
-                    'lebihMesin' => $lebihMesin,
+                    'tagihanMesin' => round(number_format($tagihanMesin, 1, '.', '')),
+                    'lebihMesin' => round(number_format($lebihMesin, 1, '.', '')),
                     'style' => $value['style'],
                     'inisial' => $value['inisial'],
                     'area' => $value['area'],
