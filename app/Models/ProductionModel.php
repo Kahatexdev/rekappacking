@@ -311,18 +311,22 @@ class ProductionModel extends Model
         $result = $this->findAll();
         return $result;
     }
-    public function getPerbaikanArea()
+    public function getPerbaikanArea($noModel)
     {
         $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
         $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+        $this->join('master_inisial', 'master_inisial.id_inisial = flow_proses.id_inisial');
 
         $this->select('production.*,
              shipment.delivery, shipment.po_shipment,
              flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
+             master_inisial.no_model
              ');
+        $this->where('no_model', $noModel);
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
-        $this->where("(production.storage_akhir LIKE 'PA02%' OR
+        $this->where("(
+            production.storage_akhir LIKE 'PA02%' OR
                        production.storage_akhir LIKE 'PB02%' OR 
                        production.storage_akhir LIKE 'PA01%' OR 
                        production.storage_akhir LIKE 'PC02%' OR 
@@ -342,15 +346,18 @@ class ProductionModel extends Model
         $result = $this->findAll();
         return $result;
     }
-    public function getPerbaikanRosso()
+    public function getPerbaikanRosso($noModel)
     {
         $this->join('shipment', 'shipment.kode_shipment = production.kode_shipment');
         $this->join('flow_proses', 'flow_proses.id_proses = production.id_proses');
+        $this->join('master_inisial', 'master_inisial.id_inisial = flow_proses.id_inisial');
+
 
         $this->select('production.*,
              shipment.delivery, shipment.po_shipment,
              flow_proses.proses_1, flow_proses.proses_2, flow_proses.proses_3, flow_proses.proses_4, flow_proses.proses_5, 
              ');
+        $this->where('no_model', $noModel);
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
         $this->where("(production.storage_akhir LIKE 'PR01%' OR

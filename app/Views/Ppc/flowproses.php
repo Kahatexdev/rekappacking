@@ -43,13 +43,37 @@
                         </script>
                     <?php endif; ?>
                     <ul class="nav nav-pills mb-3">
-                        <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Data PDK</a>
+                        <li class="nav-item"><a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Import Data</a>
                         </li>
-                        <li class="nav-item"><a href="#navpills-2" class="nav-link" data-toggle="tab" aria-expanded="false">Import Data</a>
+                        <li class="nav-item"><a href="#navpills-2" class="nav-link " data-toggle="tab" aria-expanded="false">Data Flow Proses</a>
                         </li>
                     </ul>
                     <div class="tab-content br-n pn">
+
                         <div id="navpills-1" class="tab-pane active">
+                            <div class="row align-items-center">
+                                <div id="drop-area" class="border rounded d-flex justify-content-center align-item-center mx-3" style="height:200px; width: 100%; cursor:pointer;">
+                                    <div class="text-center mt-5">
+                                        <i class="icon-cloud-upload" style="font-size: 48px;">
+
+                                        </i>
+                                        <p class="mt-3" style="font-size: 28px;">
+                                            Upload file here
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 pl-0 pr-4">
+
+                                    <form action="<?= base_url('ppc/importFlowProses') ?>" method="POST" enctype="multipart/form-data">
+                                        <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
+                                        <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="navpills-2" class="tab-pane ">
                             <div class="row align-items-center">
                                 <div class="table-responsive">
 
@@ -88,7 +112,7 @@
                                                         <td><?= $dt['proses8'] ?></td>
                                                         <td><?= $dt['proses9'] ?></td>
                                                         <td><?= $dt['proses10'] ?></td>
-                                                        <td><button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="<?= $dt['id_proses'] ?>" data-inisial="<?= $dt['inisial'] ?>">
+                                                        <td><button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="<?= $dt['id_proses'] ?>" data-proses1="<?= $dt['proses1'] ?>" data-proses2="<?= $dt['proses2'] ?>" data-proses3="<?= $dt['proses3'] ?>" data-proses4="<?= $dt['proses4'] ?>" data-proses5="<?= $dt['proses5'] ?>" data-proses6="<?= $dt['proses6'] ?>" data-proses7="<?= $dt['proses7'] ?>" data-proses8="<?= $dt['proses8'] ?>" data-proses9="<?= $dt['proses9'] ?>" data-proses10="<?= $dt['proses10'] ?>" data-inisial="<?= $dt['inisial'] ?>">
                                                                 Edit
                                                             </button></td>
 
@@ -123,35 +147,35 @@
                                                             <div class="col-lg-6">
 
                                                                 <label for="proses1">Proses 1</label>
-                                                                <select name="proses1" id="proses" class="form-control">
+                                                                <select name="proses1" id="proses1" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 2</label>
-                                                                <select name="proses2" id="proses" class="form-control">
+                                                                <select name="proses2" id="proses2" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 3</label>
-                                                                <select name="proses3" id="proses" class="form-control">
+                                                                <select name="proses3" id="proses3" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 4</label>
-                                                                <select name="proses4" id="proses" class="form-control">
+                                                                <select name="proses4" id="proses4" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 5</label>
-                                                                <select name="proses5" id="proses" class="form-control">
+                                                                <select name="proses5" id="proses5" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
@@ -161,35 +185,35 @@
                                                             <div class="col-lg-6">
 
                                                                 <label for="proses1">Proses 6</label>
-                                                                <select name="proses6" id="proses" class="form-control">
+                                                                <select name="proses6" id="proses6" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 7</label>
-                                                                <select name="proses7" id="proses" class="form-control">
+                                                                <select name="proses7" id="proses7" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 8</label>
-                                                                <select name="proses8" id="proses" class="form-control">
+                                                                <select name="proses8" id="proses8" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 9</label>
-                                                                <select name="proses9" id="proses" class="form-control">
+                                                                <select name="proses9" id="proses9" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
                                                                     <?php endforeach ?>
                                                                 </select>
                                                                 <label for="proses1">Proses 10</label>
-                                                                <select name="proses10" id="proses" class="form-control">
+                                                                <select name="proses10" id="proses10" class="form-control">
                                                                     <option value=""></option>
                                                                     <?php foreach ($proses as $pr) : ?>
                                                                         <option value="<?= $pr['nama_proses'] ?>"><?= $pr['nama_proses'] ?></option>
@@ -212,29 +236,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="navpills-2" class="tab-pane">
-                            <div class="row align-items-center">
-                                <div id="drop-area" class="border rounded d-flex justify-content-center align-item-center mx-3" style="height:200px; width: 100%; cursor:pointer;">
-                                    <div class="text-center mt-5">
-                                        <i class="icon-cloud-upload" style="font-size: 48px;">
-
-                                        </i>
-                                        <p class="mt-3" style="font-size: 28px;">
-                                            Upload file here
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 pl-0 pr-4">
-
-                                    <form action="<?= base_url('ppc/importFlowProses') ?>" method="POST" enctype="multipart/form-data">
-                                        <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
-                                        <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -249,11 +250,29 @@
     $(document).ready(function() {
         $('.btn-list-inisial').on('click', function() {
             var idProses = $(this).data('proses');
+            var Proses1 = $(this).data('proses1');
+            var Proses2 = $(this).data('proses2');
+            var Proses3 = $(this).data('proses3');
+            var Proses4 = $(this).data('proses4');
+            var Proses5 = $(this).data('proses5');
+            var Proses6 = $(this).data('proses6');
+            var Proses7 = $(this).data('proses7');
+            var Proses8 = $(this).data('proses8');
+            var Proses9 = $(this).data('proses9');
+            var Proses10 = $(this).data('proses10');
             var inisial = $(this).data('inisial');
-            console.log(idProses)
-            console.log(inisial)
             document.getElementById('exampleModalLongTitle').textContent = "Ubah Flow Proses " + inisial
             document.getElementById('idProsesVal').value = idProses
+            document.getElementById('proses1').value = Proses1
+            document.getElementById('proses2').value = Proses2
+            document.getElementById('proses3').value = Proses3
+            document.getElementById('proses4').value = Proses4
+            document.getElementById('proses5').value = Proses5
+            document.getElementById('proses6').value = Proses6
+            document.getElementById('proses7').value = Proses7
+            document.getElementById('proses8').value = Proses8
+            document.getElementById('proses9').value = Proses9
+            document.getElementById('proses10').value = Proses10
             document.getElementById('modalForm').action = 'update/' + idProses
         });
     });

@@ -41,7 +41,7 @@ class ShipmentModel extends Model
     public function getKodeShipment($validateShipment)
     {
         $kode_shipment = $this->where('id_inisial', $validateShipment['inisial'])
-            ->where('delivery', $validateShipment['delivery'])
+            // ->where('delivery', $validateShipment['delivery'])
             ->first();
 
         return $kode_shipment;

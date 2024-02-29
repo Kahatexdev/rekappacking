@@ -32,7 +32,8 @@ class PpcController extends BaseController
         $this->flowModel     = new FlowModels();
         $this->shipment      = new ShipmentModel();
         $this->prodModel     = new ProductionModel();
-        if ($this->filters   = ['role' => ['packing']] != session()->get('role')) {
+
+        if ($this->filters   = ['role' => ['ppc']] != session()->get('role')) {
             return redirect()->to(base_url('/login'));
         }
         $this->isLogedin();

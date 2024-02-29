@@ -37,6 +37,8 @@
                                 <th>Inisial</th>
                                 <th>Style</th>
                                 <th>Colour</th>
+                                <th>No Box</th>
+                                <th>No Label</th>
                                 <th>BS Prod</th>
                             </tr>
                         </thead>
@@ -54,6 +56,8 @@
                                         <td><?= $Data['inisial'] ?></td>
                                         <td><?= $Data['style'] ?></td>
                                         <td><?= $Data['colour'] ?></td>
+                                        <td><?= $Data['no_box'] ?></td>
+                                        <td><?= $Data['no_label'] ?></td>
                                         <td><?= $Data['qty_prod'] ?></td>
                                     </tr>
                                 <?php endforeach ?>

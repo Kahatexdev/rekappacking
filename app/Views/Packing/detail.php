@@ -60,10 +60,12 @@
                                                 </button>
                                             </td>
                                         </tr>
+
                                 <?php
                                     endforeach;
                                 endif;
                                 ?>
+
                             </tbody>
                         </table>
                         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -93,6 +95,7 @@
 
                                                 <form action="" id="modalForm" method="POST" enctype="multipart/form-data">
                                                     <input type="text" value="<?= $no_model ?>" hidden name="noModel">
+                                                    <input type="text" value="" id="storage" hidden name="storage">
                                                     <input type="file" id="fileInput" name="excel_file" multiple accept=".xls , .xlsx" class="form-control mx-3">
                                                     <button type="submit" class="btn btn-info btn-block mx-3"> Simpan</button>
                                                 </form>
@@ -115,13 +118,63 @@
 
 </div>
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h4>
+                        Data Perbaikan <?= $no_model ?>
+                    </h4>
+                </div>
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table responsive table-striped table-bordered vertical-middle">
+                            <thead>
+                                <th>Perbaikan</th>
+                                <th>Aksi</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>In Perbaikan Area</td>
+                                    <td><a href="<?= base_url('packing/perbaikanarea/' . $no_model) ?>" class="btn btn-info"> Lihat Data</a></td>
+                                </tr>
+                                <tr>
+                                    <td>In Perbaikan Rosso</td>
+                                    <td><a href="<?= base_url('packing/perbaikanrosso/' . $no_model) ?>" class="btn btn-info"> Lihat Data</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Out Perbaikan Area</td>
+                                    <td> <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="PA" data-no-model="<?= $no_model ?>">
+                                            Import Perbaikan
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Out Perbaikan Rosso</td>
+                                    <td> <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="PR" data-no-model="<?= $no_model ?>">
+                                            Import Perbaikan
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 
 <script>
     $(document).ready(function() {
         $('.btn-list-inisial').on('click', function() {
             var idProses = $(this).data('proses');
             var noModel = $(this).data('no-model');
-            console.log(noModel)
+            console.log(idProses)
             var ket;
             switch (true) {
                 case idProses.startsWith("MC"):
@@ -154,6 +207,12 @@
                 case idProses.startsWith("OB"):
                     ket = "obras";
                     break;
+                case idProses.startsWith("PA"):
+                    ket = "outperbaikan";
+                    break;
+                case idProses.startsWith("PR"):
+                    ket = "outperbaikan";
+                    break;
                 default:
                     ket = "";
                     break;
@@ -162,6 +221,7 @@
             console.log(ket);
             document.getElementById('exampleModalLongTitle').textContent = "Import Produksi " + idProses
             document.getElementById('modalForm').action = '<?= base_url('packing/importproduksi') ?>' + ket;
+            document.getElementById('storage').value = idProses;
         });
     });
 </script>

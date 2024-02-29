@@ -8,12 +8,12 @@ use App\Controllers\BaseController;
 
 class PerbaikanController extends BaseController
 {
-    public function perbaikanArea()
+    public function perbaikanArea($noModel)
     {
-        $dataProduksi = $this->prodModel->getPerbaikanArea();
+        $dataProduksi = $this->prodModel->getPerbaikanArea($noModel);
+
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
-
             $kode_shipment = $row['kode_shipment'];
             $idInisial = $this->shipment->getIdInisial($kode_shipment);
             $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
@@ -39,14 +39,15 @@ class PerbaikanController extends BaseController
             'Judul' => 'Data Perbaikan Area',
             'User' =>  session()->get('username'),
             'Tabel' => 'Data in Perbaikan',
-            'Data' => $dataJoined
+            'Data' => $dataJoined,
+            'no_model' => $noModel
         ];
 
         return view('Packing/Perbaikan/perbaikanarea', $data);
     }
-    public function perbaikanRosso()
+    public function perbaikanRosso($noModel)
     {
-        $dataProduksi = $this->prodModel->getPerbaikanRosso();
+        $dataProduksi = $this->prodModel->getPerbaikanRosso($noModel);
         $dataJoined = [];
         foreach ($dataProduksi as $row) {
 
@@ -75,12 +76,14 @@ class PerbaikanController extends BaseController
             'Judul' => 'Data Perbaikan Rosso',
             'User' =>  session()->get('username'),
             'Tabel' => 'Data Perbaikan Rosso',
-            'Data' => $dataJoined
+            'Data' => $dataJoined,
+            'no_model' => $noModel
+
         ];
 
         return view('Packing/Perbaikan/perbaikanrosso', $data);
     }
-    public function outPerbaikan()
+    public function outPerbaikanArea()
     {
         $dataProduksi = $this->prodModel->getOutPerbaikan();
 
@@ -115,13 +118,50 @@ class PerbaikanController extends BaseController
             'Data' => $dataJoined
         ];
 
-        return view('Packing/Perbaikan/outperbaikan', $data);
+        return view('Packing/Perbaikan/outperbaikanarea', $data);
+    }
+    public function outPerbaikanRosso()
+    {
+        $dataProduksi = $this->prodModel->getOutPerbaikan();
+
+        $dataJoined = [];
+        foreach ($dataProduksi as $row) {
+
+            $kode_shipment = $row['kode_shipment'];
+            $idInisial = $this->shipment->getIdInisial($kode_shipment);
+            $dataInisial = $this->masterInisial->where('id_inisial', intval($idInisial['id_inisial']))->first();
+            $dataJoined[] = [
+
+                'no_model'  => $dataInisial['no_model'],
+                'inisial'   => $dataInisial['inisial'],
+                'style'     => $dataInisial['style'],
+                'colour'    => $dataInisial['colour'],
+                'id_production' => $row['id_production'],
+                'tgl_prod'  => $row['tgl_prod'],
+                'bagian'    => $row['bagian'],
+                'storage_akhir' => $row['storage_akhir'],
+                'qty_prod'  => $row['qty_prod'],
+                'bs_prod'   => $row['bs_prod'],
+                'no_box'    => $row['no_box'],
+                'no_label'  => $row['no_label'],
+                'delivery'  => $row['delivery'],
+                'tgl_upload' => $row['created_at'],
+            ];
+        }
+        $data = [
+            'Judul' => 'Data Out Perbaikan',
+            'User' =>  session()->get('username'),
+            'Tabel' => 'Data Out Perbaikan',
+            'Data' => $dataJoined
+        ];
+
+        return view('Packing/Perbaikan/outperbaikanrosso', $data);
     }
 
     public function importOutPerbaikan()
     {
         $file = $this->request->getFile('excel_file');
-
+        $noModel = $this->request->getPost('noModel');
         if ($file->isValid() && !$file->hasMoved()) {
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
@@ -196,13 +236,13 @@ class PerbaikanController extends BaseController
                                             $this->prodModel->insert($dataInsert);
                                         }
                                     } else {
-                                        return redirect()->to(base_url('/packing/outperbaikan'))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                                        return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input flow proses terlebih dahulu');
                                     }
                                 } else {
-                                    return redirect()->to(base_url('/packing/outperbaikan'))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                                    return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
                                 }
                             } else {
-                                return redirect()->to(base_url('/packing/outperbaikan'))->with('error', 'Silahkan input DATA PRODUKSI outperbaikan (Outflow outperbaikan)');
+                                return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input DATA PRODUKSI outperbaikan (Outflow outperbaikan)');
                             }
                         } else {
                             dd('not array found');
@@ -210,9 +250,9 @@ class PerbaikanController extends BaseController
                     }
                 }
             }
-            return redirect()->to(base_url('/packing/outperbaikan'))->with('success', 'Data imported and saved to database successfully');
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('success', 'Data imported and saved to database successfully');
         } else {
-            return redirect()->to(base_url('/packing/outperbaikan'))->with('error', 'No data found in the Excel file');
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'No data found in the Excel file');
         }
     }
     public function exportQc($selectedIds)

@@ -55,31 +55,31 @@
                 </div>
                 <div class="label py-0  mb-0">
 
-                    <label for="qty"> Description : Desc</label>
+                    <label for="desc"> Description :
+
+                    </label>
+                    <input type="text" name="desc" id="" class="form-control form-control-sm">
                 </div>
-                <div class="label py-0  mb-0">
+                <div class="label py-0 mt-2 mb-0">
 
                     <label for="user"> Dibuat Oleh : <?= $User ?></label>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="label py-0 mt-2 mb-0">
 
-                    <label for="no_model"> No Order : <?= $no_order ?></label>
-                </div>
-                <div class="label py-0  mb-0">
-
-                    <label for="qty"> Buyer : <?= $buyer ?> </label>
-                </div>
             </div>
             <div class="col-lg-4">
                 <div class="label py-0 mt-2 mb-0">
 
-                    <label for="no_model"> Area : </label>
+                    <label for="qty"> Buyer : <?= $buyer ?> </label>
+                </div>
+                <div class="label py-0 mb-0">
+
+                    <label for="no_model"> Area : <?= $area ?></label>
                 </div>
                 <div class="label py-0  mb-0">
 
-                    <label for="qty"> Order : </label>
+                    <label for="qty"> No Order : <?= $no_order ?></label>
                 </div>
                 <div class="label py-0  mb-0">
 
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="row">
-            <table class="table-responsive text-center" border="1" id="myTable" style=" background-image: url('<?= base_url('assets/images/bg5.png') ?>');
+            <table class="table-striped text-center w-100" border="1" id="myTable" style=" background-image: url('<?= base_url('assets/images/bg5.png') ?>');
             background-size: cover; ">
                 <thead>
                     <tr>
@@ -135,25 +135,27 @@
                                 <td><?= $Data['inisial'] ?></td>
                                 <td class="qty"><?= $Data['qtyIns'] ?></td>
                                 <td><?= $Data['colour'] ?></td>
-                                <td><?= $Data['mesin'] ?></td>
-                                <td><?= $Data['sisaRosso'] ?></td>
-                                <td><?= $Data['rosso'] ?></td>
+                                <td class="mesin"><?= $Data['mesin'] ?></td>
+                                <td class="sisaRosso"><?= $Data['sisaRosso'] ?></td>
+                                <td class="rosso"><?= $Data['rosso'] ?></td>
+                                <td class="sisaSetting"><?= $Data['sisaSetting'] ?></td>
+                                <td class="setting"><?= $Data['setting'] ?></td>
+                                <td class="perbaikanIn"><?= $Data['perbaikanIn'] ?></td>
+                                <td class="perbaikanOut"><?= $Data['perbaikanOut'] ?></td>
+                                <td class="sisaPerbaikan"><?= $Data['sisaPerbaikan'] ?></td>
+                                <td class="stocklot"><?= $Data['stocklot'] ?></td>
                                 <td>0</td>
-                                <td><?= $Data['setting'] ?></td>
-                                <td><?= $Data['perbaikanIn'] ?></td>
-                                <td><?= $Data['perbaikanOut'] ?></td>
-                                <td><?= $Data['sisaPerbaikan'] ?></td>
-                                <td><?= $Data['stocklot'] ?></td>
+                                <td class="gsIn"><?= $Data['gsIn'] ?></td>
+                                <td class="gsOut"><?= $Data['gsOut'] ?></td>
+                                <td class="sisaGudang"><?= $Data['sisaGudang'] ?></td>
+                                <td class="tagihanMesin"><?= $Data['tagihanMesin'] ?></td>
+                                <td class="lebihMesin"><?= $Data['lebihMesin'] ?></td>
                                 <td>0</td>
-                                <td><?= $Data['gsIn'] ?></td>
-                                <td><?= $Data['gsOut'] ?></td>
-                                <td><?= $Data['sisaGudang'] ?></td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
+                                <td class="">
+                                    <input type="number" class="form-control form-control-sm" value="0">
+                                </td>
                                 <td class="total">0</td>
-                                <td>-</td>
+                                <td class=""><input type="text" class="form-control"></td>
 
                             </tr>
                         <?php endforeach ?>
@@ -168,6 +170,24 @@
                     }
                     ?>
                 </tbody>
+                <tfoot>
+                    <td colspan="4"> Total per Storage</td>
+                    <td id="totalMesin" </td>
+                    <td id="totalSisaRosso"> </td>
+                    <td id="totalRosso"> </td>
+                    <td id="totalSisaSetting"> </td>
+                    <td id="totalSetting"> </td>
+                    <td id="totalPerbaikanIn"> </td>
+                    <td id="totalPerbaikanOut"> </td>
+                    <td id="totalSisaPerbaikan"> </td>
+                    <td id="totalStocklot"> </td>
+                    <td id=""> </td>
+                    <td id="totalGsIn"> </td>
+                    <td id="totalGsOut"> </td>
+                    <td id="totalSisaGudang"> </td>
+                    <td id="totalTagihanMesin"> </td>
+                    <td id="totalLebihMesin"> </td>
+                </tfoot>
             </table>
         </div>
 
@@ -175,15 +195,61 @@
 </div>
 
 <script>
-    function loop() {
-        var table = document.getElementById('myTable')
-        var rowCount = table.rows.length;
-        for (let i = 1; i <= rowCount; i++) {
-            let value = table.rows[i].querySelector('.qty').value; // Mengambil data dari sel ke-3 (index 2) di setiap baris
-            console.log("Baris ke " + i + " nilainya " + value);
-        }
+    var mesinElements = document.querySelectorAll('.mesin');
+    var sisaRossoElements = document.querySelectorAll('.sisaRosso');
+    var rossoElements = document.querySelectorAll('.rosso');
+    var sisaSettingElements = document.querySelectorAll('.sisaSetting');
+    var settingElements = document.querySelectorAll('.setting');
+    var perbaikanInElements = document.querySelectorAll('.perbaikanIn');
+    var perbaikanOutElements = document.querySelectorAll('.perbaikanOut');
+    var sisaPerbaikanElements = document.querySelectorAll('.sisaPerbaikan');
+    var stocklotElements = document.querySelectorAll('.stocklot');
+    var gsInElements = document.querySelectorAll('.gsIn');
+    var gsOutElements = document.querySelectorAll('.gsOut');
+    var sisaGudangElements = document.querySelectorAll('.sisaGudang');
+    var tagihanMesinElements = document.querySelectorAll('.tagihanMesin');
+    var lebihMesinElements = document.querySelectorAll('.lebihMesin');
+
+    // Fungsi untuk mengakumulasi nilai dari elemen-elemen
+    function accumulateValues(elements) {
+        var total = 0;
+        elements.forEach(function(element) {
+            total += parseFloat(element.textContent); // Mengkonversi teks ke angka dan menjumlahkannya
+        });
+        return total;
     }
-    loop()
+
+    // Akumulasi nilai untuk setiap kolom
+    var totalMesin = accumulateValues(mesinElements);
+    var totalSisaRosso = accumulateValues(sisaRossoElements);
+    var totalRosso = accumulateValues(rossoElements);
+    var totalSisaSetting = accumulateValues(sisaSettingElements)
+    var totalSetting = accumulateValues(settingElements)
+    var totalPerbaikanIn = accumulateValues(perbaikanInElements)
+    var totalPerbaikanOut = accumulateValues(perbaikanOutElements)
+    var totalSisaPerbaikan = accumulateValues(sisaPerbaikanElements)
+    var totalStocklot = accumulateValues(stocklotElements);
+    var totalGsIn = accumulateValues(gsInElements);
+    var totalGsOut = accumulateValues(gsOutElements)
+    var totalSisaGudang = accumulateValues(sisaGudangElements)
+    var totalTagihanMesin = accumulateValues(tagihanMesinElements)
+    var totalLebihMesin = accumulateValues(lebihMesinElements)
+
+    // Set nilai total ke elemen-elemen <td> di bagian <tfoot>
+    document.getElementById('totalMesin').textContent = totalMesin;
+    document.getElementById('totalSisaRosso').textContent = totalSisaRosso;
+    document.getElementById('totalRosso').textContent = totalRosso;
+    document.getElementById('totalSisaSetting').textContent = totalSisaSetting;
+    document.getElementById('totalSetting').textContent = totalSetting;
+    document.getElementById('totalPerbaikanIn').textContent = totalPerbaikanIn;
+    document.getElementById('totalPerbaikanOut').textContent = totalPerbaikanOut;
+    document.getElementById('totalSisaPerbaikan').textContent = totalSisaPerbaikan;
+    document.getElementById('totalStocklot').textContent = totalStocklot;
+    document.getElementById('totalGsIn').textContent = totalGsIn;
+    document.getElementById('totalGsOut').textContent = totalGsOut;
+    document.getElementById('totalSisaGudang').textContent = totalSisaGudang;
+    document.getElementById('totalTagihanMesin').textContent = totalTagihanMesin;
+    document.getElementById('totalLebihMesin').textContent = totalLebihMesin;
 </script>
 
 <?php $this->endSection(); ?>
