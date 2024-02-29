@@ -98,7 +98,7 @@ class ProductionModel extends Model
              ');
 
         // Tambahkan kondisi WHERE untuk filter storage_akhir null
-        $this->like('production.storage_awal', 'st')->where('production.storage_akhir IS NOT NULL');
+        $this->like('production.storage_awal', 'st')->where('production.storage_akhir', 'gs');
 
         // Lakukan query dan kembalikan hasil
         $result = $this->findAll();
@@ -406,7 +406,10 @@ class ProductionModel extends Model
     }
     public function getIdProd($keyProd)
     {
-        $qry = $this->where('id_proses', $keyProd['idProses'])->$this->where('kode_shipment', $keyProd['kdShipment'])->$this->where('no_label', $keyProd['noLabel'])->findAll();
+        $qry = $this->where('id_proses', $keyProd['idProses']) // Membandingkan 'id_proses' dengan nilai integer
+            ->where('kode_shipment', $keyProd['kdShipment']) // Membandingkan 'kode_shipment' dengan nilai string
+            ->where('no_label', $keyProd['noLabel']) // Membandingkan 'no_label' dengan nilai string
+            ->first();
         return $qry;
     }
 }
