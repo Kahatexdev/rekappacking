@@ -404,4 +404,9 @@ class ProductionModel extends Model
         $result = $query->getRow();
         return $result;
     }
+    public function getIdProd($keyProd)
+    {
+        $qry = $this->where('id_proses', $keyProd['idProses'])->$this->where('kode_shipment', $keyProd['kdShipment'])->$this->where('no_label', $keyProd['noLabel'])->findAll();
+        return $qry;
+    }
 }
