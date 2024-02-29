@@ -125,7 +125,6 @@ class PackingController extends BaseController
                             $id_inisial = $result['id_inisial'];
                             //dibikin foreach untuk getKodeShipment
                             $kode_shipment = $this->shipment->getKodeShipment($id_inisial);
-                            dd($kode_shipment);
 
                             $kd_shipment = $kode_shipment['kode_shipment'];
                             $id_proses = $this->flowModel->getIdProses($id_inisial);
@@ -139,6 +138,8 @@ class PackingController extends BaseController
                                 ];
                                 $getIdProd = $this->prodModel->getIdProd($keyProd);
                                 $idProd = $getIdProd['id_produksi'];
+                                dd($idProd);
+
                                 $tglProd    = $data[1];
                                 $strReplace = str_replace('.', '-', $tglProd);
                                 $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);

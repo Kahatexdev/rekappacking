@@ -38,9 +38,9 @@ class ShipmentModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getKodeShipment($validateShipment)
+    public function getKodeShipment($id_inisial)
     {
-        $kode_shipment = $this->where('id_inisial', $validateShipment['inisial'])
+        $kode_shipment = $this->where('id_inisial', $id_inisial)
             // ->where('delivery', $validateShipment['delivery'])
             ->first();
 
