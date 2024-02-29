@@ -67,7 +67,7 @@ class RekapModel extends Model
     {
         $query = $this->selectSum('qty_prod', 'total_qty_prod') // Menambahkan alias untuk hasil sum
             ->where('id_proses', $idProses)
-            ->like('storage_awal', 'ST')->where('storage_akhir IS NOT NULL')
+            ->like('storage_awal', 'ST')->like('storage_akhir', 'GS')
             ->get();
 
         $result = $query->getRow();
