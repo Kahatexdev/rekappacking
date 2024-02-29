@@ -141,13 +141,14 @@
                                 <td class="perbaikanIn"><?= round(number_format($Data["proses"]["perbaikanIn"], 1, '.', ''))  ?></td>
                                 <td class="perbaikanOut"><?= round(number_format($Data["proses"]["perbaikanOut"], 1, '.', ''))  ?></td>
                                 <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
-                                <td class="stocklot"><?= round(number_format($Data["proses"]["stockLot"], 1, '.', ''))  ?></td>
-                                <td>0</td>
+                                <td class="pbstc"><?= round(number_format($Data["proses"]["pbstc"], 1, '.', ''))  ?></td>
+                                <td class="stocklot"><?= round(number_format($Data["proses"]["other"], 1, '.', ''))  ?></td>
+                
                                 <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
                                 <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
                                 <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
                                 <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
-                                <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
+                                <td class="lebihMesin"><?= $Data["proses"]["lebihMesin"]  ?></td>
                                 <td class="BsBelumGanti">0</td>
                                 <td class="">
                                     <input type="text" class="form-control form-control-sm" name="idInisial" hidden value="<?= $Data["proses"]["idInisial"] ?>">
@@ -173,7 +174,7 @@
                 </tbody>
                 <tfoot>
                     <td colspan="4"> Total per Storage</td>
-                    <td id="totalMesin" </td>
+                    <td id="totalMesin"> </td>
                     <td id="totalSisaRosso"> </td>
                     <td id="totalRosso"> </td>
                     <td id="totalSisaSetting"> </td>
@@ -181,8 +182,8 @@
                     <td id="totalPerbaikanIn"> </td>
                     <td id="totalPerbaikanOut"> </td>
                     <td id="totalSisaPerbaikan"> </td>
+                    <td id="totalPBSTC"> </td>
                     <td id="totalStocklot"> </td>
-                    <td id=""> </td>
                     <td id="totalGsIn"> </td>
                     <td id="totalGsOut"> </td>
                     <td id="totalSisaGudang"> </td>
@@ -205,6 +206,7 @@
     var perbaikanInElements = document.querySelectorAll('.perbaikanIn');
     var perbaikanOutElements = document.querySelectorAll('.perbaikanOut');
     var sisaPerbaikanElements = document.querySelectorAll('.sisaPerbaikan');
+    var pbstcElements = document.querySelectorAll('.pbstc');
     var stocklotElements = document.querySelectorAll('.stocklot');
     var gsInElements = document.querySelectorAll('.gsIn');
     var gsOutElements = document.querySelectorAll('.gsOut');
@@ -232,6 +234,7 @@
     var totalPerbaikanOut = accumulateValues(perbaikanOutElements)
     var totalSisaPerbaikan = accumulateValues(sisaPerbaikanElements)
     var totalStocklot = accumulateValues(stocklotElements);
+    var totalPBSTC = accumulateValues(pbstcElements);
     var totalGsIn = accumulateValues(gsInElements);
     var totalGsOut = accumulateValues(gsOutElements)
     var totalSisaGudang = accumulateValues(sisaGudangElements)
@@ -248,6 +251,7 @@
     document.getElementById('totalPerbaikanIn').textContent = totalPerbaikanIn;
     document.getElementById('totalPerbaikanOut').textContent = totalPerbaikanOut;
     document.getElementById('totalSisaPerbaikan').textContent = totalSisaPerbaikan;
+    document.getElementById('totalPBSTC').textContent = totalPBSTC;
     document.getElementById('totalStocklot').textContent = totalStocklot;
     document.getElementById('totalGsIn').textContent = totalGsIn;
     document.getElementById('totalGsOut').textContent = totalGsOut;

@@ -46,13 +46,15 @@ class RekapController extends BaseController
                 $pin = $this->rekapModel->sumPin($idProses) / 24;
                 $pout = $this->rekapModel->sumPout($idProses) / 24;
                 $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
+                $pbstc = $this->rekapModel->sumPBSTC($idProses) / 24;
+                $other = $stocklot - $pbstc;
                 $h1 = $this->dataProses->filterProses($id_proses['proses_1'])["kategori"];
                 $h2 = $this->dataProses->filterProses($id_proses['proses_2'])["kategori"];
                 $h3 = $this->dataProses->filterProses($id_proses['proses_3'])["kategori"];
                 $h4 = "Sisa " . $h2;
                 $h5 = "Sisa " . $h3;
-                $sisaSetting = $rosso - ($setting + $pin + $stocklot);
-                $sisaPerbaikan = $pin - $pout - $stocklot;
+                $sisaSetting = $rosso - ($setting + $pin + $other);
+                $sisaPerbaikan = $pin - $pout - $pbstc;
                 $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
                 $gsIn = $this->rekapModel->sumGsin($idProses) / 24;
                 $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
@@ -65,19 +67,22 @@ class RekapController extends BaseController
                 if ($sisaSetting < 0) {
                     $sisaSetting = 0;
                 }
-                if ($mesin > $value["po_inisial"]) {
+                if ($mesin < $value["po_inisial"]) {
                     $tagihanMesin = $value["po_inisial"] - $mesin;
-                    $lebihMesin = $mesin - ($value["po_inisial"] + $stocklot);
+
                     if ($tagihanMesin < 0) {
                         $tagihanMesin = 0;
                     }
                 }
+                if ($mesin>$value["po_inisial"]){
+                }
+                    $lebihMesin = $mesin - ($value["po_inisial"] + $stocklot);
                 $header = [
                     $h1,
-                    $h4,
                     $h2,
-                    $h5,
                     $h3,
+                    $h4,
+                    $h5,
                 ];
                 $proses = [
                     $h1 => $mesin,
@@ -88,7 +93,8 @@ class RekapController extends BaseController
                     "perbaikanIn" => $pin,
                     "perbaikanOut" => $pout,
                     "sisaPerbaikan" => $sisaPerbaikan,
-                    "stockLot" => $stocklot,
+                    "other" => $other,
+                    "pbstc" => $pbstc,
                     "gsIn" => $gsIn,
                     "gsOut" => $gsOut,
                     "sisaGudang" => $sisaGudang,
