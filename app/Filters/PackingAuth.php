@@ -27,7 +27,7 @@ class PackingAuth implements FilterInterface
     {
 
         if (!session('role') || session('role') !== 'packing') {
-            return redirect()->to(base_url('/ppc'))->with('error', 'Unauthorized access');
+            return redirect()->to(base_url('/login'))->with('error', 'Unauthorized access');
         }
     }
 

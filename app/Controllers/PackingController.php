@@ -92,6 +92,97 @@ class PackingController extends BaseController
             return redirect()->to(base_url('/packing'))->with('error', 'PDK ini belum memiliki Inisial Hubungi PPC');
         }
     }
+    public function importDeffect()
+    {
+        $file = $this->request->getFile('excel_file');
+        $noModel = $this->request->getPost('noModel');
+        $storage = $this->request->getPost('storage');
+        if ($file->isValid() && !$file->hasMoved()) {
+            $spreadsheet = IOFactory::load($file);
+            $data = $spreadsheet->getActiveSheet();
+            $startRow = 2; // Ganti dengan nomor baris mulai
+
+            foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
+                $cellIterator = $row->getCellIterator();
+                $cellIterator->setIterateOnlyExistingCells(false);
+                $data = [];
+                foreach ($cellIterator as $cell) {
+                    $data[] = $cell->getValue();
+                }
+
+                if (!empty($data)) {
+                    // validate this :
+                    $no_model = $data[3];
+                    $area = $data[2];
+                    $jc = $data[6];
+                    $validate = ['no_model' => $no_model, 'area' => $area, 'jc' => $jc];
+                    if ($data[0] == null) {
+                        break;
+                    } else {
+                        $result = $this->masterInisial->getIdInisial($validate);
+
+                        if ($result && array_key_exists('id_inisial', $result)) {
+                            $id_inisial = $result['id_inisial'];
+                            //dibikin foreach untuk getKodeShipment
+                            $kode_shipment = $this->shipment->getKodeShipment($id_inisial);
+                            dd($kode_shipment);
+
+                            $kd_shipment = $kode_shipment['kode_shipment'];
+                            $id_proses = $this->flowModel->getIdProses($id_inisial);
+                            if ($id_proses && array_key_exists('id_proses', $id_proses)) {
+                                $idProses   = $id_proses['id_proses'];
+                                $noLabel = $data[13];
+                                $keyProd = [
+                                    'kdShipment' => $kd_shipment,
+                                    'idProses' => $id_proses,
+                                    'noLabel' => $noLabel
+                                ];
+                                $getIdProd = $this->prodModel->getIdProd($keyProd);
+                                $idProd = $getIdProd['id_produksi'];
+                                $tglProd    = $data[1];
+                                $strReplace = str_replace('.', '-', $tglProd);
+                                $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);
+                                $formated   = $dateTime->format('Y-m-d');
+                                $bagian     = $data[2];
+                                $storage1   = $data[2];
+                                $storage2   = $data[10];
+                                $qtypcs        = $data[12];
+                                $qty = $qtypcs;
+                                $no_box     = $data[23];
+                                $no_label   = $data[22];
+                                $shift      = $data[30];
+                                $admin      = session()->get('username');
+                                $dataInsert = [
+                                    'tgl_prod'              => $formated,
+                                    'id_proses'             => $idProses,
+                                    'bagian'                => $bagian,
+                                    'storage_awal'          => $storage1,
+                                    'storage_akhir'         => $storage2,
+                                    'qty_prod'              => $qty,
+                                    'no_box'                => $no_box,
+                                    'no_label'              => $no_label,
+                                    'admin'                 => $admin,
+                                    'kode_shipment'         => intval($kd_shipment),
+                                    'shift'                 => $shift
+                                ];
+                                $exististingPDK = $this->prodModel->existingData($dataInsert);
+                                if (!$exististingPDK) {
+                                    $this->prodModel->insert($dataInsert);
+                                }
+                            } else {
+                                return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input flow proses terlebih dahulu');
+                            }
+                        } else {
+                            return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input Master data dan flow proses terlebih dahulu');
+                        }
+                    }
+                }
+            }
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('success', 'Data imported and saved to database successfully');
+        } else {
+            return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'No data found in the Excel file');
+        }
+    }
     public function importPDK()
     {
         $file = $this->request->getFile('excel_file');

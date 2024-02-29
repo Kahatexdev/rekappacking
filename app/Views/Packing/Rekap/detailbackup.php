@@ -4,16 +4,16 @@
 <div class="card">
     <div class="card-header d-flex justify-content-between">
         <h4>Rekap Data <?= $pdk ?></h4>
-        <a href="" target="_blank" class="btn btn-info">Simpan Data</a>
+        <a href="" class="btn btn-info">Export Data</a>
     </div>
     <div class="card-body border">
         <div class="row text-center align-items-center border">
-            <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="col-lg-2 ">
                 <img src="<?= base_url('assets/images/loho.png') ?>" class="w-50" alt="">
                 <br>
                 <b> PT KAHATEX </b>
             </div>
-            <div class="col-lg-10  col-md-10 col-sm-10">
+            <div class="col-lg-10 ">
                 <h5>
                     FORMULIR
                 </h5>
@@ -30,13 +30,13 @@
             </div>
         </div>
         <div class="row border rounded">
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6">
                 <div class="label py-0 mt-2 mb-0">
 
                     <label for="nodokumen"> No. Dokumen : FOR–KK–612/REV_00/HAL 1/1</label>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 text-left">
+            <div class="col-lg-6 text-left">
                 <div class="label py-0 mt-2 mb-0 ">
 
                     <label for="tanggl"> Tanggal Revisi : 16 Februari 2021</label>
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="row border">
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-4">
                 <div class="label py-0 mt-2 mb-0">
 
                     <label for="no_model"> PDK : <?= $pdk ?></label>
@@ -65,10 +65,10 @@
                     <label for="user"> Dibuat Oleh : <?= $User ?></label>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-4">
 
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-4">
                 <div class="label py-0 mt-2 mb-0">
 
                     <label for="qty"> Buyer : <?= $buyer ?> </label>
@@ -109,9 +109,11 @@
 
                     </tr>
                     <tr>
-                        <?php foreach ($header_prod as $key => $value) : ?>
-                            <th><?= $value ?></th>
-                        <?php endforeach ?>
+                        <th>Mesin</th>
+                        <th>Sisa Rosso</th>
+                        <th>Rosso</th>
+                        <th>Sisa Setting</th>
+                        <th>Setting</th>
                         <th>In</th>
                         <th>Out</th>
                         <th>Sisa </th>
@@ -131,31 +133,28 @@
                             <tr>
                                 <td><?= $Data['style'] ?></td>
                                 <td><?= $Data['inisial'] ?></td>
-                                <td class="qty"><?= $Data["po_inisial"] ?></td>
+                                <td class="qty"><?= $Data['qtyIns'] ?></td>
                                 <td><?= $Data['colour'] ?></td>
-                                <td class="mesin"><?= round(number_format($Data["proses"][$header_prod[0]], 1, '.', ''))  ?></td>
-                                <td class="sisaRosso"><?= round(number_format($Data["proses"][$header_prod[1]], 1, '.', ''))  ?></td>
-                                <td class="rosso"><?= round(number_format($Data["proses"][$header_prod[2]], 1, '.', ''))  ?></td>
-                                <td class="sisaSetting"><?= round(number_format($Data["proses"][$header_prod[3]], 1, '.', ''))  ?></td>
-                                <td class="setting"><?= round(number_format($Data["proses"][$header_prod[4]], 1, '.', ''))  ?></td>
-                                <td class="perbaikanIn"><?= round(number_format($Data["proses"]["perbaikanIn"], 1, '.', ''))  ?></td>
-                                <td class="perbaikanOut"><?= round(number_format($Data["proses"]["perbaikanOut"], 1, '.', ''))  ?></td>
-                                <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
-                                <td class="stocklot"><?= round(number_format($Data["proses"]["stockLot"], 1, '.', ''))  ?></td>
+                                <td class="mesin"><?= $Data['mesin'] ?></td>
+                                <td class="sisaRosso"><?= $Data['sisaRosso'] ?></td>
+                                <td class="rosso"><?= $Data['rosso'] ?></td>
+                                <td class="sisaSetting"><?= $Data['sisaSetting'] ?></td>
+                                <td class="setting"><?= $Data['setting'] ?></td>
+                                <td class="perbaikanIn"><?= $Data['perbaikanIn'] ?></td>
+                                <td class="perbaikanOut"><?= $Data['perbaikanOut'] ?></td>
+                                <td class="sisaPerbaikan"><?= $Data['sisaPerbaikan'] ?></td>
+                                <td class="stocklot"><?= $Data['stocklot'] ?></td>
                                 <td>0</td>
-                                <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
-                                <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
-                                <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
-                                <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
-                                <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
-                                <td class="BsBelumGanti">0</td>
+                                <td class="gsIn"><?= $Data['gsIn'] ?></td>
+                                <td class="gsOut"><?= $Data['gsOut'] ?></td>
+                                <td class="sisaGudang"><?= $Data['sisaGudang'] ?></td>
+                                <td class="tagihanMesin"><?= $Data['tagihanMesin'] ?></td>
+                                <td class="lebihMesin"><?= $Data['lebihMesin'] ?></td>
+                                <td>0</td>
                                 <td class="">
-                                    <input type="text" class="form-control form-control-sm" name="idInisial" hidden value="<?= $Data["proses"]["idInisial"] ?>">
-                                    <input type="number" class="form-control form-control-sm" id="plusPacking" oninput="" value="0">
+                                    <input type="number" class="form-control form-control-sm" value="0">
                                 </td>
-                                <td class="">
-                                    <input type="number" class="form-control form-control-sm" id="totalPacking" oninput="" value="0">
-                                </td>
+                                <td class="total">0</td>
                                 <td class=""><input type="text" class="form-control"></td>
 
                             </tr>
@@ -188,7 +187,6 @@
                     <td id="totalSisaGudang"> </td>
                     <td id="totalTagihanMesin"> </td>
                     <td id="totalLebihMesin"> </td>
-                    <td id="totalBsBelumGanti"> </td>
                 </tfoot>
             </table>
         </div>
@@ -211,7 +209,6 @@
     var sisaGudangElements = document.querySelectorAll('.sisaGudang');
     var tagihanMesinElements = document.querySelectorAll('.tagihanMesin');
     var lebihMesinElements = document.querySelectorAll('.lebihMesin');
-    var BsBelumGantiElements = document.querySelectorAll('.BsBelumGanti');
 
     // Fungsi untuk mengakumulasi nilai dari elemen-elemen
     function accumulateValues(elements) {
@@ -237,7 +234,6 @@
     var totalSisaGudang = accumulateValues(sisaGudangElements)
     var totalTagihanMesin = accumulateValues(tagihanMesinElements)
     var totalLebihMesin = accumulateValues(lebihMesinElements)
-    var totalBsBelumGanti = accumulateValues(BsBelumGantiElements)
 
     // Set nilai total ke elemen-elemen <td> di bagian <tfoot>
     document.getElementById('totalMesin').textContent = totalMesin;
@@ -254,7 +250,6 @@
     document.getElementById('totalSisaGudang').textContent = totalSisaGudang;
     document.getElementById('totalTagihanMesin').textContent = totalTagihanMesin;
     document.getElementById('totalLebihMesin').textContent = totalLebihMesin;
-    document.getElementById('totalBsBelumGanti').textContent = totalBsBelumGanti;
 </script>
 
 <?php $this->endSection(); ?>

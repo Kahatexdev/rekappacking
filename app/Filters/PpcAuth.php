@@ -27,7 +27,7 @@ class PpcAuth implements FilterInterface
     {
         //
         if (!session('role') || session('role') !== 'ppc') {
-            return redirect()->to(base_url('/packing'))->with('error', 'Unauthorized access');
+            return redirect()->to(base_url('/login'))->with('error', 'Unauthorized access');
         }
     }
 

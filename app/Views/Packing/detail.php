@@ -158,9 +158,18 @@
                                         </button>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>Data Deffect</td>
+                                    <td> <button type="button" class="btn btn-info btn-list-inisial" data-toggle="modal" data-target="#exampleModalLong" data-proses="DEFFECT" data-no-model="<?= $no_model ?>">
+                                            Import Deffect
+                                        </button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -213,13 +222,16 @@
                 case idProses.startsWith("PR"):
                     ket = "outperbaikan";
                     break;
+                case idProses.startsWith("DE"):
+                    ket = "deffect";
+                    break;
                 default:
                     ket = "";
                     break;
             }
 
             console.log(ket);
-            document.getElementById('exampleModalLongTitle').textContent = "Import Produksi " + idProses
+            document.getElementById('exampleModalLongTitle').textContent = "Import " + idProses
             document.getElementById('modalForm').action = '<?= base_url('packing/importproduksi') ?>' + ket;
             document.getElementById('storage').value = idProses;
         });
