@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 // login
+$routes->get('/', 'AuthController::index');
 $routes->get('/login', 'AuthController::index');
 $routes->get('/logout', 'AuthController::logout');
 $routes->post('authverify', 'AuthController::auth');

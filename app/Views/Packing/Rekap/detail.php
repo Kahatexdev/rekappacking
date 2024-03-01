@@ -143,12 +143,12 @@
                                 <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
                                 <td class="pbstc"><?= round(number_format($Data["proses"]["pbstc"], 1, '.', ''))  ?></td>
                                 <td class="stocklot"><?= round(number_format($Data["proses"]["other"], 1, '.', ''))  ?></td>
-                
+
                                 <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
                                 <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
                                 <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
                                 <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
-                                <td class="lebihMesin"><?= $Data["proses"]["lebihMesin"]  ?></td>
+                                <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
                                 <td class="BsBelumGanti">0</td>
                                 <td class="">
                                     <input type="text" class="form-control form-control-sm" name="idInisial" hidden value="<?= $Data["proses"]["idInisial"] ?>">
