@@ -3,8 +3,8 @@
 
 <div class="card">
     <div class="card-header d-flex justify-content-between">
-        <h4>Rekap Data <?= $pdk ?></h4>
-        <a href="" target="_blank" class="btn btn-info">Simpan Data</a>
+        <h4>Silahkan Isi Tambahan Packing</h4>
+        <a href="<?= base_url('packing/export/' . $pdk) ?>" target="_blank" class="btn btn-info">Export Data</a>
     </div>
     <div class="card-body border">
         <div class="row text-center align-items-center border">
@@ -58,7 +58,7 @@
                     <label for="desc"> Description :
 
                     </label>
-                    <input type="text" name="desc" id="" class="form-control form-control-sm">
+
                 </div>
                 <div class="label py-0 mt-2 mb-0">
 
@@ -88,110 +88,124 @@
             </div>
         </div>
         <div class="row">
-            <table class="table-striped text-center w-100" border="1" id="myTable" style=" background-image: url('<?= base_url('assets/images/bg5.png') ?>');
+            <form action="<?= base_url('packing/saveRekap') ?>" method="POST" target="_blank">
+
+                <table class="table-striped text-center w-100" border="1" id="myTable" style=" background-image: url('<?= base_url('assets/images/bg5.png') ?>');
             background-size: cover; ">
-                <thead>
-                    <tr>
-                        <th rowspan="2">Style</th>
-                        <th rowspan="2">Inisial</th>
-                        <th rowspan="2">QTY (dz)</th>
-                        <th rowspan="2">Colour</th>
-                        <th colspan="5">Prod (dz)</th>
-                        <th colspan="3">Perbaikan (dz)</th>
-                        <th colspan="2">Stocklot (dz)</th>
-                        <th colspan="3">Gudang Setting (dz)</th>
-                        <th rowspan="2">Tagihan MC</th>
-                        <th rowspan="2">Lebih Mesin</th>
-                        <th rowspan="2">BS Belum Ganti</th>
-                        <th rowspan="2">(+) Packing</th>
-                        <th rowspan="2">Total</th>
-                        <th rowspan="2">Ket</th>
-
-                    </tr>
-                    <tr>
-                        <?php foreach ($header_prod as $key => $value) : ?>
-                            <th><?= $value ?></th>
-                        <?php endforeach ?>
-                        <th>In</th>
-                        <th>Out</th>
-                        <th>Sisa </th>
-                        <th>PB Stc</th>
-                        <th>Other</th>
-                        <th>In</th>
-                        <th>Out</th>
-                        <th>Sisa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    if (!empty($inisial)) {
-
-                    ?>
-                        <?php foreach ($inisial as $Data) : ?>
-                            <tr>
-                                <td><?= $Data['style'] ?></td>
-                                <td><?= $Data['inisial'] ?></td>
-                                <td class="qty"><?= $Data["po_inisial"] ?></td>
-                                <td><?= $Data['colour'] ?></td>
-                                <td class="mesin"><?= round(number_format($Data["proses"][$header_prod[0]], 1, '.', ''))  ?></td>
-                                <td class="sisaRosso"><?= round(number_format($Data["proses"][$header_prod[1]], 1, '.', ''))  ?></td>
-                                <td class="rosso"><?= round(number_format($Data["proses"][$header_prod[2]], 1, '.', ''))  ?></td>
-                                <td class="sisaSetting"><?= round(number_format($Data["proses"][$header_prod[3]], 1, '.', ''))  ?></td>
-                                <td class="setting"><?= round(number_format($Data["proses"][$header_prod[4]], 1, '.', ''))  ?></td>
-                                <td class="perbaikanIn"><?= round(number_format($Data["proses"]["perbaikanIn"], 1, '.', ''))  ?></td>
-                                <td class="perbaikanOut"><?= round(number_format($Data["proses"]["perbaikanOut"], 1, '.', ''))  ?></td>
-                                <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
-                                <td class="pbstc"><?= round(number_format($Data["proses"]["pbstc"], 1, '.', ''))  ?></td>
-                                <td class="stocklot"><?= round(number_format($Data["proses"]["other"], 1, '.', ''))  ?></td>
-
-                                <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
-                                <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
-                                <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
-                                <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
-                                <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
-                                <td class="BsBelumGanti">0</td>
-                                <td class="">
-                                    <input type="text" class="form-control form-control-sm" name="idInisial" hidden value="<?= $Data["proses"]["idInisial"] ?>">
-                                    <input type="number" class="form-control form-control-sm" id="plusPacking" oninput="" value="0">
-                                </td>
-                                <td class="">
-                                    <input type="number" class="form-control form-control-sm" id="totalPacking" oninput="" value="0">
-                                </td>
-                                <td class=""><input type="text" class="form-control"></td>
-
-                            </tr>
-                        <?php endforeach ?>
-                    <?php
-
-                    } else {
-                    ?>
+                    <thead>
                         <tr>
-                            <td colspan="8" class="text-center">Tidak ada data</td>
+                            <th rowspan="2">Style</th>
+                            <th rowspan="2">Inisial</th>
+                            <th rowspan="2">QTY (dz)</th>
+                            <th rowspan="2">Colour</th>
+                            <th colspan="5">Prod (dz)</th>
+                            <th colspan="3">Perbaikan (dz)</th>
+                            <th colspan="2">Stocklot (dz)</th>
+                            <th colspan="3">Gudang Setting (dz)</th>
+                            <th rowspan="2">Deffect After Gudang</th>
+                            <th rowspan="2">Tagihan MC</th>
+                            <th rowspan="2">Lebih Mesin</th>
+                            <th rowspan="2">BS Belum Ganti</th>
+                            <th rowspan="2">(+) Packing</th>
+                            <th rowspan="2">Total</th>
+                            <th rowspan="2">Ket</th>
+
                         </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-                <tfoot>
-                    <td colspan="4"> Total per Storage</td>
-                    <td id="totalMesin"> </td>
-                    <td id="totalSisaRosso"> </td>
-                    <td id="totalRosso"> </td>
-                    <td id="totalSisaSetting"> </td>
-                    <td id="totalSetting"> </td>
-                    <td id="totalPerbaikanIn"> </td>
-                    <td id="totalPerbaikanOut"> </td>
-                    <td id="totalSisaPerbaikan"> </td>
-                    <td id="totalPBSTC"> </td>
-                    <td id="totalStocklot"> </td>
-                    <td id="totalGsIn"> </td>
-                    <td id="totalGsOut"> </td>
-                    <td id="totalSisaGudang"> </td>
-                    <td id="totalTagihanMesin"> </td>
-                    <td id="totalLebihMesin"> </td>
-                    <td id="totalBsBelumGanti"> </td>
-                </tfoot>
-            </table>
+                        <tr>
+                            <?php foreach ($header_prod as $key => $value) : ?>
+                                <th><?= $value ?></th>
+                            <?php endforeach ?>
+                            <th>In</th>
+                            <th>Out</th>
+                            <th>Sisa </th>
+                            <th>PB Stc</th>
+                            <th>Other</th>
+                            <th>In</th>
+                            <th>Out</th>
+                            <th>Sisa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if (!empty($inisial)) {
+
+                        ?>
+                            <?php foreach ($inisial as $Data) : ?>
+                                <tr>
+                                    <td><?= $Data['style'] ?></td>
+                                    <td><?= $Data['inisial'] ?></td>
+                                    <td class="qty"><?= $Data["po_inisial"] ?></td>
+                                    <td><?= $Data['colour'] ?></td>
+                                    <td class="mesin"><?= round(number_format($Data["proses"][$header_prod[0]], 1, '.', ''))  ?></td>
+                                    <td class="sisaRosso"><?= round(number_format($Data["proses"][$header_prod[1]], 1, '.', ''))  ?></td>
+                                    <td class="rosso"><?= round(number_format($Data["proses"][$header_prod[2]], 1, '.', ''))  ?></td>
+                                    <td class="sisaSetting"><?= round(number_format($Data["proses"][$header_prod[3]], 1, '.', ''))  ?></td>
+                                    <td class="setting"><?= round(number_format($Data["proses"][$header_prod[4]], 1, '.', ''))  ?></td>
+                                    <td class="perbaikanIn"><?= round(number_format($Data["proses"]["perbaikanIn"], 1, '.', ''))  ?></td>
+                                    <td class="perbaikanOut"><?= round(number_format($Data["proses"]["perbaikanOut"], 1, '.', ''))  ?></td>
+                                    <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
+                                    <td class="pbstc"><?= round(number_format($Data["proses"]["pbstc"], 1, '.', ''))  ?></td>
+                                    <td class="stocklot"><?= round(number_format($Data["proses"]["other"], 1, '.', ''))  ?></td>
+
+                                    <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
+                                    <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
+                                    <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
+                                    <td class="deffectAfterGudang"><?= round(number_format($Data["proses"]["deffect"], 1, '.', ''))  ?></td>
+                                    <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
+                                    <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
+                                    <td class="BsBelumGanti">0</td>
+                                    <td class="">
+
+                                        <input type="text" class="form-control form-control-sm" name="idInisial" hidden value="<?= $Data["proses"]["idInisial"] ?>">
+
+                                        <input type="number" class="form-control form-control-sm plusPacking editable" value="<?= $Data["proses"]["plusPacking"]; ?>" data-id="<?= $Data["proses"]["idInisial"] ?>" data-field="plus_packing" name="plusPacking">
+
+                                    </td>
+                                    <td class="">
+                                        <input type="number" class="form-control form-control-sm totalInput editable" data-id="<?= $Data["proses"]["idInisial"] ?>" data-field="total" value="<?= $Data["proses"]["totalPacking"]; ?>">
+                                    </td>
+                                    <td class=""><input type="text" name="ket" data-id="<?= $Data["proses"]["idInisial"] ?>" data-field="keterangan" class=" form-control editable" value="<?= $Data["proses"]["ket"]; ?>"></td>
+
+
+                                </tr>
+
+                            <?php endforeach ?>
+                        <?php
+
+                        } else {
+                        ?>
+                            <tr>
+                                <td colspan="8" class="text-center">Tidak ada data</td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                        <td colspan="4"> Total per Storage</td>
+                        <td id="totalMesin"> </td>
+                        <td id="totalSisaRosso"> </td>
+                        <td id="totalRosso"> </td>
+                        <td id="totalSisaSetting"> </td>
+                        <td id="totalSetting"> </td>
+                        <td id="totalPerbaikanIn"> </td>
+                        <td id="totalPerbaikanOut"> </td>
+                        <td id="totalSisaPerbaikan"> </td>
+                        <td id="totalPBSTC"> </td>
+                        <td id="totalStocklot"> </td>
+                        <td id="totalGsIn"> </td>
+                        <td id="totalGsOut"> </td>
+                        <td id="totalSisaGudang"> </td>
+                        <td id="totalDeffectAfterGudang"> </td>
+                        <td id="totalTagihanMesin"> </td>
+                        <td id="totalLebihMesin"> </td>
+                        <td id="totalBsBelumGanti"> </td>
+                        <td id="totalPlusPacking">0 </td>
+                        <td id="totalAmount"> 0</td>
+                    </tfoot>
+                </table>
+
+            </form>
         </div>
 
     </div>
@@ -211,9 +225,11 @@
     var gsInElements = document.querySelectorAll('.gsIn');
     var gsOutElements = document.querySelectorAll('.gsOut');
     var sisaGudangElements = document.querySelectorAll('.sisaGudang');
+    var deffectAfterGudangElements = document.querySelectorAll('.deffectAfterGudang');
     var tagihanMesinElements = document.querySelectorAll('.tagihanMesin');
     var lebihMesinElements = document.querySelectorAll('.lebihMesin');
     var BsBelumGantiElements = document.querySelectorAll('.BsBelumGanti');
+    var plusPackingElements = document.querySelectorAll('.plusPacking');
 
     // Fungsi untuk mengakumulasi nilai dari elemen-elemen
     function accumulateValues(elements) {
@@ -223,6 +239,8 @@
         });
         return total;
     }
+
+
 
     // Akumulasi nilai untuk setiap kolom
     var totalMesin = accumulateValues(mesinElements);
@@ -238,6 +256,7 @@
     var totalGsIn = accumulateValues(gsInElements);
     var totalGsOut = accumulateValues(gsOutElements)
     var totalSisaGudang = accumulateValues(sisaGudangElements)
+    var totalDeffectAfterGudang = accumulateValues(deffectAfterGudangElements)
     var totalTagihanMesin = accumulateValues(tagihanMesinElements)
     var totalLebihMesin = accumulateValues(lebihMesinElements)
     var totalBsBelumGanti = accumulateValues(BsBelumGantiElements)
@@ -256,9 +275,75 @@
     document.getElementById('totalGsIn').textContent = totalGsIn;
     document.getElementById('totalGsOut').textContent = totalGsOut;
     document.getElementById('totalSisaGudang').textContent = totalSisaGudang;
+    document.getElementById('totalDeffectAfterGudang').textContent = totalDeffectAfterGudang;
     document.getElementById('totalTagihanMesin').textContent = totalTagihanMesin;
     document.getElementById('totalLebihMesin').textContent = totalLebihMesin;
     document.getElementById('totalBsBelumGanti').textContent = totalBsBelumGanti;
+</script>
+<script>
+    // Ambil semua elemen dengan kelas 'totalInput'
+    var inputs = document.querySelectorAll('#myTable .totalInput');
+
+    // Inisialisasi total
+    var total = 0;
+
+    // Iterasi melalui setiap input dan tambahkan nilainya ke total
+    inputs.forEach(function(input) {
+        input.addEventListener('input', function() {
+            total = 0; // Reset total sebelum menghitung ulang
+            inputs.forEach(function(input) {
+                total += parseFloat(input.value); // Tambahkan nilai input ke total
+            });
+            document.getElementById('totalAmount').innerText = total; // Perbarui teks total
+        });
+    });
+</script>
+<script>
+    // Ambil semua elemen dengan kelas 'totalInput'
+    var inputs = document.querySelectorAll('#myTable .plusPacking');
+
+    // Inisialisasi total
+    var total = 0;
+
+    // Iterasi melalui setiap input dan tambahkan nilainya ke total
+    inputs.forEach(function(input) {
+        input.addEventListener('input', function() {
+            total = 0; // Reset total sebelum menghitung ulang
+            inputs.forEach(function(input) {
+                total += parseFloat(input.value); // Tambahkan nilai input ke total
+            });
+            document.getElementById('totalPlusPacking').innerText = total; // Perbarui teks total
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.editable').on('change', function() {
+            var id = $(this).data('id');
+            var field = $(this).data('field');
+            var value = $(this).val();
+
+            // Mengirim data ke server menggunakan AJAX
+            $.ajax({
+                url: '<?= site_url('packing/saveRekap') ?>', // URL endpoint untuk memperbarui data
+                type: 'POST',
+                dataType: 'json', // Menentukan tipe data yang diharapkan dari server
+                data: JSON.stringify({ // Mengubah data menjadi format JSON
+                    id: id,
+                    field: field,
+                    value: value
+                }),
+                success: function(response) {
+                    alert('Data berhasil diperbarui');
+                    // Lakukan tindakan lain setelah data diperbarui jika diperlukan
+                },
+                error: function(xhr, status, error) {
+                    alert('Terjadi kesalahan: ' + error);
+                }
+            });
+        });
+    });
 </script>
 
 <?php $this->endSection(); ?>

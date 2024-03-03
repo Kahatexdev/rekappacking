@@ -141,4 +141,11 @@ class RekapModel extends Model
 
         return  $result->total_qty_prod;
     }
+    public function sumDeffect($idProses)
+    {
+        $query = $this->selectSum('deffect', 'totalDeffect')
+            ->where('id_proses', $idProses)->get();
+        $result = $query->getRow();
+        return $result->totalDeffect;
+    }
 }
