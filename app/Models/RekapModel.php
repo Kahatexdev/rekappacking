@@ -67,7 +67,7 @@ class RekapModel extends Model
     {
         $query = $this->selectSum('qty_prod', 'total_qty_prod') // Menambahkan alias untuk hasil sum
             ->where('id_proses', $idProses)
-            ->like('storage_awal', 'ST')->like('storage_akhir','GS')
+            ->like('storage_awal', 'ST')->like('storage_akhir', 'GS')
             ->get();
 
         $result = $query->getRow();
@@ -91,7 +91,7 @@ class RekapModel extends Model
         $query = $this->selectSum('qty_prod', 'total_qty_prod')
             ->where('id_proses', $idProses) // Konversi $idProses ke tipe data int
             ->where("(production.storage_awal LIKE 'PA02%' OR production.storage_awal LIKE 'PR02%' OR production.storage_awal LIKE 'PA01%' OR production.storage_awal LIKE 'PR01%' OR production.storage_awal LIKE 'PB02%' OR production.storage_awal LIKE 'PA01%')")
-           -> like('storage_akhir','GS')
+            ->like('storage_akhir', 'GS')
             ->get();
 
         $result = $query->getRow();
@@ -129,16 +129,23 @@ class RekapModel extends Model
 
         return  $result->total_qty_prod;
     }
-    public function sumPBSTC ($idProses)
+    public function sumPBSTC($idProses)
     {
-$query = $this->selectSum('qty_prod', 'total_qty_prod')
-        ->where('id_proses', $idProses) // Konversi $idProses ke tipe data int
-        ->where("(production.storage_awal LIKE 'PA02%' OR production.storage_awal LIKE 'PR02%' OR production.storage_awal LIKE 'PA01%' OR production.storage_awal LIKE 'PR01%' OR production.storage_awal LIKE 'PB02%' OR production.storage_awal LIKE 'PA01%')")
-       -> like('storage_akhir','STOCKLOT')
-        ->get();
+        $query = $this->selectSum('qty_prod', 'total_qty_prod')
+            ->where('id_proses', $idProses) // Konversi $idProses ke tipe data int
+            ->where("(production.storage_awal LIKE 'PA02%' OR production.storage_awal LIKE 'PR02%' OR production.storage_awal LIKE 'PA01%' OR production.storage_awal LIKE 'PR01%' OR production.storage_awal LIKE 'PB02%' OR production.storage_awal LIKE 'PA01%')")
+            ->like('storage_akhir', 'STOCKLOT')
+            ->get();
 
-    $result = $query->getRow();
+        $result = $query->getRow();
 
-    return  $result->total_qty_prod;
+        return  $result->total_qty_prod;
+    }
+    public function sumDeffect($idProses)
+    {
+        $query = $this->selectSum('deffect', 'totalDeffect')
+            ->where('id_proses', $idProses)->get();
+        $result = $query->getRow();
+        return $result->totalDeffect;
     }
 }

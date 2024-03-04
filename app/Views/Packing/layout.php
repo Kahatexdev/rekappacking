@@ -119,7 +119,7 @@
                             <i class="icon-home menu-icon"></i><span class="nav-text">Data Produksi</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-graph menu-icon"></i> <span class="nav-text">Data perbaikan</span>
                         </a>
@@ -144,8 +144,8 @@
                                     <i class="icon-chart menu-icon"></i><span class="nav-text">Data Out Perbaikan Rosso</span>
                                 </a>
                             </li> -->
-                        </ul>
-                    </li>
+                    <!-- </ul>
+                    </li> -->
                     <li>
                         <a href="<?= base_url('packing/ingudang') ?>" aria-expanded="false">
                             <i class="icon-chart menu-icon"></i><span class="nav-text">Data In Gudang</span>

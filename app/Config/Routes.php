@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 // login
+$routes->get('/', 'AuthController::index');
 $routes->get('/login', 'AuthController::index');
 $routes->get('/logout', 'AuthController::logout');
 $routes->post('authverify', 'AuthController::auth');
@@ -107,6 +108,8 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
 
     $routes->get('rekap', 'RekapController::rekapPacking');
     $routes->post('detailrekap/(:any)', 'RekapController::detailRekap/$1');
+    $routes->get('export/(:any)', 'RekapController::export/$1');
+    $routes->post('saveRekap', 'RekapController::saveRekap');
 
 
 

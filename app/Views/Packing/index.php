@@ -55,7 +55,7 @@
                                                 <td><?= $dt['buyer'] ?></td>
                                                 <td>
                                                     <form action="<?= base_url('packing/details/' . $dt['no_model']); ?>" id="" method="get">
-                                                        <button type="submit" class="btn btn-success detail text-white  ">Import data</button>
+                                                        <button type="submit" class="btn btn-success detail text-white  ">Lihat data</button>
                                                     </form>
                                                 </td>
                                             </tr>

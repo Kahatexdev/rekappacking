@@ -133,42 +133,42 @@ class PackingController extends BaseController
                                 $noLabel = $data[13];
                                 $keyProd = [
                                     'kdShipment' => $kd_shipment,
-                                    'idProses' => $id_proses,
+                                    'idProses' => $idProses,
                                     'noLabel' => $noLabel
                                 ];
                                 $getIdProd = $this->prodModel->getIdProd($keyProd);
-                                $idProd = $getIdProd['id_produksi'];
-                                dd($idProd);
+                                if ($getIdProd && array_key_exists('id_production', $getIdProd)) {
+                                    $idProd = $getIdProd['id_production'];
+                                    $tglProd    = $getIdProd['tgl_prod'];
+                                    $strReplace = str_replace('.', '-', $tglProd);
+                                    $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);
+                                    $bagian     = $getIdProd['bagian'];
+                                    $storage1   = $getIdProd['storage_awal'];
+                                    $storage2   = $getIdProd['storage_akhir'];
+                                    $qtypcs        = $getIdProd['qty_prod'];
+                                    $qty = $qtypcs;
+                                    $no_box     = $getIdProd['no_box'];
+                                    $no_label   = $getIdProd['no_label'];
+                                    $shift      = $getIdProd['shift'];
+                                    $deffect = $data[7];
 
-                                $tglProd    = $data[1];
-                                $strReplace = str_replace('.', '-', $tglProd);
-                                $dateTime   = \DateTime::createFromFormat('d-m-Y', $strReplace);
-                                $formated   = $dateTime->format('Y-m-d');
-                                $bagian     = $data[2];
-                                $storage1   = $data[2];
-                                $storage2   = $data[10];
-                                $qtypcs        = $data[12];
-                                $qty = $qtypcs;
-                                $no_box     = $data[23];
-                                $no_label   = $data[22];
-                                $shift      = $data[30];
-                                $admin      = session()->get('username');
-                                $dataInsert = [
-                                    'tgl_prod'              => $formated,
-                                    'id_proses'             => $idProses,
-                                    'bagian'                => $bagian,
-                                    'storage_awal'          => $storage1,
-                                    'storage_akhir'         => $storage2,
-                                    'qty_prod'              => $qty,
-                                    'no_box'                => $no_box,
-                                    'no_label'              => $no_label,
-                                    'admin'                 => $admin,
-                                    'kode_shipment'         => intval($kd_shipment),
-                                    'shift'                 => $shift
-                                ];
-                                $exististingPDK = $this->prodModel->existingData($dataInsert);
-                                if (!$exististingPDK) {
-                                    $this->prodModel->insert($dataInsert);
+                                    $admin      = session()->get('username');
+                                    $dataInsert = [
+                                        'tgl_prod'              => $strReplace,
+                                        'id_proses'             => $idProses,
+                                        'bagian'                => $bagian,
+                                        'storage_awal'          => $storage1,
+                                        'storage_akhir'         => $storage2,
+                                        'qty_prod'              => $qty,
+                                        'no_box'                => $no_box,
+                                        'no_label'              => $no_label,
+                                        'admin'                 => $admin,
+                                        'kode_shipment'         => intval($kd_shipment),
+                                        'shift'                 => $shift,
+                                        'deffect'               => $deffect
+                                    ];
+
+                                    $this->prodModel->update($idProd, $dataInsert);
                                 }
                             } else {
                                 return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Silahkan input flow proses terlebih dahulu');
