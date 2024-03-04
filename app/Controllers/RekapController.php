@@ -228,7 +228,7 @@ class RekapController extends BaseController
             }
         }
         $data = [
-            'Judul' => 'Detail PDK',
+            'Judul' => 'Rekap Packing',
             'pdk' => $noModel,
             'poInisial' => $Disisial['po_inisial'],
             'User' => session()->get('username'),
