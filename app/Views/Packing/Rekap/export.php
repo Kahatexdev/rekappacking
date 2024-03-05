@@ -39,7 +39,7 @@
 <body>
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <button onclick="window.print()" class="btn btn-info">Cetak</button>
+            <button id="exportBtn" onclick="Hide()" class="btn btn-info">Cetak</button>
         </div>
         <div class="card-body border">
             <div class="row text-center align-items-center border">
@@ -239,7 +239,85 @@
             </div>
 
         </div>
+        <div class="card-footer">
+            <div class="d-flex mx-5 px-5 d-flex justify-content-between ">
+                <div class="h6">
+                    <h6>MNG.PACKING
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>MNG.MESIN
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>KEPALA AREA
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>MNG.ROSSO&SETTING
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>KEPALA GUDANG
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6> PLANNER MESIN
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>MENYETUJUI
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>MENGETAHUI
+
+                    </h6>
+                </div>
+            </div>
+            <div class="d-flex mx-5 px-5 mt-5 d-flex justify-content-between ">
+                <div class="h6">
+                    <h6>........................
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>........................
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>............................
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>..............................................
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>.................................
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6> ............................
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>............................
+                    </h6>
+                </div>
+                <div class="h6">
+                    <h6>............................
+
+                    </h6>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        function Hide() {
+            document.getElementById('exportBtn').classList.add("d-none");
+            window.print()
+        }
+    </script>
 
     <script>
         var mesinElements = document.querySelectorAll('.mesin');
@@ -314,8 +392,6 @@
         document.getElementById('totalBsBelumGanti').textContent = totalBsBelumGanti;
         document.getElementById('totalPlusPacking').textContent = totalPlusPacking;
         document.getElementById('totalAmount').textContent = totalAmount;
-    </script>
-    <script>
         // Ambil semua elemen dengan kelas 'totalInput'
         var inputs = document.querySelectorAll('#myTable .totalInput');
 
