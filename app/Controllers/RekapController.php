@@ -64,6 +64,7 @@ class RekapController extends BaseController
                 $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
                 $tagihanMesin = 0;
                 $lebihMesin = 0;
+
                 $sisaGudang = $gsIn - $gsOut;
                 if ($sisaGudang < 0) {
                     $sisaGudang = 0;
@@ -81,6 +82,7 @@ class RekapController extends BaseController
                 if ($mesin > $value["po_inisial"]) {
                 }
                 $lebihMesin = $mesin - ($value["po_inisial"] + $stocklot);
+                $bsBelumGanti = (($value["po_inisial"] + $stocklot + $deffect) - $mesin) - $tagihanMesin;
                 $header = [
                     $h1,
                     $h2,
@@ -105,6 +107,7 @@ class RekapController extends BaseController
                     'deffect' => $deffect,
                     "tagihanMesin" => $tagihanMesin,
                     "lebihMesin" => $lebihMesin,
+                    'bsBelumGanti' => $bsBelumGanti,
                     'idInisial' => $idInisial,
                     'plusPacking' => $pluspacking,
                     'totalPacking' => $totalPacking,
@@ -195,6 +198,8 @@ class RekapController extends BaseController
                 if ($mesin > $value["po_inisial"]) {
                 }
                 $lebihMesin = $mesin - ($value["po_inisial"] + $stocklot);
+                $bsBelumGanti = (($value["po_inisial"] + $stocklot + $deffect) - $mesin) - $tagihanMesin;
+
                 $header = [
                     $h1,
                     $h2,
@@ -220,6 +225,7 @@ class RekapController extends BaseController
                     "tagihanMesin" => $tagihanMesin,
                     "lebihMesin" => $lebihMesin,
                     'idInisial' => $idInisial,
+                    'bsBelumGanti' => $bsBelumGanti,
                     'plusPacking' => $pluspacking,
                     'totalPacking' => $totalPacking,
                     'ket' => $ket,
