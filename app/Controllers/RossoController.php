@@ -36,7 +36,6 @@ class RossoController extends BaseController
                         $result = $this->dataProses->filterProses($filterThis);
                         if ($result && array_key_exists('kategori', $result)) {
                             $kategori = $result['kategori'];
-
                             if ($kategori == 'Rosso') {
                                 if ($filterThis != $storage) {
                                     return redirect()->to(base_url('/packing/details/' . $noModel))->with('error', 'Storage number ERP tidak sesuai dengan Flow proses. Silahkan Perbaiki terlebih dahulu');
@@ -49,12 +48,10 @@ class RossoController extends BaseController
                                         // $deliv = date("Y-m-d", $unixTimeStamp);
                                         $validateShipment = [
                                             'inisial' => $id_inisial,
-
                                         ];
                                         //dibikin foreach untuk getKodeShipment
                                         $kode_shipment = $this->shipment->getKodeShipment($validateShipment);
                                         $kd_shipment = $kode_shipment['kode_shipment'];
-
                                         $id_proses = $this->flowModel->getIdProses($id_inisial);
                                         if ($id_proses && array_key_exists('id_proses', $id_proses)) {
                                             $idProses   = $id_proses['id_proses'];
@@ -67,9 +64,9 @@ class RossoController extends BaseController
                                             $storage2   = $data[10];
                                             $qtyerp        = $data[12];
                                             $qty = str_replace('-', '', $qtyerp);
-                                            $shift = $data[30];
                                             $no_box     = $data[23];
                                             $no_label   = $data[22];
+                                            $shift = $data[30];
                                             $admin      = session()->get('username');
                                             $dataInsert = [
                                                 'tgl_prod'              => $formated,
@@ -85,6 +82,7 @@ class RossoController extends BaseController
                                                 'shift'                 => $shift
                                             ];
                                             $exististingPDK = $this->prodModel->existingData($dataInsert);
+                                            dd($formated);
                                             if (!$exististingPDK) {
                                                 $this->prodModel->insert($dataInsert);
                                             }
