@@ -242,11 +242,11 @@
         <div class="card-footer">
             <div class="d-flex mx-5 px-5 d-flex justify-content-between ">
                 <div class="h6">
-                    <h6>MNG.PACKING
+                    <h6>MNG. PACKING
                     </h6>
                 </div>
                 <div class="h6">
-                    <h6>MNG.MESIN
+                    <h6>MNG. MESIN
                     </h6>
                 </div>
                 <div class="h6">
@@ -254,7 +254,7 @@
                     </h6>
                 </div>
                 <div class="h6">
-                    <h6>MNG.ROSSO&SETTING
+                    <h6>MNG.ROSSO & SETTING
                     </h6>
                 </div>
                 <div class="h6">
@@ -266,7 +266,7 @@
                     </h6>
                 </div>
                 <div class="h6">
-                    <h6>MENYETUJUI
+                    <h6>Disetujui Oleh
                     </h6>
                 </div>
                 <div class="h6">
