@@ -342,7 +342,6 @@ class PackingController extends BaseController
             $spreadsheet = IOFactory::load($file);
             $data = $spreadsheet->getActiveSheet();
             $startRow = 18; // Ganti dengan nomor baris mulai
-
             foreach ($spreadsheet->getActiveSheet()->getRowIterator($startRow) as $row) {
                 $cellIterator = $row->getCellIterator();
                 $cellIterator->setIterateOnlyExistingCells(false);
@@ -403,6 +402,7 @@ class PackingController extends BaseController
                                         'shift'                 => $shift
                                     ];
                                     $exististingPDK = $this->prodModel->existingData($dataInsert);
+                                    dd($exististingPDK);
                                     if (!$exististingPDK) {
                                         $this->prodModel->insert($dataInsert);
                                     }

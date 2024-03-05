@@ -33,6 +33,11 @@
                 size: landscape;
             }
         }
+
+        .hitam{
+            color: black;
+            border-color: black;
+        }
     </style>
 </head>
 
@@ -41,17 +46,17 @@
         <div class="card-header d-flex justify-content-between">
             <button id="exportBtn" onclick="Hide()" class="btn btn-info">Cetak</button>
         </div>
-        <div class="card-body border">
-            <div class="row text-center align-items-center border">
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <img src="<?= base_url('assets/images/loho.png') ?>" class="w-50" alt="">
+        <div class="card-body hitam" >
+            <div class="row text-center align-items-center ">
+                <div class="col-lg-1 col-md-2 col-sm-2" style="border: 1px solid;">
+                    <img src="<?= base_url('assets/images/loho.png') ?>" style="width: 55px;" alt="">
                     <br>
-                    <b> PT KAHATEX </b>
+                    <h5>PT KAHATEX </h5> 
                 </div>
-                <div class="col-lg-10  col-md-10 col-sm-10">
-                    <h5>
+                <div class="col-lg-11  col-md-10 col-sm-10"  style="border: 1px solid;">
+                    <h3>
                         FORMULIR
-                    </h5>
+                    </h3>
                     <strong>
                         DEPARTEMEN KAOS KAKI
 
@@ -64,21 +69,19 @@
 
                 </div>
             </div>
-            <div class="row border rounded">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="label py-0 mt-1 mb-0">
-
-                        <label for="nodokumen"> No. Dokumen : FOR–KK–612/REV_00/HAL 1/1</label>
-                    </div>
+            
+                <div class="flex d-flex justify-content-between" >
+                    <div>
+                    <label for="nodokumen"> No. Dokumen : FOR–KK–612/REV_00/HAL 1/1</label>
+        
+                    </div>  
+                    <div>
+                    <label for="tanggal"> Tanggal Revisi : 16 Februari 2021</label>
+                    </div>                       
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 text-left">
-                    <div class="label py-0 mt-1 mb-0 ">
-
-                        <label for="tanggl"> Tanggal Revisi : 16 Februari 2021</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row border">
+             
+         
+            <div class="row hitam"  style="border: 2px solid;">
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="label py-0 mt-1 mb-0">
 
@@ -124,15 +127,16 @@
             </div>
             <div class="row">
 
-
-                <table class="table-striped text-center w-100" border="1" id="myTable" style=" background-image: url('<?= base_url('assets/images/bg5.png') ?>');
-            background-size: cover; ">
+<div class="table-responsive">
+    
+                <table class="table-bordered text-center w-100"  id="myTable" style=" background-image: url('<?= base_url('assets/images/bg0.png') ?>');
+            background-size: cover; color:black; ">
                     <thead>
                         <tr>
                             <th rowspan="2">Style</th>
                             <th rowspan="2">Inisial</th>
-                            <th rowspan="2">QTY (dz)</th>
                             <th rowspan="2">Colour</th>
+                            <th rowspan="2">QTY (dz)</th>
                             <th colspan="5">Prod (dz)</th>
                             <th colspan="3">Perbaikan (dz)</th>
                             <th colspan="2">Stocklot (dz)</th>
@@ -169,8 +173,8 @@
                                 <tr>
                                     <td><?= $Data['style'] ?></td>
                                     <td><?= $Data['inisial'] ?></td>
-                                    <td class="qty"><?= $Data["po_inisial"] ?></td>
                                     <td><?= $Data['colour'] ?></td>
+                                    <td class="qty"><?= $Data["po_inisial"] ?></td>
                                     <td class="mesin"><?= round(number_format($Data["proses"][$header_prod[0]], 1, '.', ''))  ?></td>
                                     <td class="sisaRosso"><?= round(number_format($Data["proses"][$header_prod[1]], 1, '.', ''))  ?></td>
                                     <td class="rosso"><?= round(number_format($Data["proses"][$header_prod[2]], 1, '.', ''))  ?></td>
@@ -213,7 +217,8 @@
                         }
                         ?>
                         <tr>
-                            <td colspan="4"> Total per Storage</td>
+                            <td colspan="3"> Total per Storage</td>
+                            <td id="totalQty"><?= $poInisial ?> </td>
                             <td id="totalMesin"> </td>
                             <td id="totalSisaRosso"> </td>
                             <td id="totalRosso"> </td>
@@ -233,83 +238,63 @@
                             <td id="totalBsBelumGanti"> </td>
                             <td id="totalPlusPacking">0 </td>
                             <td id="totalAmount"> 0</td>
+                            <td id=""> </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            </div>
 
         </div>
-        <div class="card-footer">
-            <div class="d-flex mx-5 px-5 d-flex justify-content-between ">
-                <div class="h6">
-                    <h6>MNG. PACKING
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>MNG. MESIN
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>KEPALA AREA
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>MNG.ROSSO & SETTING
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>KEPALA GUDANG
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6> PLANNER MESIN
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>Disetujui Oleh
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>MENGETAHUI
+        <div class="card-footer align-items-center text-center">
+            <table border="0" class="table " style="color:black">
+                <thead class="px-2 p-y-2" >
+                    <th class="px-2 p-y-2" > MNG. Packing</th>
+                    <th>MNG. MESIN</th>
+                    <th> KEPALA AREA</th>
+                    <th> MNG.ROSSO & SETTING</th>
+                    <th> KEPALA GUDANG</th>
+                    <th> PLANNER MESIN</th>
+                    <th>DISETUJUI OLEH</th>
+                    <th> DISETUJUI OLEH</th>
+                    <th> MENGETAHUI</th>
+                </thead>
+                <tbody>
+                    <tr class="px-2 p-y-2" style="width: 100; height: 50px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>(.........................................)</td>
+                        <td>(.........................................)</td>
+                        <td>(.........................................)</td>
+                        <td>(.........................................)</td>
+                        <td>(.........................................)</td>
+                        <td>(.........................................)</td>
+                        <td>(.........................................)</td>
+                        
+                        <td>Mr.Willy</td>              
+                                  <td>(.........................................)</td>
 
-                    </h6>
-                </div>
-            </div>
-            <div class="d-flex mx-5 px-5 mt-5 d-flex justify-content-between ">
-                <div class="h6">
-                    <h6>........................
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>........................
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>............................
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>..............................................
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>.................................
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6> ............................
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>............................
-                    </h6>
-                </div>
-                <div class="h6">
-                    <h6>............................
+                    </tr>
+                    <tr>
+                        <td colspan="9">
+                        ket: Data sisa tersebut merupakan sisa label yang belum keluar pada system ERP, tidak menutup kemungkinan jika barang lolos tidak terinput oleh user. Dengan itu dimohon management setiap bagian untuk cek pada area kerja masing-masing untuk menghindari tertinggalnya barang
+                        </td>
+                    </tr>
+                </tbody>
 
-                    </h6>
-                </div>
-            </div>
+            </table>
+
+
         </div>
     </div>
     <script>
