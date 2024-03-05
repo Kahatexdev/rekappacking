@@ -188,7 +188,7 @@
                                     <td class="deffectAfterGudang"><?= round(number_format($Data["proses"]["deffect"], 1, '.', ''))  ?></td>
                                     <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
                                     <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
-                                    <td class="BsBelumGanti">0</td>
+                                    <td class="BsBelumGanti"><?= round(number_format($Data["proses"]["bsBelumGanti"], 1, '.', ''))  ?></td>
                                     <td class="plusPacking">
                                         <?= $Data["proses"]["plusPacking"]; ?>
                                     </td>
