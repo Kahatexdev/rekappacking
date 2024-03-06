@@ -402,7 +402,6 @@ class PackingController extends BaseController
                                         'shift'                 => $shift
                                     ];
                                     $exististingPDK = $this->prodModel->existingData($dataInsert);
-                                    dd($exististingPDK);
                                     if (!$exististingPDK) {
                                         $this->prodModel->insert($dataInsert);
                                     }

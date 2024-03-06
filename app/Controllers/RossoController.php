@@ -82,7 +82,6 @@ class RossoController extends BaseController
                                                 'shift'                 => $shift
                                             ];
                                             $exististingPDK = $this->prodModel->existingData($dataInsert);
-                                            dd($formated);
                                             if (!$exististingPDK) {
                                                 $this->prodModel->insert($dataInsert);
                                             }
