@@ -2,48 +2,13 @@
 
 namespace App\Controllers;
 
-use App\Models\DataModel;
-use App\Models\PDKModels;
-use App\Models\FlowModels;
-use App\Models\MasterProses;
-use App\Models\ShipmentModel;
-use App\Models\MasterInisial;
-use App\Models\ProductionModel;
 
 
 use App\Controllers\BaseController;
 
 class PpcController extends BaseController
 {
-    protected $filters;
-    protected $dataPDK;
-    protected $dataModel;
-    protected $dataProses;
-    protected $masterInisial;
-    protected $shipment;
-    protected $flowModel;
-    protected $prodModel;
-    public function __construct()
-    {
-        $this->dataModel     = new DataModel();
-        $this->dataPDK       = new PDKModels();
-        $this->dataProses    = new MasterProses();
-        $this->masterInisial = new MasterInisial();
-        $this->flowModel     = new FlowModels();
-        $this->shipment      = new ShipmentModel();
-        $this->prodModel     = new ProductionModel();
 
-        if ($this->filters   = ['role' => ['ppc']] != session()->get('role')) {
-            return redirect()->to(base_url('/login'));
-        }
-        $this->isLogedin();
-    }
-    protected function isLogedin()
-    {
-        if (!session()->get('user_id')) {
-            return redirect()->to(base_url('/login'));
-        }
-    }
     public function index()
     {
         $dataPdk = $this->dataPDK->findAll();
@@ -162,5 +127,128 @@ class PpcController extends BaseController
         } else {
             return redirect()->to(base_url('ppc/flowproses/' . $no_model))->with('error', 'Gagal Memperbarui Data');
         }
+    }
+    public function requestPacking()
+    {
+        $dataPdk = $this->dataPDK->getPermintaanPacking();
+        $dataJoined = [];
+        foreach ($dataPdk as $dp) {
+            $dataJoined[] = [
+                'no_model' => $dp['no_model'],
+                'no_order' => $dp['no_order'],
+                'buyer' => $dp['buyer'],
+            ];
+        }
+        $data = [
+            'Judul' => 'Dashboard Packing',
+            'User' => session()->get('username'),
+            'Data' => $dataJoined,
+        ];
+        return view('Ppc/request', $data);
+    }
+    public function detailrequest($noModel)
+    {
+        $dataPdk = $this->dataPDK->where(['no_model' => $noModel])->first();
+        $Disisial = $this->masterInisial->getMasterInisial($noModel);
+        $dataInisial = $this->masterInisial->where('no_model', $noModel)->findAll();
+        $header = [];
+
+        foreach ($dataInisial as &$value) {
+            $id_proses = $this->flowModel->getIdProses($value['id_inisial']);
+            if ($id_proses && array_key_exists('id_proses', $id_proses)) {
+                $idProses = $id_proses['id_proses'];
+                $idInisial = $value['id_inisial'];
+                $pluspacking = $value['plus_packing'];
+                $totalPacking = $value['total'];
+                $ket = $value['keterangan'];
+                $mesin = $this->rekapModel->sumMesin($idProses) / 24;
+                $rosso = $this->rekapModel->sumRosso($idProses) / 24;
+                $setting = $this->rekapModel->sumSetting($idProses) / 24;
+                $pin = $this->rekapModel->sumPin($idProses) / 24;
+                $pout = $this->rekapModel->sumPout($idProses) / 24;
+                $deffect = $this->rekapModel->sumDeffect($idProses);
+                $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
+                $pbstc = $this->rekapModel->sumPBSTC($idProses) / 24;
+                $other = $stocklot - $pbstc;
+                $h1 = $this->dataProses->filterProses($id_proses['proses_1'])["kategori"];
+                $h2 = $this->dataProses->filterProses($id_proses['proses_2'])["kategori"];
+                $h3 = $this->dataProses->filterProses($id_proses['proses_3'])["kategori"];
+                $h4 = "Sisa " . $h2;
+                $h5 = "Sisa " . $h3;
+                $sisaSetting = $rosso - ($setting + $pin + $other);
+                $sisaPerbaikan = $pin - $pout - $pbstc;
+                $stocklot = $this->rekapModel->sumStocklot($idProses) / 24;
+                $gsIn = $this->rekapModel->sumGsin($idProses) / 24;
+                $gsOut = $this->rekapModel->sumGsOut($idProses) / 24;
+                $tagihanMesin = 0;
+                $lebihMesin = 0;
+
+                $sisaGudang = $gsIn - $gsOut;
+                if ($sisaGudang < 0) {
+                    $sisaGudang = 0;
+                }
+                if ($sisaSetting < 0) {
+                    $sisaSetting = 0;
+                }
+                if ($mesin < $value["po_inisial"]) {
+                    $tagihanMesin = $value["po_inisial"] - $mesin;
+
+                    if ($tagihanMesin < 0) {
+                        $tagihanMesin = 0;
+                    }
+                }
+                if ($mesin > $value["po_inisial"]) {
+                }
+                $lebihMesin = $mesin - ($value["po_inisial"] + $stocklot);
+                $bsBelumGanti = (($value["po_inisial"] + $stocklot + $deffect) - $mesin) - $tagihanMesin;
+                if ($bsBelumGanti < 0) {
+                    $bsBelumGanti = 0;
+                }
+                $header = [
+                    $h1,
+                    $h2,
+                    $h3,
+                    $h4,
+                    $h5,
+                ];
+                $proses = [
+                    $h1 => $mesin,
+                    $h4 => $mesin - $rosso,
+                    $h2 => $rosso,
+                    $h5 => $sisaSetting,
+                    $h3 => $setting,
+                    "perbaikanIn" => $pin,
+                    "perbaikanOut" => $pout,
+                    "sisaPerbaikan" => $sisaPerbaikan,
+                    "other" => $other,
+                    "pbstc" => $pbstc,
+                    "gsIn" => $gsIn,
+                    "gsOut" => $gsOut,
+                    "sisaGudang" => $sisaGudang,
+                    'deffect' => $deffect,
+                    "tagihanMesin" => $tagihanMesin,
+                    "lebihMesin" => $lebihMesin,
+                    'bsBelumGanti' => $bsBelumGanti,
+                    'idInisial' => $idInisial,
+                    'plusPacking' => $pluspacking,
+                    'totalPacking' => $totalPacking,
+                    'ket' => $ket,
+                ];
+                $value["proses"] = $proses;
+            }
+        }
+        $data = [
+            'Judul' => 'Detail PDK',
+            'pdk' => $noModel,
+            'poInisial' => $Disisial['po_inisial'],
+            'User' => session()->get('username'),
+            'buyer' => $dataPdk["buyer"],
+            'area' => $Disisial['area'],
+            'no_order' => $dataPdk["no_order"],
+            'inisial' => $dataInisial,
+            'header_prod' => $header,
+
+        ];
+        return view('Ppc/detailrequest', $data);
     }
 }

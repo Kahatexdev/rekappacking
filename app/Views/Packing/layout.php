@@ -162,6 +162,11 @@
                             <i class="icon-docs menu-icon"></i><span class="nav-text">Rekap Packing</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('packing/perjalanan') ?>" aria-expanded="false">
+                            <i class="icon-docs menu-icon"></i><span class="nav-text">Data Perjalanan</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

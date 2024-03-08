@@ -34,269 +34,313 @@
             }
         }
 
-        .hitam{
+        .hitam {
             color: black;
             border-color: black;
+        }
+
+        .kertas {
+            height: 1000px;
         }
     </style>
 </head>
 
-<body>
-    <div class="card">
-        <div class="card-header d-flex justify-content-between">
-            <button id="exportBtn" onclick="Hide()" class="btn btn-info">Cetak</button>
-        </div>
-        <div class="card-body hitam" >
-            <div class="row text-center align-items-center ">
-                <div class="col-lg-1 col-md-2 col-sm-2" style="border: 1px solid;">
-                    <img src="<?= base_url('assets/images/loho.png') ?>" style="width: 55px;" alt="">
-                    <br>
-                    <h5>PT KAHATEX </h5> 
-                </div>
-                <div class="col-lg-11  col-md-10 col-sm-10"  style="border: 1px solid;">
-                    <h3>
-                        FORMULIR
-                    </h3>
-                    <strong>
-                        DEPARTEMEN KAOS KAKI
+<body style="background-color: white; ">
+    <div class="container-fluid h-auto">
 
-                    </strong>
-                    <br>
-                    <strong>
-
-                        REKAPAN DATA PRODUKSI
-                    </strong>
-
-                </div>
+        <div class="card kertas" style="  background-image: url('<?= base_url('assets/images/bg01.png') ?>'); background-size:cover;">
+            <div class="card-header d-flex justify-content-between">
+                <button id="exportBtn" onclick="Hide()" class="btn btn-info">Cetak</button>
             </div>
-            
-                <div class="flex d-flex justify-content-between" >
+            <div class="card-body hitam">
+                <div class="row text-center align-items-center ">
+                    <div class="col-lg-1 col-md-2 col-sm-2" style="border: 1px solid;">
+                        <img src="<?= base_url('assets/images/loho.png') ?>" style="width: 55px;" alt="">
+                        <br>
+                        <h5>PT KAHATEX </h5>
+                    </div>
+                    <div class="col-lg-11  col-md-10 col-sm-10" style="border: 1px solid;">
+                        <h3>
+                            FORMULIR
+                        </h3>
+                        <strong>
+                            DEPARTEMEN KAOS KAKI
+
+                        </strong>
+                        <br>
+                        <strong>
+
+                            REKAPAN DATA PRODUKSI
+                        </strong>
+
+                    </div>
+                </div>
+
+                <div class="flex d-flex justify-content-between">
                     <div>
-                    <label for="nodokumen"> No. Dokumen : FOR–KK–612/REV_00/HAL 1/1</label>
-        
-                    </div>  
+                        <label for="nodokumen"> No. Dokumen : FOR–KK–612/REV_00/HAL 1/1</label>
+
+                    </div>
                     <div>
-                    <label for="tanggal"> Tanggal Revisi : 16 Februari 2021</label>
-                    </div>                       
-                </div>
-             
-         
-            <div class="row hitam"  style="border: 2px solid;">
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="label py-0 mt-1 mb-0">
-
-                        <label for="no_model"> PDK : <?= $pdk ?></label>
-                    </div>
-                    <div class="label py-0  mb-0">
-
-                        <label for="qty" id="total"> Total Qty PDK : <?= $poInisial ?></label>
-                    </div>
-                    <div class="label py-0  mb-0">
-
-                        <label for="desc"> Description :
-
-                        </label>
-
-                    </div>
-                    <div class="label py-0 mt-1 mb-0">
-
-                        <label for="user"> Dibuat Oleh : <?= $User ?></label>
+                        <label for="tanggal"> Tanggal Revisi : 16 Februari 2021</label>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
 
+
+                <div class="row hitam" style="border: 2px solid;">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <table>
+                            <tr>
+                                <td>
+                                    PDK
+                                </td>
+                                <td>
+                                    : <?= $pdk ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Total Qty PDK
+                                </td>
+                                <td>
+                                    : <?= $poInisial ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Description
+                                </td>
+                                <td>
+                                    :
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Dibuat Oleh
+                                </td>
+                                <td>
+                                    : <?= $User ?>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+
+                        <table>
+                            <tr>
+                                <td>
+                                    Buyer
+                                </td>
+                                <td>
+                                    : <?= $buyer ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Area
+                                </td>
+                                <td>
+                                    : <?= $area ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    No Order
+                                </td>
+                                <td>
+                                    : <?= $no_order ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Export
+                                </td>
+                                <td>
+                                    :
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="label py-0 mt-1 mb-0">
+                <div class="row">
 
-                        <label for="qty"> Buyer : <?= $buyer ?> </label>
-                    </div>
-                    <div class="label py-0 mb-0">
+                    <div class="table-responsive">
 
-                        <label for="no_model"> Area : <?= $area ?></label>
-                    </div>
-                    <div class="label py-0  mb-0">
-
-                        <label for="qty"> No Order : <?= $no_order ?></label>
-                    </div>
-                    <div class="label py-0  mb-0">
-
-                        <label for="qty"> Export : </label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-
-<div class="table-responsive">
-    
-                <table class="table-bordered text-center w-100"  id="myTable" style=" background-image: url('<?= base_url('assets/images/bg0.png') ?>');
-            background-size: cover; color:black; ">
-                    <thead>
-                        <tr>
-                            <th rowspan="2">Style</th>
-                            <th rowspan="2">Inisial</th>
-                            <th rowspan="2">Colour</th>
-                            <th rowspan="2">QTY (dz)</th>
-                            <th colspan="5">Prod (dz)</th>
-                            <th colspan="3">Perbaikan (dz)</th>
-                            <th colspan="2">Stocklot (dz)</th>
-                            <th colspan="3">Gudang Setting (dz)</th>
-                            <th rowspan="2">Deffect After Gudang</th>
-                            <th rowspan="2">Tagihan MC</th>
-                            <th rowspan="2">Lebih Mesin</th>
-                            <th rowspan="2">BS Belum Ganti</th>
-                            <th rowspan="2">(+) Packing</th>
-                            <th rowspan="2">Total</th>
-                            <th rowspan="2">Keterangan</th>
-
-                        </tr>
-                        <tr>
-                            <?php foreach ($header_prod as $key => $value) : ?>
-                                <th><?= $value ?></th>
-                            <?php endforeach ?>
-                            <th>In</th>
-                            <th>Out</th>
-                            <th>Sisa </th>
-                            <th>PB Stc</th>
-                            <th>Other</th>
-                            <th>In</th>
-                            <th>Out</th>
-                            <th>Sisa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        if (!empty($inisial)) {
-
-                        ?>
-                            <?php foreach ($inisial as $Data) : ?>
+                        <table class="table-bordered text-center w-100" id="myTable" style="color:black; ">
+                            <thead>
                                 <tr>
-                                    <td><?= $Data['style'] ?></td>
-                                    <td><?= $Data['inisial'] ?></td>
-                                    <td><?= $Data['colour'] ?></td>
-                                    <td class="qty"><?= $Data["po_inisial"] ?></td>
-                                    <td class="mesin"><?= round(number_format($Data["proses"][$header_prod[0]], 1, '.', ''))  ?></td>
-                                    <td class="sisaRosso"><?= round(number_format($Data["proses"][$header_prod[1]], 1, '.', ''))  ?></td>
-                                    <td class="rosso"><?= round(number_format($Data["proses"][$header_prod[2]], 1, '.', ''))  ?></td>
-                                    <td class="sisaSetting"><?= round(number_format($Data["proses"][$header_prod[3]], 1, '.', ''))  ?></td>
-                                    <td class="setting"><?= round(number_format($Data["proses"][$header_prod[4]], 1, '.', ''))  ?></td>
-                                    <td class="perbaikanIn"><?= round(number_format($Data["proses"]["perbaikanIn"], 1, '.', ''))  ?></td>
-                                    <td class="perbaikanOut"><?= round(number_format($Data["proses"]["perbaikanOut"], 1, '.', ''))  ?></td>
-                                    <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
-                                    <td class="pbstc"><?= round(number_format($Data["proses"]["pbstc"], 1, '.', ''))  ?></td>
-                                    <td class="stocklot"><?= round(number_format($Data["proses"]["other"], 1, '.', ''))  ?></td>
-
-                                    <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
-                                    <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
-                                    <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
-                                    <td class="deffectAfterGudang"><?= round(number_format($Data["proses"]["deffect"], 1, '.', ''))  ?></td>
-                                    <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
-                                    <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
-                                    <td class="BsBelumGanti"><?= round(number_format($Data["proses"]["bsBelumGanti"], 1, '.', ''))  ?></td>
-                                    <td class="plusPacking">
-                                        <?= $Data["proses"]["plusPacking"]; ?>
-                                    </td>
-                                    <td class="totalAmount">
-
-                                        <?= $Data["proses"]["totalPacking"]; ?>
-                                    </td>
-                                    <td class=""><?= $Data["proses"]["ket"]; ?></td>
-
+                                    <th rowspan="2">Style</th>
+                                    <th rowspan="2">Inisial</th>
+                                    <th rowspan="2">Colour</th>
+                                    <th rowspan="2">QTY (dz)</th>
+                                    <th colspan="5">Prod (dz)</th>
+                                    <th colspan="3">Perbaikan (dz)</th>
+                                    <th colspan="2">Stocklot (dz)</th>
+                                    <th colspan="3">Gudang Setting (dz)</th>
+                                    <th rowspan="2">Deffect After Gudang</th>
+                                    <th rowspan="2">Tagihan MC</th>
+                                    <th rowspan="2">Lebih Mesin</th>
+                                    <th rowspan="2">BS Belum Ganti</th>
+                                    <th rowspan="2">(+) Packing</th>
+                                    <th rowspan="2">Total</th>
+                                    <th rowspan="2">Keterangan</th>
 
                                 </tr>
+                                <tr>
+                                    <?php foreach ($header_prod as $key => $value) : ?>
+                                        <th><?= $value ?></th>
+                                    <?php endforeach ?>
+                                    <th>In</th>
+                                    <th>Out</th>
+                                    <th>Sisa </th>
+                                    <th>PB Stc</th>
+                                    <th>Other</th>
+                                    <th>In</th>
+                                    <th>Out</th>
+                                    <th>Sisa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                if (!empty($inisial)) {
 
-                            <?php endforeach ?>
-                        <?php
+                                ?>
+                                    <?php foreach ($inisial as $Data) : ?>
+                                        <tr>
+                                            <td><?= $Data['style'] ?></td>
+                                            <td><?= $Data['inisial'] ?></td>
+                                            <td><?= $Data['colour'] ?></td>
+                                            <td class="qty"><?= $Data["po_inisial"] ?></td>
+                                            <td class="mesin"><?= round(number_format($Data["proses"][$header_prod[0]], 1, '.', ''))  ?></td>
+                                            <td class="sisaRosso"><?= round(number_format($Data["proses"][$header_prod[1]], 1, '.', ''))  ?></td>
+                                            <td class="rosso"><?= round(number_format($Data["proses"][$header_prod[2]], 1, '.', ''))  ?></td>
+                                            <td class="sisaSetting"><?= round(number_format($Data["proses"][$header_prod[3]], 1, '.', ''))  ?></td>
+                                            <td class="setting"><?= round(number_format($Data["proses"][$header_prod[4]], 1, '.', ''))  ?></td>
+                                            <td class="perbaikanIn"><?= round(number_format($Data["proses"]["perbaikanIn"], 1, '.', ''))  ?></td>
+                                            <td class="perbaikanOut"><?= round(number_format($Data["proses"]["perbaikanOut"], 1, '.', ''))  ?></td>
+                                            <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
+                                            <td class="pbstc"><?= round(number_format($Data["proses"]["pbstc"], 1, '.', ''))  ?></td>
+                                            <td class="stocklot"><?= round(number_format($Data["proses"]["other"], 1, '.', ''))  ?></td>
+                                            <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
+                                            <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
+                                            <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
+                                            <td class="deffectAfterGudang"><?= round(number_format($Data["proses"]["deffect"], 1, '.', ''))  ?></td>
+                                            <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
+                                            <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
+                                            <td class="BsBelumGanti"><?= round(number_format($Data["proses"]["bsBelumGanti"], 1, '.', ''))  ?></td>
+                                            <td class="plusPacking">
+                                                <?= $Data["proses"]["plusPacking"]; ?>
+                                            </td>
+                                            <td class="totalAmount">
 
-                        } else {
-                        ?>
-                            <tr>
-                                <td colspan="8" class="text-center">Tidak ada data</td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
+                                                <?= $Data["proses"]["totalPacking"]; ?>
+                                            </td>
+                                            <td class=""><?= $Data["proses"]["ket"]; ?></td>
+
+
+                                        </tr>
+
+                                    <?php endforeach ?>
+                                <?php
+
+                                } else {
+                                ?>
+                                    <tr>
+                                        <td colspan="8" class="text-center">Tidak ada data</td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                                <tr>
+                                    <td colspan="3"> Total per Storage</td>
+                                    <td id="totalQty"> <?= $poInisial ?> </td>
+                                    <td id="totalMesin"> </td>
+                                    <td id="totalSisaRosso"> </td>
+                                    <td id="totalRosso"> </td>
+                                    <td id="totalSisaSetting"> </td>
+                                    <td id="totalSetting"> </td>
+                                    <td id="totalPerbaikanIn"> </td>
+                                    <td id="totalPerbaikanOut"> </td>
+                                    <td id="totalSisaPerbaikan"> </td>
+                                    <td id="totalPBSTC"> </td>
+                                    <td id="totalStocklot"> </td>
+                                    <td id="totalGsIn"> </td>
+                                    <td id="totalGsOut"> </td>
+                                    <td id="totalSisaGudang"> </td>
+                                    <td id="totalDeffectAfterGudang"> </td>
+                                    <td id="totalTagihanMesin"> </td>
+                                    <td id="totalLebihMesin"> </td>
+                                    <td id="totalBsBelumGanti"> </td>
+                                    <td id="totalPlusPacking">0 </td>
+                                    <td id="totalAmount"> 0</td>
+                                    <td id="persentase"> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer align-items-center text-center">
+                <table border="0" class="table " style="color:black">
+                    <thead class="px-2 p-y-2">
+                        <th class="px-2 p-y-2"> MNG. Packing</th>
+                        <th>MNG. MESIN</th>
+                        <th> KEPALA AREA</th>
+                        <th> MNG.ROSSO & SETTING</th>
+                        <th> KEPALA GUDANG</th>
+                        <th> PLANNER MESIN</th>
+                        <th>DISETUJUI OLEH</th>
+                        <th> DISETUJUI OLEH</th>
+                        <th> MENGETAHUI</th>
+                    </thead>
+                    <tbody>
+                        <tr class="px-2 p-y-2" style="width: 100; height: 50px;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                         <tr>
-                            <td colspan="3"> Total per Storage</td>
-                            <td id="totalQty"><?= $poInisial ?> </td>
-                            <td id="totalMesin"> </td>
-                            <td id="totalSisaRosso"> </td>
-                            <td id="totalRosso"> </td>
-                            <td id="totalSisaSetting"> </td>
-                            <td id="totalSetting"> </td>
-                            <td id="totalPerbaikanIn"> </td>
-                            <td id="totalPerbaikanOut"> </td>
-                            <td id="totalSisaPerbaikan"> </td>
-                            <td id="totalPBSTC"> </td>
-                            <td id="totalStocklot"> </td>
-                            <td id="totalGsIn"> </td>
-                            <td id="totalGsOut"> </td>
-                            <td id="totalSisaGudang"> </td>
-                            <td id="totalDeffectAfterGudang"> </td>
-                            <td id="totalTagihanMesin"> </td>
-                            <td id="totalLebihMesin"> </td>
-                            <td id="totalBsBelumGanti"> </td>
-                            <td id="totalPlusPacking">0 </td>
-                            <td id="totalAmount"> 0</td>
-                            <td id=""> </td>
+                            <td>(.........................................)</td>
+                            <td>(.........................................)</td>
+                            <td>(.........................................)</td>
+                            <td>(.........................................)</td>
+                            <td>(.........................................)</td>
+                            <td>(.........................................)</td>
+                            <td>(.........................................)</td>
+
+                            <td>Mr.Willy</td>
+                            <td>(.........................................)</td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="9">
+                                ket: Data sisa tersebut merupakan sisa label yang belum keluar pada system ERP, tidak menutup kemungkinan jika barang lolos tidak terinput oleh user. Dengan itu dimohon management setiap bagian untuk cek pada area kerja masing-masing untuk menghindari tertinggalnya barang
+                            </td>
                         </tr>
                     </tbody>
+
                 </table>
+
+
             </div>
-            </div>
-
-        </div>
-        <div class="card-footer align-items-center text-center">
-            <table border="0" class="table " style="color:black">
-                <thead class="px-2 p-y-2" >
-                    <th class="px-2 p-y-2" > MNG. Packing</th>
-                    <th>MNG. MESIN</th>
-                    <th> KEPALA AREA</th>
-                    <th> MNG.ROSSO & SETTING</th>
-                    <th> KEPALA GUDANG</th>
-                    <th> PLANNER MESIN</th>
-                    <th>DISETUJUI OLEH</th>
-                    <th> DISETUJUI OLEH</th>
-                    <th> MENGETAHUI</th>
-                </thead>
-                <tbody>
-                    <tr class="px-2 p-y-2" style="width: 100; height: 50px;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>(.........................................)</td>
-                        <td>(.........................................)</td>
-                        <td>(.........................................)</td>
-                        <td>(.........................................)</td>
-                        <td>(.........................................)</td>
-                        <td>(.........................................)</td>
-                        <td>(.........................................)</td>
-                        
-                        <td>Mr.Willy</td>              
-                                  <td>(.........................................)</td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="9">
-                        ket: Data sisa tersebut merupakan sisa label yang belum keluar pada system ERP, tidak menutup kemungkinan jika barang lolos tidak terinput oleh user. Dengan itu dimohon management setiap bagian untuk cek pada area kerja masing-masing untuk menghindari tertinggalnya barang
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-
         </div>
     </div>
+
     <script>
         function Hide() {
             document.getElementById('exportBtn').classList.add("d-none");
@@ -377,6 +421,10 @@
         document.getElementById('totalBsBelumGanti').textContent = totalBsBelumGanti;
         document.getElementById('totalPlusPacking').textContent = totalPlusPacking;
         document.getElementById('totalAmount').textContent = totalAmount;
+
+        var totalQty = document.getElementById('totalQty').textContent
+        var persen = (totalPlusPacking / totalQty) * 100
+        document.getElementById('persentase').textContent = persen.toFixed(2) + "%"
         // Ambil semua elemen dengan kelas 'totalInput'
         var inputs = document.querySelectorAll('#myTable .totalInput');
 

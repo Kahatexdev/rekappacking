@@ -1,6 +1,28 @@
 <?php $this->extend('Packing/layout'); ?>
 <?php $this->section('content'); ?>
+<?php if (session()->getFlashdata('success')) : ?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '<?= session()->getFlashdata('success') ?>',
+            });
+        });
+    </script>
+<?php endif; ?>
 
+<?php if (session()->getFlashdata('error')) : ?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: '<?= session()->getFlashdata('error') ?>',
+            });
+        });
+    </script>
+<?php endif; ?>
 
 <div class="row ">
     <div class="col-lg-12">
@@ -23,6 +45,7 @@
                             <tr>
                                 <th>No PDK</th>
                                 <th> Aksi </th>
+                                <th> Status </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,8 +58,11 @@
                                         <td><?= $Item['no_model'] ?></td>
                                         <td>
                                             <form action="<?= base_url('packing/detailrekap/' . $Item['no_model']); ?>" id="" method="post">
-                                                <button type="submit" class="btn btn-success detail text-white  ">Export Rekapan</button>
+                                                <button type="submit" class="btn btn-success detail text-white  ">Request Tambahan</button>
                                             </form>
+                                        </td>
+                                        <td>
+                                            <?= $Item['status'] ?>
                                         </td>
 
 

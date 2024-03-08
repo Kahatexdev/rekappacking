@@ -1,0 +1,1727 @@
+INFO - 2024-03-08 00:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 00:01:36 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PerjalananController.php on line 87.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:14:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:14:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:21:00 --> syntax error, unexpected variable "$dataProduksi"
+in APPPATH\Controllers\PerjalananController.php on line 96.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\PerjalananController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PerjalananController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PerjalananController')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\PerjalananController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:29:25 --> Undefined variable $dataIns
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 27.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataIns', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 27)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(123): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:31:13 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(123): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:31:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:31:49 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(123): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:32:00 --> Undefined array key "noLable"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "noLable"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 61)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(123): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:35:36 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(124): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:36:36 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(124): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:41:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 01:43:45 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 56.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(124): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:45:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 01:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-08 01:53:37 --> mysqli_sql_exception: Illegal parameter data types int and row for operation '=' in C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(`qty...', 0)
+#1 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`qty...')
+#2 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`qty...')
+#3 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`qty...', Array, false)
+#4 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\rekappacking\app\Models\PerjalananModel.php(60): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\rekappacking\app\Controllers\PerjalananController.php(98): App\Models\PerjalananModel->getDataRosso(Array)
+#7 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+#8 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+#9 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\rekappacking\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\rekappacking\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-03-08 01:53:37 --> Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`qty_prod`) AS `total_qty_prod`
+FROM `production`
+WHERE `id_production` = :id_production:
+AND  `storage_awal` LIKE :storage_awal: ESCAPE \'!\'
+AND `storage_akhir` IS NOT NULL', [...], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PerjalananModel.php(60): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\PerjalananController.php(98): App\Models\PerjalananModel->getDataRosso([...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 01:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 02:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 02:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 02:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 02:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 02:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 02:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 02:04:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 07:26:12 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(134): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 07:26:12 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(134): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 07:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 07:38:03 --> Undefined array key "noLabel"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 60.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "noLabel"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 60)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(134): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 07:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 07:38:26 --> Undefined array key "qty"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 62.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "qty"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 62)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(134): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 07:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 07:39:37 --> Undefined array key "qty"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 62.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "qty"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 62)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(134): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 07:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 07:42:53 --> Undefined array key "qty"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 62.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "qty"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 62)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(134): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 07:43:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 07:45:29 --> Undefined array key "qty"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 62.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "qty"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 62)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(132): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 07:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 07:46:11 --> Undefined array key "qty"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 63.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "qty"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 63)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(132): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 07:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 07:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:07:28 --> Call to undefined method App\Models\ProductionModel::getIdProses
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\PerjalananController.php(76): CodeIgniter\Model->__call('getIdProses', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:30:39 --> Undefined array key "no_label"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 60.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "no_label"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 60)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(133): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:31:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:37:23 --> Undefined variable $no_label
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $no_label', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 61)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(133): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:38:51 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(133): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:39:56 --> Undefined array key "no_label"
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 APPPATH\Views\Packing\Perjalanan\detail.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "no_label"', 'C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php', 61)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Perjalanan\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 5 APPPATH\Controllers\PerjalananController.php(131): view('Packing/Perjalanan/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:40:45 --> Undefined variable $dataProduksi
+in APPPATH\Controllers\PerjalananController.php on line 127.
+ 1 APPPATH\Controllers\PerjalananController.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataProduksi', 'C:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\PerjalananController.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:45:04 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(131): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:45:48 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(132): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:47:52 --> Cannot access offset of type string on string
+in APPPATH\Views\Packing\Perjalanan\detail.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Perjalanan/detail', [], true)
+ 4 APPPATH\Controllers\PerjalananController.php(132): view('Packing/Perjalanan/detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:49:38 --> Undefined variable $noBox
+in APPPATH\Controllers\PerjalananController.php on line 108.
+ 1 APPPATH\Controllers\PerjalananController.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $noBox', 'C:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\PerjalananController.php', 108)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 08:50:27 --> Undefined variable $dataProduksi
+in APPPATH\Controllers\PerjalananController.php on line 128.
+ 1 APPPATH\Controllers\PerjalananController.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataProduksi', 'C:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\PerjalananController.php', 128)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 08:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 08:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 08:56:11 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(134): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 08:56:11 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(134): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 09:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:34:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:34:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:57:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 10:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 11:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 11:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 11:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 11:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 11:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 11:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 11:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 11:25:09 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:13:55 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:14:21 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:20:11 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:20:38 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:21:41 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:21:41 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:21:48 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:21:48 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:21:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:21:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:25:49 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:25:52 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:26:56 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:26:58 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:26:58 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:27:35 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:29:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:29:30 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:34:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 13:34:01 --> Call to a member function sumMesin() on null
+in APPPATH\Controllers\PpcController.php on line 200.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:37:11 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:37:11 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:37:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:37:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:37:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:37:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:37:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:37:23 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:37:23 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:38:58 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:38:58 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:39:48 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 153.
+ 1 APPPATH\Views\Ppc\detailrequest.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:39:48 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 153.
+ 1 APPPATH\Views\Ppc\detailrequest.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 13:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:39:57 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 153.
+ 1 APPPATH\Views\Ppc\detailrequest.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:39:57 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 153.
+ 1 APPPATH\Views\Ppc\detailrequest.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:41:14 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 153.
+ 1 APPPATH\Views\Ppc\detailrequest.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:41:14 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 153.
+ 1 APPPATH\Views\Ppc\detailrequest.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:42:06 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:42:06 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:43:07 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:43:07 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:43:55 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:43:55 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:44:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:44:08 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:44:08 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:53:01 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:53:01 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:53:58 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:53:58 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 157.
+ 1 APPPATH\Views\Ppc\detailrequest.php(157): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:55:28 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 156.
+ 1 APPPATH\Views\Ppc\detailrequest.php(156): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:55:28 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 156.
+ 1 APPPATH\Views\Ppc\detailrequest.php(156): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:55:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 13:55:29 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 156.
+ 1 APPPATH\Views\Ppc\detailrequest.php(156): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 13:55:29 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 156.
+ 1 APPPATH\Views\Ppc\detailrequest.php(156): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(253): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 13:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:08:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:08:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:12:41 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:12:41 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:12:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:12:57 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:12:57 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:13:09 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:13:09 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:13:23 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:13:23 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:14:31 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:14:31 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:14:37 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:14:37 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:14:41 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:14:41 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:14:51 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:14:51 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:14:59 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:14:59 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:15:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 14:15:47 --> Undefined variable $dataProduksi
+in APPPATH\Controllers\PerjalananController.php on line 128.
+ 1 APPPATH\Controllers\PerjalananController.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataProduksi', 'C:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\PerjalananController.php', 128)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PerjalananController->detailperjalanan('1458')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerjalananController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:18:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:18:03 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:18:03 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:18:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:18:38 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:18:38 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:18:49 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:18:49 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:19:00 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:19:00 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:19:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:19:03 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:19:03 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:19:17 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:19:17 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:19:33 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:19:33 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:23:17 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:23:17 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:23:26 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:23:26 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:40:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:40:22 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:40:22 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:40:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:40:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:45:25 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:45:25 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-08 14:47:21 --> Cannot access offset of type string on string
+in APPPATH\Controllers\RekapController.php on line 262.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->reqpacking('ER1012')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:52:47 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:52:47 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:53:15 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:53:15 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:53:52 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:53:52 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:54:04 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:54:04 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:56:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:56:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:56:19 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Packing\Rekap\detail.php on line 153.
+ 1 APPPATH\Views\Packing\Rekap\detail.php(153): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Packing\\Rekap\\detail.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Packing/Rekap/detail', [], true)
+ 5 APPPATH\Controllers\RekapController.php(135): view('Packing/Rekap/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\RekapController->detailRekap('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RekapController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-08 14:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-08 14:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-08 14:59:44 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 156.
+ 1 APPPATH\Views\Ppc\detailrequest.php(156): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(252): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-08 14:59:44 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\detailrequest.php on line 156.
+ 1 APPPATH\Views\Ppc\detailrequest.php(156): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\detailrequest.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Ppc/detailrequest', [], true)
+ 5 APPPATH\Controllers\PpcController.php(252): view('Ppc/detailrequest', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PpcController->detailrequest('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\rekappacking\\public\\index.php')

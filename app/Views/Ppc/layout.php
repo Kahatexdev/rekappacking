@@ -119,6 +119,11 @@
                             <i class="icon-home menu-icon"></i><span class="nav-text">Master Data</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('ppc/requestpacking') ?>" aria-expanded="false">
+                            <i class="icon-chart menu-icon"></i><span class="nav-text">Permintaan (+) Packing</span>
+                        </a>
+                    </li>
 
                 </ul>
             </div>

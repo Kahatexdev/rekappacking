@@ -12,7 +12,7 @@ class PDKModels extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['no_model', 'no_order', 'buyer', 'po_global', 'created_at', 'updated_at', 'admin'];
+    protected $allowedFields    = ['no_model', 'no_order', 'buyer', 'po_global', 'created_at', 'updated_at', 'admin', 'status'];
 
     // Dates
     protected $useTimestamps = true;
@@ -52,5 +52,9 @@ class PDKModels extends Model
                         master_inisial.inisial');
         $result = $this->findAll();
         return $result;
+    }
+    public function getPermintaanPacking()
+    {
+        return $this->where('status', 'Menunggu Approval')->findAll();
     }
 }

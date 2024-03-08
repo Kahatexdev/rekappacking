@@ -1,10 +1,14 @@
-<?php $this->extend('Packing/layout'); ?>
+<?php $this->extend('Ppc/layout'); ?>
 <?php $this->section('content'); ?>
 
 <div class="card">
     <div class="card-header d-flex justify-content-between">
-        <h4>Silahkan Isi Tambahan Packing</h4>
+        <h4>Permintaan Tambahan Packing</h4>
+        <div class="div">
 
+            <a href="<?= base_url('ppc/approve/' . $pdk) ?>" class="btn btn-info">Approve</a>
+            <a href="<?= base_url('ppc/approve/' . $pdk) ?>" class="btn btn-danger">Decline</a>
+        </div>
     </div>
     <div class="card-body border">
         <div class="row text-center align-items-center border">
@@ -146,7 +150,6 @@
                                 <td class="sisaPerbaikan"><?= round(number_format($Data["proses"]["sisaPerbaikan"], 1, '.', ''))  ?></td>
                                 <td class="pbstc"><?= round(number_format($Data["proses"]["pbstc"], 1, '.', ''))  ?></td>
                                 <td class="stocklot"><?= round(number_format($Data["proses"]["other"], 1, '.', ''))  ?></td>
-
                                 <td class="gsIn"><?= round(number_format($Data["proses"]["gsIn"], 1, '.', ''))  ?></td>
                                 <td class="gsOut"><?= round(number_format($Data["proses"]["gsOut"], 1, '.', ''))  ?></td>
                                 <td class="sisaGudang"><?= round(number_format($Data["proses"]["sisaGudang"], 1, '.', ''))  ?></td>
@@ -154,17 +157,14 @@
                                 <td class="tagihanMesin"><?= round(number_format($Data["proses"]["tagihanMesin"], 1, '.', ''))  ?></td>
                                 <td class="lebihMesin"><?= round(number_format($Data["proses"]["lebihMesin"], 1, '.', ''))  ?></td>
                                 <td class="BsBelumGanti"><?= round(number_format($Data["proses"]["bsBelumGanti"], 1, '.', ''))  ?></td>
-                                <td class="">
-
-                                    <input type="text" class="form-control form-control-sm" name="idInisial" hidden value="<?= $Data["proses"]["idInisial"] ?>">
-
-                                    <input type="number" class="form-control form-control-sm plusPacking editable" value="<?= $Data["proses"]["plusPacking"]; ?>" data-id="<?= $Data["proses"]["idInisial"] ?>" data-field="plus_packing" name="plusPacking">
-
+                                <td class="plusPacking">
+                                    <?= $Data["proses"]["plusPacking"]; ?>
                                 </td>
-                                <td class="">
-                                    <input type="number" class="form-control form-control-sm totalInput editable" data-id="<?= $Data["proses"]["idInisial"] ?>" data-field="total" value="<?= $Data["proses"]["totalPacking"]; ?>">
+                                <td class="totalAmount">
+
+                                    <?= $Data["proses"]["totalPacking"]; ?>
                                 </td>
-                                <td class=""><input type="text" name="ket" data-id="<?= $Data["proses"]["idInisial"] ?>" data-field="keterangan" class=" form-control editable" value="<?= $Data["proses"]["ket"]; ?>"></td>
+                                <td class=""><?= $Data["proses"]["ket"]; ?></td>
 
 
                             </tr>
@@ -180,36 +180,34 @@
                     <?php
                     }
                     ?>
+                    <tr>
+                        <td colspan="3"> Total per Storage</td>
+                        <td id="totalQty"> <?= $poInisial ?> </td>
+                        <td id="totalMesin"> </td>
+                        <td id="totalSisaRosso"> </td>
+                        <td id="totalRosso"> </td>
+                        <td id="totalSisaSetting"> </td>
+                        <td id="totalSetting"> </td>
+                        <td id="totalPerbaikanIn"> </td>
+                        <td id="totalPerbaikanOut"> </td>
+                        <td id="totalSisaPerbaikan"> </td>
+                        <td id="totalPBSTC"> </td>
+                        <td id="totalStocklot"> </td>
+                        <td id="totalGsIn"> </td>
+                        <td id="totalGsOut"> </td>
+                        <td id="totalSisaGudang"> </td>
+                        <td id="totalDeffectAfterGudang"> </td>
+                        <td id="totalTagihanMesin"> </td>
+                        <td id="totalLebihMesin"> </td>
+                        <td id="totalBsBelumGanti"> </td>
+                        <td id="totalPlusPacking">0 </td>
+                        <td id="totalAmount"> 0</td>
+                        <td id="persentase"> </td>
+                    </tr>
                 </tbody>
-                <tfoot>
-                    <td colspan="3"> Total per Storage</td>
-                    <td><input type="number" id="totalQty" value="<?= $poInisial ?>" hidden><?= $poInisial ?> </td>
-                    <td id="totalMesin"> </td>
-                    <td id="totalSisaRosso"> </td>
-                    <td id="totalRosso"> </td>
-                    <td id="totalSisaSetting"> </td>
-                    <td id="totalSetting"> </td>
-                    <td id="totalPerbaikanIn"> </td>
-                    <td id="totalPerbaikanOut"> </td>
-                    <td id="totalSisaPerbaikan"> </td>
-                    <td id="totalPBSTC"> </td>
-                    <td id="totalStocklot"> </td>
-                    <td id="totalGsIn"> </td>
-                    <td id="totalGsOut"> </td>
-                    <td id="totalSisaGudang"> </td>
-                    <td id="totalDeffectAfterGudang"> </td>
-                    <td id="totalTagihanMesin"> </td>
-                    <td id="totalLebihMesin"> </td>
-                    <td id="totalBsBelumGanti"> </td>
-                    <td id="totalPlusPacking">0 </td>
-                    <td id="totalAmount"> 0</td>
-                    <td id="persentase"> 0</td>
-                </tfoot>
             </table>
-        </div>
-        <div class="d-flex justify-content-end">
 
-            <a href="<?= base_url('packing/reqpacking/' . $pdk) ?>" class="btn btn-info text-right mt-3">Ajukan Tambahan</a>
+
         </div>
 
     </div>
@@ -234,6 +232,7 @@
     var lebihMesinElements = document.querySelectorAll('.lebihMesin');
     var BsBelumGantiElements = document.querySelectorAll('.BsBelumGanti');
     var plusPackingElements = document.querySelectorAll('.plusPacking');
+    var totalAmountElements = document.querySelectorAll('.totalAmount');
 
     // Fungsi untuk mengakumulasi nilai dari elemen-elemen
     function accumulateValues(elements) {
@@ -264,6 +263,8 @@
     var totalTagihanMesin = accumulateValues(tagihanMesinElements)
     var totalLebihMesin = accumulateValues(lebihMesinElements)
     var totalBsBelumGanti = accumulateValues(BsBelumGantiElements)
+    var totalPlusPacking = accumulateValues(plusPackingElements)
+    var totalAmount = accumulateValues(totalAmountElements)
 
     // Set nilai total ke elemen-elemen <td> di bagian <tfoot>
     document.getElementById('totalMesin').textContent = totalMesin;
@@ -283,7 +284,12 @@
     document.getElementById('totalTagihanMesin').textContent = totalTagihanMesin;
     document.getElementById('totalLebihMesin').textContent = totalLebihMesin;
     document.getElementById('totalBsBelumGanti').textContent = totalBsBelumGanti;
+    document.getElementById('totalPlusPacking').textContent = totalPlusPacking;
+    document.getElementById('totalAmount').textContent = totalAmount;
 
+    var totalQty = document.getElementById('totalQty').textContent
+    var persen = (totalPlusPacking / totalQty) * 100
+    document.getElementById('persentase').textContent = persen.toFixed(2) + "%"
     // 
 </script>
 <script>

@@ -412,4 +412,10 @@ class ProductionModel extends Model
             ->first();
         return $qry;
     }
+    public function getDataByProses($idProses)
+    {
+        $this->where('id_proses', $idProses)->orderBy('no_label', 'ASC')->get();
+        $result = $this->findAll();
+        return $result;
+    }
 }

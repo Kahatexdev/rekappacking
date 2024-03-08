@@ -154,6 +154,7 @@ body {
   color: #76838f;
   text-align: left;
   background-color: #F3F3F9;
+
 }
 
 [tabindex="-1"]:focus {
@@ -661,6 +662,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
 }
 
 @media (min-width: 576px) {
@@ -17032,7 +17034,7 @@ table.dataTable thead .sorting::after {
 }
 
 .card-footer {
-  background: white;
+  background: none;
 }
 
 .dropdown-toggle:focus {

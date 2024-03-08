@@ -15,7 +15,8 @@ class RekapController extends BaseController
 
 
             $dataJoined[] = [
-                'no_model' => $no_model
+                'no_model' => $no_model,
+                'status' => $dp['status']
             ];
         }
 
@@ -83,6 +84,9 @@ class RekapController extends BaseController
                 }
                 $lebihMesin = $mesin - ($value["po_inisial"] + $stocklot);
                 $bsBelumGanti = (($value["po_inisial"] + $stocklot + $deffect) - $mesin) - $tagihanMesin;
+                if ($bsBelumGanti < 0) {
+                    $bsBelumGanti = 0;
+                }
                 $header = [
                     $h1,
                     $h2,
@@ -199,7 +203,9 @@ class RekapController extends BaseController
                 }
                 $lebihMesin = $mesin - ($value["po_inisial"] + $stocklot);
                 $bsBelumGanti = (($value["po_inisial"] + $stocklot + $deffect) - $mesin) - $tagihanMesin;
-
+                if ($bsBelumGanti < 0) {
+                    $bsBelumGanti = 0;
+                }
                 $header = [
                     $h1,
                     $h2,
@@ -246,5 +252,18 @@ class RekapController extends BaseController
 
         ];
         return view('Packing/Rekap/export', $data);
+    }
+
+    public function reqpacking($noModel)
+    {
+        $status = 'Menunggu Approval';
+        $field = 'status';
+
+        $update = $this->dataPDK->update($noModel, [$field => $status]);
+        if ($update) {
+            return redirect()->to(base_url('packing/rekap/'))->with('success', 'Berhasil Meminta tambahan packing');
+        } else {
+            return redirect()->to(base_url('packing/rekap/'))->with('error', 'Gagal Meminta tambahan packing');
+        }
     }
 }

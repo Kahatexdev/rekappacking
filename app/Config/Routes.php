@@ -51,6 +51,8 @@ $routes->group('/ppc', ['filter' => 'ppcAuth'], function ($routes) {
     $routes->get('flowproses/(:any)', 'PpcController::flowproses/$1');
     $routes->post('flowproses/update/(:any)', 'PpcController::updateFlow/$1');
     $routes->post('importFlowProses', 'PackingController::importFlowProses');
+    $routes->get('requestpacking', 'PpcController::requestPacking');
+    $routes->post('detailrequest/(:any)', 'PpcController::detailrequest/$1');
 });
 
 //packing routes
@@ -110,8 +112,15 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
     $routes->post('detailrekap/(:any)', 'RekapController::detailRekap/$1');
     $routes->get('export/(:any)', 'RekapController::export/$1');
     $routes->post('saveRekap', 'RekapController::saveRekap');
+    $routes->get('reqpacking/(:any)', 'RekapController::reqpacking/$1');
 
 
 
     $routes->get('stocklot', 'StocklotController::stocklot');
+
+
+
+    $routes->get('perjalanan', 'PerjalananController::index');
+    $routes->post('getInisial', 'PerjalananController::getInisial');
+    $routes->get('detailperjalanan/(:any)', 'PerjalananController::detailperjalanan/$1');
 });
