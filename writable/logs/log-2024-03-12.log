@@ -1,0 +1,82 @@
+INFO - 2024-03-12 07:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:12:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:12:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-12 07:19:47 --> ErrorException: Undefined variable $daDo
+in APPPATH\Controllers\PpcController.php on line 164.
+ 1 APPPATH\Controllers\PpcController.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $daDo', 'D:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\PpcController.php', 164)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\PpcController->requestPacking()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-12 07:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-12 07:20:13 --> ErrorException: Undefined variable $daDo
+in APPPATH\Controllers\PpcController.php on line 165.
+ 1 APPPATH\Controllers\PpcController.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $daDo', 'D:\\xampp\\htdocs\\rekappacking\\app\\Controllers\\PpcController.php', 165)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\PpcController->requestPacking()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-12 07:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-12 07:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-12 07:52:21 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\export.php on line 234.
+ 1 APPPATH\Views\Ppc\export.php(234): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\export.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Ppc/export', [], true)
+ 5 APPPATH\Controllers\PpcController.php(376): view('Ppc/export', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\PpcController->export('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-12 07:52:21 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\export.php on line 234.
+ 1 APPPATH\Views\Ppc\export.php(234): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\export.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Ppc/export', [], true)
+ 5 APPPATH\Controllers\PpcController.php(376): view('Ppc/export', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\PpcController->export('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-12 07:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-03-12 07:52:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\export.php on line 234.
+ 1 APPPATH\Views\Ppc\export.php(234): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\export.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Ppc/export', [], true)
+ 5 APPPATH\Controllers\PpcController.php(376): view('Ppc/export', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\PpcController->export('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+WARNING - 2024-03-12 07:52:50 --> [DEPRECATED] number_format(): Passing null to parameter #1 ($num) of type float is deprecated in APPPATH\Views\Ppc\export.php on line 234.
+ 1 APPPATH\Views\Ppc\export.php(234): number_format(null, 1, '.', '')
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\xampp\\htdocs\\rekappacking\\app\\Views\\Ppc\\export.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Ppc/export', [], true)
+ 5 APPPATH\Controllers\PpcController.php(376): view('Ppc/export', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\PpcController->export('ER1012')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PpcController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\xampp\\htdocs\\rekappacking\\public\\index.php')
+INFO - 2024-03-12 07:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

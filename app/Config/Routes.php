@@ -53,6 +53,8 @@ $routes->group('/ppc', ['filter' => 'ppcAuth'], function ($routes) {
     $routes->post('importFlowProses', 'PackingController::importFlowProses');
     $routes->get('requestpacking', 'PpcController::requestPacking');
     $routes->post('detailrequest/(:any)', 'PpcController::detailrequest/$1');
+    $routes->get('approve/(:any)', 'StatusController::approve/$1');
+    $routes->get('export/(:any)', 'PpcController::export/$1');
 });
 
 //packing routes
@@ -112,7 +114,7 @@ $routes->group('/packing', ['filter' => 'packingAuth'], function ($routes) {
     $routes->post('detailrekap/(:any)', 'RekapController::detailRekap/$1');
     $routes->get('export/(:any)', 'RekapController::export/$1');
     $routes->post('saveRekap', 'RekapController::saveRekap');
-    $routes->get('reqpacking/(:any)', 'RekapController::reqpacking/$1');
+    $routes->get('reqpacking/(:any)', 'StatusController::reqpacking/$1');
 
 
 

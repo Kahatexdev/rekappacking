@@ -57,4 +57,12 @@ class PDKModels extends Model
     {
         return $this->where('status', 'Menunggu Approval')->findAll();
     }
+    public function getApproved()
+    {
+        return $this->where('status', 'Approved')->findAll();
+    }
+    public function getDecline()
+    {
+        return $this->where('status', 'Decline')->findAll();
+    }
 }

@@ -7,7 +7,7 @@
         <div class="div">
 
             <a href="<?= base_url('ppc/approve/' . $pdk) ?>" class="btn btn-info">Approve</a>
-            <a href="<?= base_url('ppc/approve/' . $pdk) ?>" class="btn btn-danger">Decline</a>
+            <a href="<?= base_url('ppc/decline/' . $pdk) ?>" class="btn btn-danger">Decline</a>
         </div>
     </div>
     <div class="card-body border">

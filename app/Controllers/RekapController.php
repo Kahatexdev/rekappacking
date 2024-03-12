@@ -254,16 +254,5 @@ class RekapController extends BaseController
         return view('Packing/Rekap/export', $data);
     }
 
-    public function reqpacking($noModel)
-    {
-        $status = 'Menunggu Approval';
-        $field = 'status';
-
-        $update = $this->dataPDK->update($noModel, [$field => $status]);
-        if ($update) {
-            return redirect()->to(base_url('packing/rekap/'))->with('success', 'Berhasil Meminta tambahan packing');
-        } else {
-            return redirect()->to(base_url('packing/rekap/'))->with('error', 'Gagal Meminta tambahan packing');
-        }
-    }
+  
 }
